@@ -1,5 +1,5 @@
 import {BpmnDiagram} from './bpmn_diagram';
-import {ExecutionContext} from 'iam_contracts';
+import {ExecutionContext} from '@process-engine-js/core_contracts';
 
 export interface IProcessDefEntityTypeService {
   importBpmnFromXml(xml: string, context: ExecutionContext): Promise<void>;
