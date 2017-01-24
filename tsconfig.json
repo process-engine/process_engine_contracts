@@ -1,0 +1,8 @@
+{
+  "typingOptions": {
+    "enableAutoDiscovery": true
+  },
+  "compilerOptions": {
+    "target": "es5"
+  }
+}
