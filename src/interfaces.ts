@@ -1,13 +1,21 @@
 import {BpmnDiagram} from './bpmn_diagram';
-import {ExecutionContext, IEntity} from '@process-engine-js/core_contracts';
+import {ExecutionContext, IEntity, IPublicGetOptions} from '@process-engine-js/core_contracts';
 
 export interface IProcessDefEntityTypeService {
-  importBpmnFromXml(xml: string, context: ExecutionContext): Promise<void>;
-  importBpmnFromFile(xml: string): Promise<void>;
+  importBpmnFromXml(context: ExecutionContext, param: any, options?: IPublicGetOptions): Promise<void>;
+  importBpmnFromFile(context: ExecutionContext, param: any, options?: IPublicGetOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<BpmnDiagram>;
   parseBpmnFile(path: string): Promise<BpmnDiagram>;
 }
 
+export interface ISubprocessExternalEntity extends INodeInstanceEntity {
+}
+
+export interface ISubprocessInternalEntity extends INodeInstanceEntity {
+}
+
+export interface IBoundaryEventEntity extends IEventEntity {
+}
 
 export interface IEndEventEntity extends IEventEntity {
 }
@@ -36,20 +44,20 @@ export interface ILaneEntity extends IEntity {
   key: string;
   extensions: any;
   getProcessDef(): Promise<IProcessDefEntity>;
-  setProcessDef(value: IProcessDefEntity): void;
+  processDef: IProcessDefEntity;
 }
 
 export interface INodeDefEntity extends IEntity {
   name: string;
   key: string;
   getProcessDef(): Promise<IProcessDefEntity>;
-  setProcessDef(value: IProcessDefEntity): void;
+  processDef: IProcessDefEntity;
   getLane(): Promise<ILaneEntity>;
-  setLane(value: ILaneEntity): void;
+  lane: ILaneEntity;
   type: string;
   extensions: any;
   getAttachedToNode(): Promise<INodeDefEntity>;
-  setAttachedToNode(value: INodeDefEntity): void;
+  attachedToNode: INodeDefEntity;
   events: string;
   getLaneRole(context: ExecutionContext): Promise<string>;
 }
@@ -58,14 +66,14 @@ export interface INodeInstanceEntity extends IEntity {
   name: string;
   key: string;
   getProcess(): Promise<IProcessEntity>;
-  setProcess(value: IProcessEntity): void;
+  process: IProcessEntity;
   getNodeDef(): Promise<INodeDefEntity>;
-  setNodeDef(value: INodeDefEntity): void;
+  nodeDef: INodeDefEntity;
   type: string;
   state: string;
   participant: string;
   getProcessToken(): Promise<IProcessTokenEntity>;
-  setProcessToken(value: IProcessTokenEntity): void;
+  processToken: IProcessTokenEntity;
 }
 
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
@@ -76,7 +84,7 @@ export interface IProcessEntity extends IEntity {
   name: string;
   key: string;
   getProcessDef(): Promise<IProcessDefEntity>;
-  setProcessDef(value: IProcessDefEntity): void;
+  processDef: IProcessDefEntity;
 }
 
 export interface IProcessDefEntity extends IEntity {
@@ -91,7 +99,7 @@ export interface IProcessDefEntity extends IEntity {
 export interface IProcessTokenEntity extends IEntity {
   data: any;
   getProcess(): Promise<IProcessEntity>;
-  setProcess(value: IProcessEntity): void;
+  process: IProcessEntity;
 }
 
 export interface IScriptTaskEntity extends INodeInstanceEntity {
