@@ -83,9 +83,7 @@ export class BpmnDiagram {
     const process = this._getProcessById(processId);
 
     if (process && process.flowElements) {
-      
       return process.flowElements.filter((element) => {
-
         return element.$type !== 'bpmn:SequenceFlow';
       });
     }
@@ -98,10 +96,8 @@ export class BpmnDiagram {
     const process = this._getProcessById(processId);
 
     if (process && process.flowElements) {
-      
       return process.flowElements.filter((element) => {
-
-        return element.$type !== 'bpmn:SequenceFlow';
+        return element.$type === 'bpmn:SequenceFlow';
       });
     }
     

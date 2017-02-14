@@ -69,7 +69,7 @@ var BpmnDiagram = (function () {
         var process = this._getProcessById(processId);
         if (process && process.flowElements) {
             return process.flowElements.filter(function (element) {
-                return element.$type !== 'bpmn:SequenceFlow';
+                return element.$type === 'bpmn:SequenceFlow';
             });
         }
         return [];

@@ -2,8 +2,8 @@ import {BpmnDiagram} from './bpmn_diagram';
 import {ExecutionContext, IEntity, IPublicGetOptions} from '@process-engine-js/core_contracts';
 
 export interface IProcessDefEntityTypeService {
-  importBpmnFromXml(context: ExecutionContext, param: any, options?: IPublicGetOptions): Promise<void>;
-  importBpmnFromFile(context: ExecutionContext, param: any, options?: IPublicGetOptions): Promise<void>;
+  importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
+  importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<BpmnDiagram>;
   parseBpmnFile(path: string): Promise<BpmnDiagram>;
 }
@@ -31,11 +31,11 @@ export interface IFlowDefEntity extends IEntity {
   name: string;
   key: string;
   getProcessDef(): Promise<IProcessDefEntity>;
-  setProcessDef(value: IProcessDefEntity): void;
+  processDef: IProcessDefEntity;
   getSource(): Promise<INodeDefEntity>;
-  setSource(value: INodeDefEntity): void;
+  source: INodeDefEntity;
   getTarget(): Promise<INodeDefEntity>;
-  setTarget(value: INodeDefEntity): void;
+  target: INodeDefEntity;
   condition: string;
 }
 
@@ -60,6 +60,12 @@ export interface INodeDefEntity extends IEntity {
   attachedToNode: INodeDefEntity;
   events: string;
   getLaneRole(context: ExecutionContext): Promise<string>;
+  script: string;
+  eventType: string;
+  cancelActivity: boolean;
+  subProcessKey: string;
+  getSubProcessDef(): Promise<INodeDefEntity>;
+  subProcessDef: INodeDefEntity;
 }
 
 export interface INodeInstanceEntity extends IEntity {
@@ -93,7 +99,7 @@ export interface IProcessDefEntity extends IEntity {
   defId: string;
   xml: string;
   start(context: ExecutionContext): Promise<void>;
-  updateDefinitions(context: ExecutionContext, newBpmnDiagram?: BpmnDiagram): Promise<void>;
+  updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
 
 export interface IProcessTokenEntity extends IEntity {
@@ -113,4 +119,16 @@ export interface IStartEventEntity extends IEventEntity {
 }
 
 export interface IUserTaskEntity extends INodeInstanceEntity {
+}
+
+export interface IParamImportFromFile {
+  file: string;
+}
+
+export interface IParamImportFromXml {
+  xml: string;
+}
+
+export interface IParamUpdateDefs {
+  bpmnDiagram: BpmnDiagram;
 }
