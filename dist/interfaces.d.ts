@@ -110,3 +110,7 @@ export interface IParamImportFromXml {
 export interface IParamUpdateDefs {
     bpmnDiagram: BpmnDiagram;
 }
+export interface IProcessEngineService {
+    initialize(): Promise<void>;
+    start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<any>;
+}
