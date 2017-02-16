@@ -6,6 +6,13 @@ export interface IProcessDefEntityTypeService {
   importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<BpmnDiagram>;
   parseBpmnFile(path: string): Promise<BpmnDiagram>;
+  start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<string>;
+}
+
+export interface IParamStart {
+  key: string;
+  initialToken: any;
+  source: string;
 }
 
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {
@@ -91,6 +98,7 @@ export interface IProcessEntity extends IEntity {
   key: string;
   getProcessDef(): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
+  start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
 }
 
 export interface IProcessDefEntity extends IEntity {
@@ -98,7 +106,7 @@ export interface IProcessDefEntity extends IEntity {
   key: string;
   defId: string;
   xml: string;
-  start(context: ExecutionContext): Promise<void>;
+  start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<string>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
 
@@ -135,5 +143,5 @@ export interface IParamUpdateDefs {
 
 export interface IProcessEngineService {
     initialize(): Promise<void>;
-    start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<any>;
+    start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
 }
