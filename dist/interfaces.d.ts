@@ -5,12 +5,12 @@ export interface IProcessDefEntityTypeService {
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
     parseBpmnXml(xml: string): Promise<BpmnDiagram>;
     parseBpmnFile(path: string): Promise<BpmnDiagram>;
-    start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<string>;
+    start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
 }
 export interface IParamStart {
     key: string;
     initialToken: any;
-    source: string;
+    source: any;
 }
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {
 }
@@ -75,6 +75,8 @@ export interface INodeInstanceEntity extends IEntity {
     participant: string;
     getProcessToken(): Promise<IProcessTokenEntity>;
     processToken: IProcessTokenEntity;
+    start(context: ExecutionContext, source: any): Promise<void>;
+    createNode(context: ExecutionContext): Promise<any>;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
@@ -91,7 +93,7 @@ export interface IProcessDefEntity extends IEntity {
     key: string;
     defId: string;
     xml: string;
-    start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<string>;
+    start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
     updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
 export interface IProcessTokenEntity extends IEntity {
