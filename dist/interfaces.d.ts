@@ -1,11 +1,15 @@
 import { BpmnDiagram } from './bpmn_diagram';
 import { ExecutionContext, IEntity, IPublicGetOptions } from '@process-engine-js/core_contracts';
+import { IEntityType } from '@process-engine-js/data_model_contracts';
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
     parseBpmnXml(xml: string): Promise<BpmnDiagram>;
     parseBpmnFile(path: string): Promise<BpmnDiagram>;
     start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
+}
+export interface INodeInstanceEntityTypeService {
+    createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
 }
 export interface IParamStart {
     key: string;
@@ -54,7 +58,7 @@ export interface INodeDefEntity extends IEntity {
     extensions: any;
     getAttachedToNode(): Promise<INodeDefEntity>;
     attachedToNode: INodeDefEntity;
-    events: string;
+    events: any;
     getLaneRole(context: ExecutionContext): Promise<string>;
     script: string;
     eventType: string;
@@ -76,7 +80,8 @@ export interface INodeInstanceEntity extends IEntity {
     getProcessToken(): Promise<IProcessTokenEntity>;
     processToken: IProcessTokenEntity;
     start(context: ExecutionContext, source: any): Promise<void>;
-    createNode(context: ExecutionContext): Promise<any>;
+    changeState(context: ExecutionContext, newState: string, source: any): any;
+    error(context: ExecutionContext, error: any): any;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
