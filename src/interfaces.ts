@@ -43,11 +43,11 @@ export interface IExclusiveGatewayEntity extends INodeInstanceEntity {
 export interface IFlowDefEntity extends IEntity {
   name: string;
   key: string;
-  getProcessDef(): Promise<IProcessDefEntity>;
+  getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
-  getSource(): Promise<INodeDefEntity>;
+  getSource(context: ExecutionContext): Promise<INodeDefEntity>;
   source: INodeDefEntity;
-  getTarget(): Promise<INodeDefEntity>;
+  getTarget(context: ExecutionContext): Promise<INodeDefEntity>;
   target: INodeDefEntity;
   condition: string;
 }
@@ -56,20 +56,20 @@ export interface ILaneEntity extends IEntity {
   name: string;
   key: string;
   extensions: any;
-  getProcessDef(): Promise<IProcessDefEntity>;
+  getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
 }
 
 export interface INodeDefEntity extends IEntity {
   name: string;
   key: string;
-  getProcessDef(): Promise<IProcessDefEntity>;
+  getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
-  getLane(): Promise<ILaneEntity>;
+  getLane(context: ExecutionContext): Promise<ILaneEntity>;
   lane: ILaneEntity;
   type: string;
   extensions: any;
-  getAttachedToNode(): Promise<INodeDefEntity>;
+  getAttachedToNode(context: ExecutionContext): Promise<INodeDefEntity>;
   attachedToNode: INodeDefEntity;
   events: any;
   getLaneRole(context: ExecutionContext): Promise<string>;
@@ -77,21 +77,21 @@ export interface INodeDefEntity extends IEntity {
   eventType: string;
   cancelActivity: boolean;
   subProcessKey: string;
-  getSubProcessDef(): Promise<INodeDefEntity>;
+  getSubProcessDef(context: ExecutionContext): Promise<INodeDefEntity>;
   subProcessDef: INodeDefEntity;
 }
 
 export interface INodeInstanceEntity extends IEntity {
   name: string;
   key: string;
-  getProcess(): Promise<IProcessEntity>;
+  getProcess(context: ExecutionContext): Promise<IProcessEntity>;
   process: IProcessEntity;
-  getNodeDef(): Promise<INodeDefEntity>;
+  getNodeDef(context: ExecutionContext): Promise<INodeDefEntity>;
   nodeDef: INodeDefEntity;
   type: string;
   state: string;
   participant: string;
-  getProcessToken(): Promise<IProcessTokenEntity>;
+  getProcessToken(context: ExecutionContext): Promise<IProcessTokenEntity>;
   processToken: IProcessTokenEntity;
   start(context: ExecutionContext, source: any): Promise<void>;
   changeState(context: ExecutionContext, newState: string, source: any);
@@ -105,7 +105,7 @@ export interface IParallelGatewayEntity extends INodeInstanceEntity {
 export interface IProcessEntity extends IEntity {
   name: string;
   key: string;
-  getProcessDef(): Promise<IProcessDefEntity>;
+  getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
 }
@@ -121,7 +121,7 @@ export interface IProcessDefEntity extends IEntity {
 
 export interface IProcessTokenEntity extends IEntity {
   data: any;
-  getProcess(): Promise<IProcessEntity>;
+  getProcess(context: ExecutionContext): Promise<IProcessEntity>;
   process: IProcessEntity;
 }
 
