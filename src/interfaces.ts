@@ -1,6 +1,6 @@
 import {BpmnDiagram} from './bpmn_diagram';
 import {ExecutionContext, IEntity, IPublicGetOptions} from '@process-engine-js/core_contracts';
-import { IEntityType } from '@process-engine-js/data_model_contracts';
+import { IEntityType, EntityReference } from '@process-engine-js/data_model_contracts';
 
 export interface IProcessDefEntityTypeService {
   importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
@@ -13,12 +13,21 @@ export interface IProcessDefEntityTypeService {
 export interface INodeInstanceEntityTypeService {
   createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
   createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<void>;
+  continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
+  continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
 }
 
 export interface IParamStart {
   key: string;
-  initialToken: any;
-  source: any;
+  initialToken?: any;
+  source?: any;
+  isSubProcess?: boolean;
+}
+
+export interface IParamsContinueFromRemote {
+  nextDef: EntityReference;
+  source: EntityReference;
+  token: EntityReference;
 }
 
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {
@@ -96,6 +105,8 @@ export interface INodeInstanceEntity extends IEntity {
   start(context: ExecutionContext, source: any): Promise<void>;
   changeState(context: ExecutionContext, newState: string, source: any);
   error(context: ExecutionContext, error: any);
+  execute(context: ExecutionContext): Promise<void>;
+  end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
 }
 
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
@@ -108,6 +119,7 @@ export interface IProcessEntity extends IEntity {
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
+  end(context: ExecutionContext, processToken: any): Promise<void>;
 }
 
 export interface IProcessDefEntity extends IEntity {
