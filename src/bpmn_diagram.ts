@@ -63,16 +63,20 @@ export class BpmnDiagram {
 
       const lanes = this.getLanes(process.id);
 
-      lanes.forEach((lane) => {
+      if (lanes) {
+        lanes.forEach((lane) => {
+          if(lane.flowNodeRef) {
+            const result = lane.flowNodeRef.filter((nodeRef) => {
+              return nodeRef.id === elementId;
+            });
 
-        const result = lane.flowNodeRef.filter((nodeRef) => {
-          return nodeRef.id === elementId;
+            if (result.length > 0) {
+              laneId = lane.id;
+            }
+          }
         });
+      }
 
-        if (result.length > 0) {
-          laneId = lane.id;
-        }
-      });
     });
 
     return laneId;

@@ -46,14 +46,18 @@ var BpmnDiagram = (function () {
         var processes = this.getProcesses();
         processes.forEach(function (process) {
             var lanes = _this.getLanes(process.id);
-            lanes.forEach(function (lane) {
-                var result = lane.flowNodeRef.filter(function (nodeRef) {
-                    return nodeRef.id === elementId;
+            if (lanes) {
+                lanes.forEach(function (lane) {
+                    if (lane.flowNodeRef) {
+                        var result = lane.flowNodeRef.filter(function (nodeRef) {
+                            return nodeRef.id === elementId;
+                        });
+                        if (result.length > 0) {
+                            laneId = lane.id;
+                        }
+                    }
                 });
-                if (result.length > 0) {
-                    laneId = lane.id;
-                }
-            });
+            }
         });
         return laneId;
     };
