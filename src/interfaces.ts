@@ -29,9 +29,9 @@ export interface IParamStart {
 }
 
 export interface IParamsContinueFromRemote {
-  nextDef: EntityReference;
-  source: EntityReference;
-  token: EntityReference;
+  nextDef: any;
+  source: any;
+  token: any;
 }
 
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {

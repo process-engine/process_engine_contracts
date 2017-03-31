@@ -1,6 +1,6 @@
 import { BpmnDiagram } from './bpmn_diagram';
 import { ExecutionContext, IEntity, IPublicGetOptions } from '@process-engine-js/core_contracts';
-import { IEntityType, EntityReference } from '@process-engine-js/data_model_contracts';
+import { IEntityType } from '@process-engine-js/data_model_contracts';
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
@@ -24,9 +24,9 @@ export interface IParamStart {
     isSubProcess?: boolean;
 }
 export interface IParamsContinueFromRemote {
-    nextDef: EntityReference;
-    source: EntityReference;
-    token: EntityReference;
+    nextDef: any;
+    source: any;
+    token: any;
 }
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {
 }
