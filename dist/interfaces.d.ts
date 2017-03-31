@@ -12,6 +12,9 @@ export interface INodeInstanceEntityTypeService {
     createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
     createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<void>;
 }
+export interface IImportFromFileOptions {
+    overwrite?: boolean;
+}
 export interface IParamStart {
     key: string;
     initialToken: any;
