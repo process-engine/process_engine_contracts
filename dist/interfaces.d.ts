@@ -14,6 +14,9 @@ export interface INodeInstanceEntityTypeService {
     continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
     continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
 }
+export interface IImportFromFileOptions {
+    overwrite?: boolean;
+}
 export interface IParamStart {
     key: string;
     initialToken?: any;
