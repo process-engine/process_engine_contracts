@@ -11,14 +11,22 @@ export interface IProcessDefEntityTypeService {
 export interface INodeInstanceEntityTypeService {
     createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
     createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<void>;
+    continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
+    continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
 }
 export interface IImportFromFileOptions {
     overwrite?: boolean;
 }
 export interface IParamStart {
     key: string;
-    initialToken: any;
+    initialToken?: any;
+    source?: any;
+    isSubProcess?: boolean;
+}
+export interface IParamsContinueFromRemote {
+    nextDef: any;
     source: any;
+    token: any;
 }
 export interface ISubprocessExternalEntity extends INodeInstanceEntity {
 }
@@ -86,6 +94,8 @@ export interface INodeInstanceEntity extends IEntity {
     start(context: ExecutionContext, source: any): Promise<void>;
     changeState(context: ExecutionContext, newState: string, source: any): any;
     error(context: ExecutionContext, error: any): any;
+    execute(context: ExecutionContext): Promise<void>;
+    end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
@@ -96,6 +106,7 @@ export interface IProcessEntity extends IEntity {
     getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
     processDef: IProcessDefEntity;
     start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
+    end(context: ExecutionContext, processToken: any): Promise<void>;
 }
 export interface IProcessDefEntity extends IEntity {
     name: string;
