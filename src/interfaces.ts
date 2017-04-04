@@ -18,7 +18,7 @@ export interface INodeInstanceEntityTypeService {
 }
 
 export interface IImportFromFileOptions {
-  overwrite?: boolean;
+  overwriteExisting?: boolean;
 }
 
 export interface IParamStart {
@@ -167,6 +167,13 @@ export interface IParamUpdateDefs {
 }
 
 export interface IProcessEngineService {
-    initialize(): Promise<void>;
-    start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
+  initialize(): Promise<void>;
+  start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
+}
+
+export interface IProcessRepository {
+  initialize(): void;
+  getProcess(processName: string): string;
+  getProcessesByCategory(category: string): Array<string>
+  saveProcess(processName: string, process?: string): Promise<void>;
 }
