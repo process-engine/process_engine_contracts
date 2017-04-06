@@ -143,3 +143,12 @@ export interface IProcessEngineService {
     initialize(): Promise<void>;
     start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
 }
+export interface ITimerEventEntity extends INodeInstanceEntity {
+    timerDefinitionType: TimerDefinitionType;
+    timerDefinition: string;
+}
+export declare enum TimerDefinitionType {
+    date = 0,
+    duration = 1,
+    cycle = 2,
+}
