@@ -124,6 +124,7 @@ export interface IProcessEntity extends IEntity {
   processDef: IProcessDefEntity;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
   end(context: ExecutionContext, processToken: any): Promise<void>;
+  error(context: ExecutionContext, error: any): Promise<void>;
 }
 
 export interface IProcessDefEntity extends IEntity {
