@@ -18,7 +18,7 @@ export interface INodeInstanceEntityTypeService {
 }
 
 export interface IImportFromFileOptions {
-  overwrite?: boolean;
+  overwriteExisting?: boolean;
 }
 
 export interface IParamStart {
@@ -132,6 +132,13 @@ export interface IProcessDefEntity extends IEntity {
   key: string;
   defId: string;
   xml: string;
+  internalName: string;
+  path: string;
+  category: string;
+  module: string;
+  readonly: boolean;
+  version: string;
+  counter: number;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
@@ -161,6 +168,11 @@ export interface IParamImportFromFile {
 
 export interface IParamImportFromXml {
   xml: string;
+  internalName?: string;
+  category?: string;
+  module?: string;
+  path?: string;
+  readonly?: boolean;
 }
 
 export interface IParamUpdateDefs {
@@ -168,6 +180,23 @@ export interface IParamUpdateDefs {
 }
 
 export interface IProcessEngineService {
-    initialize(): Promise<void>;
-    start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
+  initialize(): Promise<void>;
+  start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
+}
+
+
+export interface IProcessEntry {
+    name: string;
+    bpmnXml: string;
+    category: string;
+    module: string;
+    path: string;
+    readonly: boolean;
+}
+
+export interface IProcessRepository {
+  initialize(): void;
+  getProcess(processName: string): IProcessEntry;
+  getProcessesByCategory(category: string): Array<IProcessEntry>
+  saveProcess(processName: string, process?: string): Promise<void>;
 }
