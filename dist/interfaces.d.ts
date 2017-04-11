@@ -78,6 +78,7 @@ export interface INodeDefEntity extends IEntity {
     subProcessKey: string;
     getSubProcessDef(context: ExecutionContext): Promise<INodeDefEntity>;
     subProcessDef: INodeDefEntity;
+    mapper: string;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
