@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var BpmnDiagram = (function () {
     function BpmnDiagram(definitions) {
         this._definitions = undefined;

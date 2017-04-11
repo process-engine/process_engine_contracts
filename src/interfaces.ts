@@ -1,13 +1,13 @@
 import {BpmnDiagram} from './bpmn_diagram';
-import {ExecutionContext, IEntity, IPublicGetOptions} from '@process-engine-js/core_contracts';
-import { IEntityType, EntityReference } from '@process-engine-js/data_model_contracts';
+import {ExecutionContext, IEntity, IPublicGetOptions, IEntityReference} from '@process-engine-js/core_contracts';
+import { IEntityType } from '@process-engine-js/data_model_contracts';
 
 export interface IProcessDefEntityTypeService {
   importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
   importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<BpmnDiagram>;
   parseBpmnFile(path: string): Promise<BpmnDiagram>;
-  start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
+  start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
 
 export interface INodeInstanceEntityTypeService {
@@ -124,6 +124,7 @@ export interface IProcessEntity extends IEntity {
   processDef: IProcessDefEntity;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
   end(context: ExecutionContext, processToken: any): Promise<void>;
+  error(context: ExecutionContext, error: any): Promise<void>;
 }
 
 export interface IProcessDefEntity extends IEntity {
@@ -131,7 +132,14 @@ export interface IProcessDefEntity extends IEntity {
   key: string;
   defId: string;
   xml: string;
-  start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
+  internalName: string;
+  path: string;
+  category: string;
+  module: string;
+  readonly: boolean;
+  version: string;
+  counter: number;
+  start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
 
@@ -160,6 +168,11 @@ export interface IParamImportFromFile {
 
 export interface IParamImportFromXml {
   xml: string;
+  internalName?: string;
+  category?: string;
+  module?: string;
+  path?: string;
+  readonly?: boolean;
 }
 
 export interface IParamUpdateDefs {
@@ -171,10 +184,20 @@ export interface IProcessEngineService {
   start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
 }
 
+
+export interface IProcessEntry {
+    name: string;
+    bpmnXml: string;
+    category: string;
+    module: string;
+    path: string;
+    readonly: boolean;
+}
+
 export interface IProcessRepository {
   initialize(): void;
-  getProcess(processName: string): string;
-  getProcessesByCategory(category: string): Array<string>
+  getProcess(processName: string): IProcessEntry;
+  getProcessesByCategory(category: string): Array<IProcessEntry>
   saveProcess(processName: string, process?: string): Promise<void>;
 }
 
