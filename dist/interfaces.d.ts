@@ -1,12 +1,12 @@
 import { BpmnDiagram } from './bpmn_diagram';
-import { ExecutionContext, IEntity, IPublicGetOptions } from '@process-engine-js/core_contracts';
+import { ExecutionContext, IEntity, IPublicGetOptions, IEntityReference } from '@process-engine-js/core_contracts';
 import { IEntityType } from '@process-engine-js/data_model_contracts';
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
     parseBpmnXml(xml: string): Promise<BpmnDiagram>;
     parseBpmnFile(path: string): Promise<BpmnDiagram>;
-    start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
+    start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
 export interface INodeInstanceEntityTypeService {
     createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
@@ -121,7 +121,7 @@ export interface IProcessDefEntity extends IEntity {
     readonly: boolean;
     version: string;
     counter: number;
-    start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IProcessEntity>;
+    start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
     updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
 }
 export interface IProcessTokenEntity extends IEntity {
