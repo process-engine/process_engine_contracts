@@ -171,12 +171,12 @@ export interface IProcessRepository {
     getProcessesByCategory(category: string): Array<IProcessEntry>;
     saveProcess(processName: string, process?: string): Promise<void>;
 }
-export interface ITimerEventEntity extends INodeInstanceEntity {
-    timerDefinitionType: TimerDefinitionType;
-    timerDefinition: string;
-}
 export declare enum TimerDefinitionType {
     date = 0,
     duration = 1,
     cycle = 2,
+}
+export interface IThrowEventEntity extends IEventEntity {
+}
+export interface ICatchEventEntity extends IEventEntity {
 }
