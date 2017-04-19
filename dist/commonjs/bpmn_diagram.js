@@ -84,6 +84,20 @@ var BpmnDiagram = (function () {
         var process = processes.find(function (item) { return item.id === processId; });
         return process;
     };
+    BpmnDiagram.prototype.getSignals = function () {
+        var signals = [];
+        this.definitions.rootElements.forEach(function (root) {
+            if (root.$type === 'bpmn:Signal') {
+                signals.push(root);
+            }
+        });
+        return signals;
+    };
+    BpmnDiagram.prototype.getSignalById = function (signalId) {
+        var signals = this.getSignals();
+        var signal = signals.find(function (item) { return item.id === signalId; });
+        return signal;
+    };
     return BpmnDiagram;
 }());
 exports.BpmnDiagram = BpmnDiagram;

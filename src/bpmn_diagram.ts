@@ -116,4 +116,27 @@ export class BpmnDiagram {
 
     return process;
   }
+
+  public getSignals(): any {
+
+    const signals: any = [];
+
+    this.definitions.rootElements.forEach((root) => {
+
+      if (root.$type === 'bpmn:Signal') {
+        signals.push(root);
+      }
+    });
+
+    return signals;
+  }
+
+  public getSignalById(signalId: string): any {
+
+    const signals = this.getSignals();
+
+    const signal = signals.find((item) => item.id === signalId);
+
+    return signal;
+  }
 }
