@@ -98,6 +98,20 @@ var BpmnDiagram = (function () {
         var signal = signals.find(function (item) { return item.id === signalId; });
         return signal;
     };
+    BpmnDiagram.prototype.getMessages = function () {
+        var messages = [];
+        this.definitions.rootElements.forEach(function (root) {
+            if (root.$type === 'bpmn:Message') {
+                messages.push(root);
+            }
+        });
+        return messages;
+    };
+    BpmnDiagram.prototype.getMessageById = function (messageId) {
+        var messages = this.getMessages();
+        var message = messages.find(function (item) { return item.id === messageId; });
+        return message;
+    };
     return BpmnDiagram;
 }());
 exports.BpmnDiagram = BpmnDiagram;

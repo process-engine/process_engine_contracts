@@ -139,4 +139,27 @@ export class BpmnDiagram {
 
     return signal;
   }
+
+  public getMessages(): any {
+
+    const messages: any = [];
+
+    this.definitions.rootElements.forEach((root) => {
+
+      if (root.$type === 'bpmn:Message') {
+        messages.push(root);
+      }
+    });
+
+    return messages;
+  }
+
+  public getMessageById(messageId: string): any {
+
+    const messages = this.getMessages();
+
+    const message = messages.find((item) => item.id === messageId);
+
+    return message;
+  }
 }

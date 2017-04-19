@@ -11,4 +11,6 @@ export declare class BpmnDiagram {
     private _getProcessById(processId);
     getSignals(): any;
     getSignalById(signalId: string): any;
+    getMessages(): any;
+    getMessageById(messageId: string): any;
 }

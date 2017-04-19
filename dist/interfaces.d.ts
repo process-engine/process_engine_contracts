@@ -1,6 +1,6 @@
 import { BpmnDiagram } from './bpmn_diagram';
 import { ExecutionContext, IEntity, IPublicGetOptions, IEntityReference } from '@process-engine-js/core_contracts';
-import { IEntityType } from '@process-engine-js/data_model_contracts';
+import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
@@ -84,6 +84,8 @@ export interface INodeDefEntity extends IEntity {
     startContext: string;
     startContextEntityType: string;
     signal: string;
+    message: string;
+    getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
