@@ -79,6 +79,11 @@ export interface INodeDefEntity extends IEntity {
     getSubProcessDef(context: ExecutionContext): Promise<INodeDefEntity>;
     subProcessDef: INodeDefEntity;
     mapper: string;
+    timerDefinitionType: number;
+    timerDefinition: any;
+    startContext: string;
+    startContextEntityType: string;
+    signal: string;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
