@@ -99,6 +99,7 @@ export interface INodeDefEntity extends IEntity {
   startContextEntityType: string;
   signal: string;
   message: string;
+  condition: string;
   getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
 }
 
