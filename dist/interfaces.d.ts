@@ -1,6 +1,6 @@
 import { BpmnDiagram } from './bpmn_diagram';
 import { ExecutionContext, IEntity, IPublicGetOptions, IEntityReference } from '@process-engine-js/core_contracts';
-import { IEntityType } from '@process-engine-js/data_model_contracts';
+import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
@@ -79,6 +79,14 @@ export interface INodeDefEntity extends IEntity {
     getSubProcessDef(context: ExecutionContext): Promise<INodeDefEntity>;
     subProcessDef: INodeDefEntity;
     mapper: string;
+    timerDefinitionType: TimerDefinitionType;
+    timerDefinition: string;
+    startContext: string;
+    startContextEntityType: string;
+    signal: string;
+    message: string;
+    condition: string;
+    getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
@@ -170,4 +178,13 @@ export interface IProcessRepository {
     getProcess(processName: string): IProcessEntry;
     getProcessesByCategory(category: string): Array<IProcessEntry>;
     saveProcess(processName: string, process?: string): Promise<void>;
+}
+export declare enum TimerDefinitionType {
+    date = 0,
+    duration = 1,
+    cycle = 2,
+}
+export interface IThrowEventEntity extends IEventEntity {
+}
+export interface ICatchEventEntity extends IEventEntity {
 }

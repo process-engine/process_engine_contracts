@@ -116,4 +116,50 @@ export class BpmnDiagram {
 
     return process;
   }
+
+  public getSignals(): any {
+
+    const signals: any = [];
+
+    this.definitions.rootElements.forEach((root) => {
+
+      if (root.$type === 'bpmn:Signal') {
+        signals.push(root);
+      }
+    });
+
+    return signals;
+  }
+
+  public getSignalById(signalId: string): any {
+
+    const signals = this.getSignals();
+
+    const signal = signals.find((item) => item.id === signalId);
+
+    return signal;
+  }
+
+  public getMessages(): any {
+
+    const messages: any = [];
+
+    this.definitions.rootElements.forEach((root) => {
+
+      if (root.$type === 'bpmn:Message') {
+        messages.push(root);
+      }
+    });
+
+    return messages;
+  }
+
+  public getMessageById(messageId: string): any {
+
+    const messages = this.getMessages();
+
+    const message = messages.find((item) => item.id === messageId);
+
+    return message;
+  }
 }

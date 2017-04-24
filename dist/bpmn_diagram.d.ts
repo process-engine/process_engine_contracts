@@ -9,4 +9,8 @@ export declare class BpmnDiagram {
     getNodes(processId: string): any;
     getFlows(processId: string): any;
     private _getProcessById(processId);
+    getSignals(): any;
+    getSignalById(signalId: string): any;
+    getMessages(): any;
+    getMessageById(messageId: string): any;
 }

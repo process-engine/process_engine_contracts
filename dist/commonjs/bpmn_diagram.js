@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var BpmnDiagram = (function () {
     function BpmnDiagram(definitions) {
         this._definitions = undefined;
@@ -83,6 +82,34 @@ var BpmnDiagram = (function () {
         var processes = this.getProcesses();
         var process = processes.find(function (item) { return item.id === processId; });
         return process;
+    };
+    BpmnDiagram.prototype.getSignals = function () {
+        var signals = [];
+        this.definitions.rootElements.forEach(function (root) {
+            if (root.$type === 'bpmn:Signal') {
+                signals.push(root);
+            }
+        });
+        return signals;
+    };
+    BpmnDiagram.prototype.getSignalById = function (signalId) {
+        var signals = this.getSignals();
+        var signal = signals.find(function (item) { return item.id === signalId; });
+        return signal;
+    };
+    BpmnDiagram.prototype.getMessages = function () {
+        var messages = [];
+        this.definitions.rootElements.forEach(function (root) {
+            if (root.$type === 'bpmn:Message') {
+                messages.push(root);
+            }
+        });
+        return messages;
+    };
+    BpmnDiagram.prototype.getMessageById = function (messageId) {
+        var messages = this.getMessages();
+        var message = messages.find(function (item) { return item.id === messageId; });
+        return message;
     };
     return BpmnDiagram;
 }());
