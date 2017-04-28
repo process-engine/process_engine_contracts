@@ -100,6 +100,7 @@ export interface INodeInstanceEntity extends IEntity {
     participant: string;
     getProcessToken(context: ExecutionContext): Promise<IProcessTokenEntity>;
     processToken: IProcessTokenEntity;
+    instanceCounter: number;
     start(context: ExecutionContext, source: any): Promise<void>;
     changeState(context: ExecutionContext, newState: string, source: any): any;
     error(context: ExecutionContext, error: any): any;
