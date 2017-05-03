@@ -14,7 +14,8 @@
     "Simon Reymann <simon.reymann@quantusflow.com>"
   ],
   "dependencies": {
-    "@process-engine-js/core_contracts": "^1.0.22"
+    "@process-engine-js/core_contracts": "^1.0.22",
+    "@process-engine-js/feature_contracts": "^1.0.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1"

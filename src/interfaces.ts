@@ -1,6 +1,7 @@
 import {BpmnDiagram} from './bpmn_diagram';
 import {ExecutionContext, IEntity, IPublicGetOptions, IEntityReference} from '@process-engine-js/core_contracts';
 import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
+import { IFeature } from '@process-engine-js/feature_contracts';
 
 export interface IProcessDefEntityTypeService {
   importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
@@ -41,6 +42,7 @@ export interface ISubprocessInternalEntity extends INodeInstanceEntity {
 }
 
 export interface IBoundaryEventEntity extends IEventEntity {
+  attachedToInstance: INodeInstanceEntity;
 }
 
 export interface IEndEventEntity extends IEventEntity {
@@ -71,6 +73,8 @@ export interface ILaneEntity extends IEntity {
   extensions: any;
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
+  features: Array<IFeature>;
+  role: string;
 }
 
 export interface INodeDefEntity extends IEntity {
@@ -101,6 +105,7 @@ export interface INodeDefEntity extends IEntity {
   message: string;
   condition: string;
   getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
+  features: Array<IFeature>;
 }
 
 export interface INodeInstanceEntity extends IEntity {
@@ -135,6 +140,9 @@ export interface IProcessEntity extends IEntity {
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
   end(context: ExecutionContext, processToken: any): Promise<void>;
   error(context: ExecutionContext, error: any): Promise<void>;
+  activeInstances: any;
+  addActiveInstance(entity: IEntity): void;
+  removeActiveInstance(entity: IEntity): void;
 }
 
 export interface IProcessDefEntity extends IEntity {
@@ -149,8 +157,15 @@ export interface IProcessDefEntity extends IEntity {
   readonly: boolean;
   version: string;
   counter: number;
+  nodeDefCollection: EntityCollection;
+  getNodeDefCollection(context: ExecutionContext): Promise<EntityCollection>;
+  flowDefCollection: EntityCollection;
+  getFlowDefCollection(context: ExecutionContext): Promise<EntityCollection>;
+  laneCollection: EntityCollection;
+  getLaneCollection(context: ExecutionContext): Promise<EntityCollection>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
+  features: Array<IFeature>;
 }
 
 export interface IProcessTokenEntity extends IEntity {
