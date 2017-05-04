@@ -92,6 +92,7 @@ export interface INodeDefEntity extends IEntity {
     condition: string;
     getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
     features: Array<IFeature>;
+    persist: boolean;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
@@ -118,14 +119,17 @@ export interface IParallelGatewayEntity extends INodeInstanceEntity {
 export interface IProcessEntity extends IEntity {
     name: string;
     key: string;
+    status: string;
     getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
     processDef: IProcessDefEntity;
     start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
     end(context: ExecutionContext, processToken: any): Promise<void>;
     error(context: ExecutionContext, error: any): Promise<void>;
     activeInstances: any;
+    allInstances: any;
     addActiveInstance(entity: IEntity): void;
     removeActiveInstance(entity: IEntity): void;
+    boundProcesses: any;
 }
 export interface IProcessDefEntity extends IEntity {
     name: string;
@@ -148,6 +152,8 @@ export interface IProcessDefEntity extends IEntity {
     start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
     updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
     features: Array<IFeature>;
+    extensions: any;
+    persist: boolean;
 }
 export interface IProcessTokenEntity extends IEntity {
     data: any;
@@ -180,6 +186,8 @@ export interface IParamUpdateDefs {
 export interface IProcessEngineService {
     initialize(): Promise<void>;
     start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
+    addActiveInstance(entity: IEntity): void;
+    removeActiveInstance(entity: IEntity): void;
 }
 export interface IProcessEntry {
     name: string;
