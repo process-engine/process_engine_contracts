@@ -131,6 +131,10 @@ export interface INodeInstanceEntity extends IEntity {
   end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
   messagebusSubscription: Promise<IMessageSubscription>;
   eventAggregatorSubscription: ISubscription;
+  wait(context: ExecutionContext): Promise<void>;
+  proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string): Promise<void>;
+  event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string): Promise<void>;
+  cancel(context: ExecutionContext): Promise<void>;
 }
 
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
