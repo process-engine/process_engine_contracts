@@ -2,6 +2,8 @@ import {BpmnDiagram} from './bpmn_diagram';
 import {ExecutionContext, IEntity, IPublicGetOptions, IEntityReference} from '@process-engine-js/core_contracts';
 import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
 import { IFeature } from '@process-engine-js/feature_contracts';
+import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
+import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
 
 export interface IProcessDefEntityTypeService {
   importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
@@ -127,6 +129,8 @@ export interface INodeInstanceEntity extends IEntity {
   error(context: ExecutionContext, error: any);
   execute(context: ExecutionContext): Promise<void>;
   end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
+  messagebusSubscription: Promise<IMessageSubscription>;
+  eventAggregatorSubscription: ISubscription;
 }
 
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
