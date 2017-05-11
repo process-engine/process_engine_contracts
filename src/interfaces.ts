@@ -223,6 +223,7 @@ export interface IProcessEngineService {
   start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
   addActiveInstance(entity: IEntity): void;
   removeActiveInstance(entity: IEntity): void;
+  activeInstances: any;
 }
 
 
