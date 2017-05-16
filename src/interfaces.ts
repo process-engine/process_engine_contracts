@@ -9,7 +9,6 @@ export interface IProcessDefEntityTypeService {
   importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
   importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<BpmnDiagram>;
-  parseBpmnFile(path: string): Promise<BpmnDiagram>;
   start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
 
@@ -239,8 +238,9 @@ export interface IProcessEntry {
 export interface IProcessRepository {
   initialize(): void;
   getProcess(processName: string): IProcessEntry;
-  getProcessesByCategory(category: string): Array<IProcessEntry>
+  getProcessesByCategory(category: string): Array<IProcessEntry>;
   saveProcess(processName: string, process?: string): Promise<void>;
+  getXmlFromFile(path: string): Promise<string>;
 }
 
 
