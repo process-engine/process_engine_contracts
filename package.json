@@ -21,6 +21,7 @@
     "@process-engine-js/messagebus_contracts": "^1.0.0"
   },
   "devDependencies": {
+    "@process-engine-js/gulptraum": "^1.2.5",
     "gulp": "^3.9.1"
   }
 }

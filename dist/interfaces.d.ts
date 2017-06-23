@@ -5,8 +5,8 @@ import { IFeature } from '@process-engine-js/feature_contracts';
 import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
 import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
 export interface IProcessDefEntityTypeService {
-    importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IPublicGetOptions): Promise<void>;
-    importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IPublicGetOptions): Promise<void>;
+    importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IImportFromXmlOptions): Promise<void>;
+    importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IImportFromFileOptions): Promise<void>;
     parseBpmnXml(xml: string): Promise<BpmnDiagram>;
     start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
@@ -15,6 +15,8 @@ export interface INodeInstanceEntityTypeService {
     createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<void>;
     continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
     continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
+}
+export interface IImportFromXmlOptions extends IImportFromFileOptions {
 }
 export interface IImportFromFileOptions {
     overwriteExisting?: boolean;
