@@ -1,5 +1,6 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var TimerDefinitionType;
     (function (TimerDefinitionType) {
         TimerDefinitionType[TimerDefinitionType["date"] = 0] = "date";
