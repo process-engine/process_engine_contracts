@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "the referencable contracts for metadata",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -22,6 +22,11 @@
   },
   "devDependencies": {
     "@process-engine-js/gulptraum": "^1.2.5",
+<<<<<<< HEAD
     "gulp": "^3.9.1"
+=======
+    "gulp": "^3.9.1",
+    "tsconfig": "^6.0.0"
+>>>>>>> 75e96bbf0a3522a42509bfc54fffda208be7d90e
   }
 }
