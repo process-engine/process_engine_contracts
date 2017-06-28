@@ -22,11 +22,7 @@
   },
   "devDependencies": {
     "@process-engine-js/gulptraum": "^1.2.5",
-<<<<<<< HEAD
-    "gulp": "^3.9.1"
-=======
     "gulp": "^3.9.1",
     "tsconfig": "^6.0.0"
->>>>>>> 75e96bbf0a3522a42509bfc54fffda208be7d90e
   }
 }
