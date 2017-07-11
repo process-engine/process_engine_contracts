@@ -26,6 +26,7 @@ export interface IParamStart {
     initialToken?: any;
     source?: any;
     isSubProcess?: boolean;
+    participant?: string;
 }
 export interface IParamsContinueFromRemote {
     nextDef: any;
@@ -107,6 +108,7 @@ export interface INodeInstanceEntity extends IEntity {
     type: string;
     state: string;
     participant: string;
+    application: string;
     getProcessToken(context: ExecutionContext): Promise<IProcessTokenEntity>;
     processToken: IProcessTokenEntity;
     instanceCounter: number;
@@ -118,8 +120,8 @@ export interface INodeInstanceEntity extends IEntity {
     messagebusSubscription: Promise<IMessageSubscription>;
     eventAggregatorSubscription: ISubscription;
     wait(context: ExecutionContext): Promise<void>;
-    proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string): Promise<void>;
-    event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string): Promise<void>;
+    proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
+    event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
     cancel(context: ExecutionContext): Promise<void>;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
