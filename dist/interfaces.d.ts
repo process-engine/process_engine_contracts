@@ -123,6 +123,7 @@ export interface INodeInstanceEntity extends IEntity {
     proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
     event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
     cancel(context: ExecutionContext): Promise<void>;
+    parseExtensionProperty(propertyString: string, token: any, context: ExecutionContext): any;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
@@ -224,4 +225,10 @@ export declare enum TimerDefinitionType {
 export interface IThrowEventEntity extends IEventEntity {
 }
 export interface ICatchEventEntity extends IEventEntity {
+}
+export interface IUserTaskMessageData {
+    userTaskEntity: IUserTaskEntity;
+    uiName: string;
+    uiData: any;
+    uiConfig: any;
 }
