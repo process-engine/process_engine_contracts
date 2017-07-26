@@ -124,6 +124,10 @@ export interface INodeInstanceEntity extends IEntity {
     event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
     cancel(context: ExecutionContext): Promise<void>;
     parseExtensionProperty(propertyString: string, token: any, context: ExecutionContext): any;
+    triggerEvent(context: ExecutionContext, eventType: string, data: any): void;
+    triggerBoundaryEvent(context: ExecutionContext, eventEntity: IBoundaryEventEntity, data: any): void;
+    boundaryEvent(context: ExecutionContext, eventEntity: IBoundaryEventEntity, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
+    followBoundary(context: ExecutionContext): Promise<void>;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
