@@ -113,6 +113,20 @@ define(["require", "exports"], function (require, exports) {
             var message = messages.find(function (item) { return item.id === messageId; });
             return message;
         };
+        BpmnDiagram.prototype.getErrors = function () {
+            var errors = [];
+            this.definitions.rootElements.forEach(function (root) {
+                if (root.$type === 'bpmn:Error') {
+                    errors.push(root);
+                }
+            });
+            return errors;
+        };
+        BpmnDiagram.prototype.getErrorById = function (errorId) {
+            var errors = this.getErrors();
+            var error = errors.find(function (item) { return item.id === errorId; });
+            return error;
+        };
         return BpmnDiagram;
     }());
     exports.BpmnDiagram = BpmnDiagram;

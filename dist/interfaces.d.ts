@@ -97,6 +97,8 @@ export interface INodeDefEntity extends IEntity {
     getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
     features: Array<IFeature>;
     persist: boolean;
+    errorName: string;
+    errorCode: string;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;

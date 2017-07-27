@@ -162,4 +162,25 @@ export class BpmnDiagram {
 
     return message;
   }
+
+  public getErrors(): any {
+
+    const errors: any = [];
+
+    this.definitions.rootElements.forEach((root) => {
+
+      if (root.$type === 'bpmn:Error') {
+        errors.push(root);
+      }
+    });
+
+    return errors;
+  }
+
+  public getErrorById(errorId: string): any {
+
+    const errors = this.getErrors();
+    const error = errors.find((item) => item.id === errorId);
+    return error;
+  }
 }
