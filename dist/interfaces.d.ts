@@ -205,6 +205,7 @@ export interface IProcessEngineService {
     addActiveInstance(entity: IEntity): void;
     removeActiveInstance(entity: IEntity): void;
     activeInstances: any;
+    config: any;
 }
 export interface IProcessEntry {
     name: string;
