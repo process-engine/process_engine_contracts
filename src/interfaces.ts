@@ -128,8 +128,8 @@ export interface INodeInstanceEntity extends IEntity {
   processToken: IProcessTokenEntity;
   instanceCounter: number;
   start(context: ExecutionContext, source: any): Promise<void>;
-  changeState(context: ExecutionContext, newState: string, source: any);
-  error(context: ExecutionContext, error: any);
+  changeState(context: ExecutionContext, newState: string, source: any): void;
+  error(context: ExecutionContext, error: any): void;
   execute(context: ExecutionContext): Promise<void>;
   end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
   messagebusSubscription: Promise<IMessageSubscription>;
@@ -137,7 +137,7 @@ export interface INodeInstanceEntity extends IEntity {
   wait(context: ExecutionContext): Promise<void>;
   proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
   event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
-  cancel(context: ExecutionContext): Promise<void>;
+  cancel(context: ExecutionContext): void;
   parseExtensionProperty(propertyString: string, token: any, context: ExecutionContext): any;
   triggerEvent(context: ExecutionContext, eventType: string, data: any): void;
   triggerBoundaryEvent(context: ExecutionContext, eventEntity: IBoundaryEventEntity, data: any): void;
