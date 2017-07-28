@@ -53,6 +53,7 @@ export interface IEndEventEntity extends IEventEntity {
 }
 
 export interface IEventEntity extends INodeInstanceEntity {
+  dispose(): void;
 }
 
 export interface IExclusiveGatewayEntity extends INodeInstanceEntity {
