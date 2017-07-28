@@ -13,4 +13,6 @@ export declare class BpmnDiagram {
     getSignalById(signalId: string): any;
     getMessages(): any;
     getMessageById(messageId: string): any;
+    getErrors(): any;
+    getErrorById(errorId: string): any;
 }

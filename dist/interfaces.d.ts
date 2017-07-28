@@ -43,6 +43,7 @@ export interface IBoundaryEventEntity extends IEventEntity {
 export interface IEndEventEntity extends IEventEntity {
 }
 export interface IEventEntity extends INodeInstanceEntity {
+    dispose(): void;
 }
 export interface IExclusiveGatewayEntity extends INodeInstanceEntity {
     follow: any;
@@ -97,6 +98,8 @@ export interface INodeDefEntity extends IEntity {
     getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
     features: Array<IFeature>;
     persist: boolean;
+    errorName: string;
+    errorCode: string;
 }
 export interface INodeInstanceEntity extends IEntity {
     name: string;
@@ -113,8 +116,8 @@ export interface INodeInstanceEntity extends IEntity {
     processToken: IProcessTokenEntity;
     instanceCounter: number;
     start(context: ExecutionContext, source: any): Promise<void>;
-    changeState(context: ExecutionContext, newState: string, source: any): any;
-    error(context: ExecutionContext, error: any): any;
+    changeState(context: ExecutionContext, newState: string, source: any): void;
+    error(context: ExecutionContext, error: any): void;
     execute(context: ExecutionContext): Promise<void>;
     end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
     messagebusSubscription: Promise<IMessageSubscription>;
@@ -122,8 +125,12 @@ export interface INodeInstanceEntity extends IEntity {
     wait(context: ExecutionContext): Promise<void>;
     proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
     event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
-    cancel(context: ExecutionContext): Promise<void>;
+    cancel(context: ExecutionContext): void;
     parseExtensionProperty(propertyString: string, token: any, context: ExecutionContext): any;
+    triggerEvent(context: ExecutionContext, eventType: string, data: any): void;
+    triggerBoundaryEvent(context: ExecutionContext, eventEntity: IBoundaryEventEntity, data: any): void;
+    boundaryEvent(context: ExecutionContext, eventEntity: IBoundaryEventEntity, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
+    followBoundary(context: ExecutionContext): Promise<void>;
 }
 export interface IParallelGatewayEntity extends INodeInstanceEntity {
     parallelType: string;
@@ -201,6 +208,7 @@ export interface IProcessEngineService {
     addActiveInstance(entity: IEntity): void;
     removeActiveInstance(entity: IEntity): void;
     activeInstances: any;
+    config: any;
 }
 export interface IProcessEntry {
     name: string;
