@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string"
+    },
+    "initialToken": {},
+    "source": {},
+    "isSubProcess": {
+      "type": "boolean"
+    },
+    "participant": {
+      "type": "string"
+    }
+  },
+  "$schema": "http://json-schema.org/draft-04/schema#"
+}

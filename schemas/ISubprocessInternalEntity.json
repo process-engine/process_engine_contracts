@@ -1,0 +1,2718 @@
+{
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "getProcess": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "IProcessEntity"
+        }
+      ]
+    },
+    "process": {
+      "$ref": "#/definitions/IProcessEntity"
+    },
+    "getNodeDef": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "INodeDefEntity"
+        }
+      ]
+    },
+    "nodeDef": {
+      "$ref": "#/definitions/INodeDefEntity"
+    },
+    "type": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "participant": {
+      "type": "string"
+    },
+    "application": {
+      "type": "string"
+    },
+    "getProcessToken": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "IProcessTokenEntity"
+        }
+      ]
+    },
+    "processToken": {
+      "$ref": "#/definitions/IProcessTokenEntity"
+    },
+    "instanceCounter": {
+      "type": "number"
+    },
+    "start": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "source"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "changeState": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "newState",
+          "type": "string"
+        },
+        {
+          "name": "source"
+        }
+      ]
+    },
+    "error": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "error"
+        }
+      ]
+    },
+    "execute": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "end": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "cancelFlow",
+          "type": "boolean"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "messagebusSubscription": {
+      "$ref": "#/definitions/Promise<IMessageSubscription>"
+    },
+    "eventAggregatorSubscription": {
+      "$ref": "#/definitions/ISubscription"
+    },
+    "wait": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "proceed": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "source",
+          "type": "IEntity"
+        },
+        {
+          "name": "applicationId",
+          "type": "string"
+        },
+        {
+          "name": "participant",
+          "type": "string"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "event": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "event",
+          "type": "string"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "source",
+          "type": "IEntity"
+        },
+        {
+          "name": "applicationId",
+          "type": "string"
+        },
+        {
+          "name": "participant",
+          "type": "string"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "cancel": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ]
+    },
+    "parseExtensionProperty": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyString",
+          "type": "string"
+        },
+        {
+          "name": "token"
+        },
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ]
+    },
+    "triggerEvent": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "eventType",
+          "type": "string"
+        },
+        {
+          "name": "data"
+        }
+      ]
+    },
+    "triggerBoundaryEvent": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "eventEntity",
+          "type": "IBoundaryEventEntity"
+        },
+        {
+          "name": "data"
+        }
+      ]
+    },
+    "boundaryEvent": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "eventEntity",
+          "type": "IBoundaryEventEntity"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "source",
+          "type": "IEntity"
+        },
+        {
+          "name": "applicationId",
+          "type": "string"
+        },
+        {
+          "name": "participant",
+          "type": "string"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "followBoundary": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "isNew": {
+      "type": "boolean"
+    },
+    "isDirty": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "string"
+    },
+    "initialize": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "derivedClassInstance",
+          "type": "IEntity"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "getProperty": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyThisContext"
+        },
+        {
+          "name": "propertyName",
+          "type": "string"
+        }
+      ]
+    },
+    "getPropertyLazy": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyThisContext"
+        },
+        {
+          "name": "propertyName",
+          "type": "string"
+        },
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IPrivateQueryOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "setProperty": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyThisContext"
+        },
+        {
+          "name": "propertyName",
+          "type": "string"
+        },
+        {
+          "name": "value"
+        }
+      ]
+    },
+    "getCalculatedProperty": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyThisContext"
+        },
+        {
+          "name": "propertyName",
+          "type": "string"
+        },
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "setCalculatedProperty": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "propertyThisContext"
+        },
+        {
+          "name": "propertyName",
+          "type": "string"
+        },
+        {
+          "name": "value"
+        },
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "toPojo": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IToPojoOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "fromPojo": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "data"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IFromPojoOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "save": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IPrivateSaveOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "IEntity"
+        }
+      ]
+    },
+    "remove": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IPrivateRemoveOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "boolean"
+        }
+      ]
+    },
+    "getEntityReference": {
+      "type": "object",
+      "parameters": [],
+      "returnType": "IEntityReference"
+    },
+    "calculate": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "ExecutionContext"
+        },
+        {
+          "name": "options",
+          "optional": true,
+          "type": "IPublicGetOptions"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {}
+      ]
+    },
+    "secureCompare": {
+      "type": "object",
+      "parameters": [
+        {
+          "name": "attributeName",
+          "type": "string"
+        },
+        {
+          "name": "valueToCompare",
+          "type": "string"
+        }
+      ],
+      "returnType": "Promise",
+      "returnTypeArguments": [
+        {
+          "type": "boolean"
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "IProcessEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "getProcessDef": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IProcessDefEntity"
+            }
+          ]
+        },
+        "processDef": {
+          "$ref": "#/definitions/IProcessDefEntity"
+        },
+        "start": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "params",
+              "type": "IParamStart"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "end": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "processToken"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "error": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "error"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "activeInstances": {},
+        "allInstances": {},
+        "addActiveInstance": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "IEntity"
+            }
+          ]
+        },
+        "removeActiveInstance": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "IEntity"
+            }
+          ]
+        },
+        "boundProcesses": {},
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "IProcessDefEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "defId": {
+          "type": "string"
+        },
+        "xml": {
+          "type": "string"
+        },
+        "internalName": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "module": {
+          "type": "string"
+        },
+        "readonly": {
+          "type": "boolean"
+        },
+        "version": {
+          "type": "string"
+        },
+        "counter": {
+          "type": "number"
+        },
+        "nodeDefCollection": {
+          "$ref": "#/definitions/IEntityCollection"
+        },
+        "getNodeDefCollection": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        },
+        "flowDefCollection": {
+          "$ref": "#/definitions/IEntityCollection"
+        },
+        "getFlowDefCollection": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        },
+        "laneCollection": {
+          "$ref": "#/definitions/IEntityCollection"
+        },
+        "getLaneCollection": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        },
+        "start": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "params",
+              "type": "IParamStart"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityReference"
+            }
+          ]
+        },
+        "updateDefinitions": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "params",
+              "optional": true,
+              "type": "IParamUpdateDefs"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IFeature"
+          }
+        },
+        "extensions": {},
+        "persist": {
+          "type": "boolean"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "IEntityCollection": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IEntity"
+          }
+        },
+        "length": {
+          "type": "number"
+        },
+        "toPojos": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "each": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "callback",
+              "type": "Function"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "add": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "entity",
+              "type": "IEntity"
+            },
+            {
+              "name": "distinct",
+              "optional": true,
+              "type": "boolean"
+            }
+          ],
+          "returnType": "IEntityCollection"
+        },
+        "addCollection": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "entityCollection",
+              "type": "IEntityCollection"
+            },
+            {
+              "name": "distinct",
+              "optional": true,
+              "type": "boolean"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        },
+        "addCollectionDistinct": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "entityCollection",
+              "type": "IEntityCollection"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        }
+      }
+    },
+    "IEntity": {
+      "type": "object",
+      "properties": {
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "IFeature": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "value": {}
+      }
+    },
+    "INodeDefEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "getProcessDef": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IProcessDefEntity"
+            }
+          ]
+        },
+        "processDef": {
+          "$ref": "#/definitions/IProcessDefEntity"
+        },
+        "getLane": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "ILaneEntity"
+            }
+          ]
+        },
+        "lane": {
+          "$ref": "#/definitions/ILaneEntity"
+        },
+        "type": {
+          "type": "string"
+        },
+        "extensions": {},
+        "getAttachedToNode": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "INodeDefEntity"
+            }
+          ]
+        },
+        "attachedToNode": {
+          "$ref": "#/definitions/INodeDefEntity"
+        },
+        "events": {},
+        "getLaneRole": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "script": {
+          "type": "string"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "cancelActivity": {
+          "type": "boolean"
+        },
+        "subProcessKey": {
+          "type": "string"
+        },
+        "getSubProcessDef": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "INodeDefEntity"
+            }
+          ]
+        },
+        "subProcessDef": {
+          "$ref": "#/definitions/INodeDefEntity"
+        },
+        "mapper": {
+          "type": "string"
+        },
+        "timerDefinitionType": {
+          "$ref": "#/definitions/TimerDefinitionType"
+        },
+        "timerDefinition": {
+          "type": "string"
+        },
+        "startContext": {
+          "type": "string"
+        },
+        "startContextEntityType": {
+          "type": "string"
+        },
+        "signal": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "condition": {
+          "type": "string"
+        },
+        "getBoundaryEvents": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntityCollection"
+            }
+          ]
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IFeature"
+          }
+        },
+        "persist": {
+          "type": "boolean"
+        },
+        "errorName": {
+          "type": "string"
+        },
+        "errorCode": {
+          "type": "string"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "ILaneEntity": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "string"
+        },
+        "extensions": {},
+        "getProcessDef": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IProcessDefEntity"
+            }
+          ]
+        },
+        "processDef": {
+          "$ref": "#/definitions/IProcessDefEntity"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/IFeature"
+          }
+        },
+        "role": {
+          "type": "string"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "TimerDefinitionType": {
+      "enum": [
+        0,
+        1,
+        2
+      ],
+      "type": "number"
+    },
+    "IProcessTokenEntity": {
+      "type": "object",
+      "properties": {
+        "data": {},
+        "getProcess": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IProcessEntity"
+            }
+          ]
+        },
+        "process": {
+          "$ref": "#/definitions/IProcessEntity"
+        },
+        "isNew": {
+          "type": "boolean"
+        },
+        "isDirty": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "initialize": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "derivedClassInstance",
+              "type": "IEntity"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "getProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            }
+          ]
+        },
+        "getPropertyLazy": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateQueryOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            }
+          ]
+        },
+        "getCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "setCalculatedProperty": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "propertyThisContext"
+            },
+            {
+              "name": "propertyName",
+              "type": "string"
+            },
+            {
+              "name": "value"
+            },
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "toPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IToPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "fromPojo": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "data"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IFromPojoOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "save": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateSaveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "IEntity"
+            }
+          ]
+        },
+        "remove": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPrivateRemoveOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        "getEntityReference": {
+          "type": "object",
+          "parameters": [],
+          "returnType": "IEntityReference"
+        },
+        "calculate": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "options",
+              "optional": true,
+              "type": "IPublicGetOptions"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
+        "secureCompare": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "attributeName",
+              "type": "string"
+            },
+            {
+              "name": "valueToCompare",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "boolean"
+            }
+          ]
+        }
+      }
+    },
+    "Promise<IMessageSubscription>": {
+      "description": "Represents the completion of an asynchronous operation",
+      "type": "object",
+      "properties": {
+        "then": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "onfulfilled",
+              "optional": true,
+              "type": "union",
+              "typeArguments": [
+                {},
+                {},
+                {}
+              ]
+            },
+            {
+              "name": "onrejected",
+              "optional": true,
+              "type": "union",
+              "typeArguments": [
+                {},
+                {},
+                {}
+              ]
+            }
+          ],
+          "typeParameters": [
+            {
+              "name": "TResult1"
+            },
+            {
+              "name": "TResult2"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "union",
+              "typeArguments": [
+                {
+                  "type": "TResult1"
+                },
+                {
+                  "type": "TResult2"
+                }
+              ]
+            }
+          ]
+        },
+        "catch": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "onrejected",
+              "optional": true,
+              "type": "union",
+              "typeArguments": [
+                {},
+                {},
+                {}
+              ]
+            }
+          ],
+          "typeParameters": [
+            {
+              "name": "TResult"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {
+              "type": "union",
+              "typeArguments": [
+                {
+                  "type": "T"
+                },
+                {
+                  "type": "TResult"
+                }
+              ]
+            }
+          ]
+        },
+        "__@toStringTag": {
+          "type": "string",
+          "enum": [
+            "Promise"
+          ]
+        }
+      }
+    },
+    "ISubscription": {
+      "type": "object",
+      "properties": {
+        "dispose": {
+          "type": "object",
+          "parameters": []
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-04/schema#"
+}

@@ -1,13 +1,27 @@
-import { BpmnDiagram } from './bpmn_diagram';
 import { ExecutionContext, IEntity, IPublicGetOptions, IEntityReference } from '@process-engine-js/core_contracts';
 import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
 import { IFeature } from '@process-engine-js/feature_contracts';
 import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
 import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
+export interface IBpmnDiagram {
+    definitions: any;
+    getProcesses(): any;
+    getParticipants(): any;
+    getLanes(processId: string): any;
+    getLaneOfElement(elementId: string): any;
+    getNodes(processId: string): any;
+    getFlows(processId: string): any;
+    getSignals(): any;
+    getSignalById(signalId: string): any;
+    getMessages(): any;
+    getMessageById(messageId: string): any;
+    getErrors(): any;
+    getErrorById(errorId: string): any;
+}
 export interface IProcessDefEntityTypeService {
     importBpmnFromXml(context: ExecutionContext, param: IParamImportFromXml, options?: IImportFromXmlOptions): Promise<void>;
     importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IImportFromFileOptions): Promise<void>;
-    parseBpmnXml(xml: string): Promise<BpmnDiagram>;
+    parseBpmnXml(xml: string): Promise<IBpmnDiagram>;
     start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
 export interface INodeInstanceEntityTypeService {
@@ -200,7 +214,7 @@ export interface IParamImportFromXml {
     readonly?: boolean;
 }
 export interface IParamUpdateDefs {
-    bpmnDiagram: BpmnDiagram;
+    bpmnDiagram: IBpmnDiagram;
 }
 export interface IProcessEngineService {
     initialize(): Promise<void>;

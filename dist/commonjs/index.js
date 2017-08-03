@@ -4,6 +4,5 @@ function __export(m) {
 }
 Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./interfaces"));
-__export(require("./bpmn_diagram"));
 
 //# sourceMappingURL=index.js.map
