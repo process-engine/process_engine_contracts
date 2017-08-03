@@ -1,5 +1,5 @@
 import { ExecutionContext, IEntity, IPublicGetOptions, IEntityReference } from '@process-engine-js/core_contracts';
-import { IEntityType, EntityCollection } from '@process-engine-js/data_model_contracts';
+import { IEntityType, IEntityCollection } from '@process-engine-js/data_model_contracts';
 import { IFeature } from '@process-engine-js/feature_contracts';
 import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
 import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
@@ -109,7 +109,7 @@ export interface INodeDefEntity extends IEntity {
     signal: string;
     message: string;
     condition: string;
-    getBoundaryEvents(context: ExecutionContext): Promise<EntityCollection>;
+    getBoundaryEvents(context: ExecutionContext): Promise<IEntityCollection>;
     features: Array<IFeature>;
     persist: boolean;
     errorName: string;
@@ -176,12 +176,12 @@ export interface IProcessDefEntity extends IEntity {
     readonly: boolean;
     version: string;
     counter: number;
-    nodeDefCollection: EntityCollection;
-    getNodeDefCollection(context: ExecutionContext): Promise<EntityCollection>;
-    flowDefCollection: EntityCollection;
-    getFlowDefCollection(context: ExecutionContext): Promise<EntityCollection>;
-    laneCollection: EntityCollection;
-    getLaneCollection(context: ExecutionContext): Promise<EntityCollection>;
+    nodeDefCollection: IEntityCollection;
+    getNodeDefCollection(context: ExecutionContext): Promise<IEntityCollection>;
+    flowDefCollection: IEntityCollection;
+    getFlowDefCollection(context: ExecutionContext): Promise<IEntityCollection>;
+    laneCollection: IEntityCollection;
+    getLaneCollection(context: ExecutionContext): Promise<IEntityCollection>;
     start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
     updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
     features: Array<IFeature>;
