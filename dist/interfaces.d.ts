@@ -187,6 +187,7 @@ export interface IProcessDefEntity extends IEntity {
     features: Array<IFeature>;
     extensions: any;
     persist: boolean;
+    updateBpmn(context: ExecutionContext, xml: string): Promise<any>;
 }
 export interface IProcessTokenEntity extends IEntity {
     data: any;

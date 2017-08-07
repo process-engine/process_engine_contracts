@@ -1061,6 +1061,23 @@
         "persist": {
           "type": "boolean"
         },
+        "updateBpmn": {
+          "type": "object",
+          "parameters": [
+            {
+              "name": "context",
+              "type": "ExecutionContext"
+            },
+            {
+              "name": "xml",
+              "type": "string"
+            }
+          ],
+          "returnType": "Promise",
+          "returnTypeArguments": [
+            {}
+          ]
+        },
         "isNew": {
           "type": "boolean"
         },
