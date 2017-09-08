@@ -1,7 +1,7 @@
-import {ExecutionContext, IEntity, IPublicGetOptions, IEntityReference} from '@process-engine-js/core_contracts';
-import { IEntityType, IEntityCollection } from '@process-engine-js/data_model_contracts';
-import { IFeature } from '@process-engine-js/feature_contracts';
+import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@process-engine-js/core_contracts';
+import { IEntityCollection, IEntityType } from '@process-engine-js/data_model_contracts';
 import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
+import { IFeature } from '@process-engine-js/feature_contracts';
 import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
 
 export interface IBpmnDiagram {
@@ -254,7 +254,6 @@ export interface IProcessEngineService {
   config: any;
 }
 
-
 export interface IProcessEntry {
     name: string;
     bpmnXml: string;
@@ -272,11 +271,10 @@ export interface IProcessRepository {
   getXmlFromFile(path: string): Promise<string>;
 }
 
-
 export enum TimerDefinitionType {
   date = 0,
   duration = 1,
-  cycle = 2
+  cycle = 2,
 }
 
 export interface IThrowEventEntity extends IEventEntity {
