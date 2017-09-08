@@ -183,10 +183,6 @@ export interface IProcessEntity extends IEntity {
   boundProcesses: any;
 }
 
-export interface IXmlObject {
-  xml: string;
-}
-
 export interface IProcessDefEntity extends IEntity {
   name: string;
   key: string;
@@ -210,7 +206,7 @@ export interface IProcessDefEntity extends IEntity {
   features: Array<IFeature>;
   extensions: any;
   persist: boolean;
-  updateBpmn(context: ExecutionContext, xml: IXmlObject): Promise<any>;
+  updateBpmn(context: ExecutionContext, xml: string): Promise<any>;
 }
 
 export interface IProcessTokenEntity extends IEntity {
