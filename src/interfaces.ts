@@ -124,7 +124,7 @@ export interface INodeDefEntity extends IEntity {
   signal: string;
   message: string;
   condition: string;
-  getBoundaryEvents(context: ExecutionContext): Promise<IEntityCollection>;
+  getBoundaryEvents(context: ExecutionContext): Promise<IEntityCollection<IBoundaryEventEntity>>;
   features: Array<IFeature>;
   persist: boolean;
   errorName: string;
@@ -195,12 +195,12 @@ export interface IProcessDefEntity extends IEntity {
   readonly: boolean;
   version: string;
   counter: number;
-  nodeDefCollection: IEntityCollection;
-  getNodeDefCollection(context: ExecutionContext): Promise<IEntityCollection>;
-  flowDefCollection: IEntityCollection;
-  getFlowDefCollection(context: ExecutionContext): Promise<IEntityCollection>;
-  laneCollection: IEntityCollection;
-  getLaneCollection(context: ExecutionContext): Promise<IEntityCollection>;
+  nodeDefCollection: IEntityCollection<INodeDefEntity>;
+  getNodeDefCollection(context: ExecutionContext): Promise<IEntityCollection<INodeDefEntity>>;
+  flowDefCollection: IEntityCollection<IFlowDefEntity>;
+  getFlowDefCollection(context: ExecutionContext): Promise<IEntityCollection<IFlowDefEntity>>;
+  laneCollection: IEntityCollection<ILaneEntity>;
+  getLaneCollection(context: ExecutionContext): Promise<IEntityCollection<ILaneEntity>>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
   features: Array<IFeature>;
