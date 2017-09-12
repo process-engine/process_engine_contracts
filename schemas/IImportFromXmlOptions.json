@@ -1,9 +1,0 @@
-{
-  "type": "object",
-  "properties": {
-    "overwriteExisting": {
-      "type": "boolean"
-    }
-  },
-  "$schema": "http://json-schema.org/draft-06/schema#"
-}
