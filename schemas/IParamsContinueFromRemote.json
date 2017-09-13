@@ -1,9 +1,0 @@
-{
-  "type": "object",
-  "properties": {
-    "nextDef": {},
-    "source": {},
-    "token": {}
-  },
-  "$schema": "http://json-schema.org/draft-06/schema#"
-}
