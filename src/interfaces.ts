@@ -248,9 +248,6 @@ export interface IParamUpdateDefs {
 export interface IProcessEngineService {
   initialize(): Promise<void>;
   start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
-  addActiveInstance(entity: IEntity): void;
-  removeActiveInstance(entity: IEntity): void;
-  activeInstances: any;
   config: any;
 }
 
