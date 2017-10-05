@@ -195,6 +195,8 @@ export interface IProcessDefEntity extends IEntity {
   readonly: boolean;
   version: string;
   counter: number;
+  draft: boolean;
+  latest: boolean;
   nodeDefCollection: IEntityCollection<INodeDefEntity>;
   getNodeDefCollection(context: ExecutionContext): Promise<IEntityCollection<INodeDefEntity>>;
   flowDefCollection: IEntityCollection<IFlowDefEntity>;
@@ -207,6 +209,8 @@ export interface IProcessDefEntity extends IEntity {
   extensions: any;
   persist: boolean;
   updateBpmn(context: ExecutionContext, xml: string): Promise<any>;
+  getDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
+  publishDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
 }
 
 export interface IProcessTokenEntity extends IEntity {
