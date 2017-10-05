@@ -29,7 +29,7 @@ export interface IProcessDefEntityTypeService {
 
 export interface INodeInstanceEntityTypeService {
   createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
-  createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<void>;
+  createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<IEntity>;
   continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
   continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
 }
