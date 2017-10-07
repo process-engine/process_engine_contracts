@@ -46,6 +46,7 @@ export interface IParamStart {
   source?: any;
   isSubProcess?: boolean;
   participant?: string;
+  version?: string;
 }
 
 export interface IParamsContinueFromRemote {
