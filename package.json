@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "4.1.0",
+  "version": "0.1.0",
   "description": "the referencable contracts for metadata",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -14,14 +14,14 @@
     "Simon Reymann <simon.reymann@quantusflow.com>"
   ],
   "dependencies": {
-    "@essential-projects/core_contracts": "^2.0.0",
-    "@essential-projects/data_model_contracts": "^2.0.0",
-    "@essential-projects/event_aggregator_contracts": "^2.0.0",
-    "@essential-projects/feature_contracts": "^2.0.0",
+  "@essential-projects/core_contracts": "^0.1.0",
+  "@essential-projects/data_model_contracts": "^0.1.0",
+  "@essential-projects/event_aggregator_contracts": "^0.1.0",
+  "@essential-projects/feature_contracts": "^0.1.0",
     "@essential-projects/messagebus_contracts": "^2.0.0"
   },
   "devDependencies": {
-    "@essential-projects/tslint-config": "^1.0.1",
+  "@essential-projects/tslint-config": "^0.1.0",
     "gulp": "^3.9.1",
     "gulptraum": "^2.2.1",
     "gulptraum-typescript": "^1.0.0",
