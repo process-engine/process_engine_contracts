@@ -1,8 +1,8 @@
-import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@process-engine-js/core_contracts';
-import { IEntityCollection, IEntityType } from '@process-engine-js/data_model_contracts';
-import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
-import { IFeature } from '@process-engine-js/feature_contracts';
-import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
+import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@essential-projects/core_contracts';
+import { IEntityCollection, IEntityType } from '@essential-projects/data_model_contracts';
+import { ISubscription } from '@essential-projects/event_aggregator_contracts';
+import { IFeature } from '@essential-projects/feature_contracts';
+import { IMessageSubscription } from '@essential-projects/messagebus_contracts';
 
 export interface IBpmnDiagram {
   definitions: any;
