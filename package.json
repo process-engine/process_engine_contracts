@@ -14,14 +14,14 @@
     "Simon Reymann <simon.reymann@quantusflow.com>"
   ],
   "dependencies": {
-  "@essential-projects/core_contracts": "^0.1.0",
-  "@essential-projects/data_model_contracts": "^0.1.0",
-  "@essential-projects/event_aggregator_contracts": "^0.1.0",
-  "@essential-projects/feature_contracts": "^0.1.0",
-  "@essential-projects/messagebus_contracts": "^0.1.0"
+    "@essential-projects/core_contracts": "^0.1.0",
+    "@essential-projects/data_model_contracts": "^0.1.0",
+    "@essential-projects/event_aggregator_contracts": "^0.1.0",
+    "@essential-projects/feature_contracts": "^0.1.0",
+    "@essential-projects/messagebus_contracts": "^0.1.0"
   },
   "devDependencies": {
-  "@essential-projects/tslint-config": "^0.1.0",
+    "@essential-projects/tslint-config": "^0.1.0",
     "gulp": "^3.9.1",
     "gulptraum": "^2.2.1",
     "gulptraum-typescript": "^1.0.0",
