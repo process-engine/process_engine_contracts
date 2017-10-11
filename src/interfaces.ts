@@ -28,6 +28,7 @@ export interface IProcessDefEntityTypeService {
 }
 
 export interface INodeInstanceEntityTypeService {
+  subscibeToNodeChannels(node: INodeInstanceEntity): INodeInstanceEntity;
   createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
   createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<IEntity>;
   continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
