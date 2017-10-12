@@ -231,6 +231,7 @@ export interface IProcessDefEntity extends IEntity {
   persist: boolean;
   updateBpmn(context: ExecutionContext, xml: string): Promise<any>;
   getDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
+  getLatest(context: ExecutionContext): Promise<IProcessDefEntity>;
   publishDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
 }
 
