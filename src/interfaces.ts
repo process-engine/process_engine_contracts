@@ -1,8 +1,8 @@
-import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@process-engine-js/core_contracts';
-import { IEntityCollection, IEntityType } from '@process-engine-js/data_model_contracts';
-import { ISubscription } from '@process-engine-js/event_aggregator_contracts';
-import { IFeature } from '@process-engine-js/feature_contracts';
-import { IMessageSubscription } from '@process-engine-js/messagebus_contracts';
+import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@essential-projects/core_contracts';
+import { IEntityCollection, IEntityType } from '@essential-projects/data_model_contracts';
+import { ISubscription } from '@essential-projects/event_aggregator_contracts';
+import { IFeature } from '@essential-projects/feature_contracts';
+import { IMessageSubscription } from '@essential-projects/messagebus_contracts';
 
 export interface IBpmnDiagram {
   definitions: any;
@@ -27,7 +27,26 @@ export interface IProcessDefEntityTypeService {
   start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
 }
 
+export enum BpmnType {
+  userTask = 'bpmn:UserTask',
+  exclusiveGateway = 'bpmn:ExclusiveGateway',
+  parallelGateway = 'bpmn:ParallelGateway',
+  serviceTask = 'bpmn:ServiceTask',
+  startEvent = 'bpmn:StartEvent',
+  endEvent = 'bpmn:EndEvent',
+  intermediateCatchEvent = 'bpmn:IntermediateCatchEvent',
+  intermediateThrowEvent = 'bpmn:IntermediateThrowEvent',
+  scriptTask = 'bpmn:ScriptTask',
+  boundaryEvent = 'bpmn:BoundaryEvent',
+  callActivity = 'bpmn:CallActivity',
+  subProcess = 'bpmn:SubProcess',
+}
+
+export type EntityTypeName = string;
+
 export interface INodeInstanceEntityTypeService {
+  subscibeToNodeChannels(node: INodeInstanceEntity): INodeInstanceEntity;
+  getEntityTypeFromBpmnType<TEntity extends IEntity = IEntity>(bpmnType: BpmnType): Promise<IEntityType<TEntity>>;
   createNode(context: ExecutionContext, entityType: IEntityType<IEntity>): Promise<IEntity>;
   createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<IEntity>;
   continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
@@ -105,7 +124,7 @@ export interface INodeDefEntity extends IEntity {
   processDef: IProcessDefEntity;
   getLane(context: ExecutionContext): Promise<ILaneEntity>;
   lane: ILaneEntity;
-  type: string;
+  type: BpmnType;
   extensions: any;
   getAttachedToNode(context: ExecutionContext): Promise<INodeDefEntity>;
   attachedToNode: INodeDefEntity;
@@ -139,7 +158,7 @@ export interface INodeInstanceEntity extends IEntity {
   process: IProcessEntity;
   getNodeDef(context: ExecutionContext): Promise<INodeDefEntity>;
   nodeDef: INodeDefEntity;
-  type: string;
+  type: BpmnType;
   state: string;
   participant: string;
   application: string;
@@ -174,6 +193,7 @@ export interface IProcessEntity extends IEntity {
   status: string;
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   processDef: IProcessDefEntity;
+  initializeProcess(): Promise<void>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
   end(context: ExecutionContext, processToken: any): Promise<void>;
   error(context: ExecutionContext, error: any): Promise<void>;
