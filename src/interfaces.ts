@@ -60,7 +60,8 @@ export interface IImportFromFileOptions {
 }
 
 export interface IParamStart {
-  key: string;
+  id?: string;
+  key?: string;
   initialToken?: any;
   source?: any;
   isSubProcess?: boolean;
