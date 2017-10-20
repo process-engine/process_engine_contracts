@@ -246,6 +246,7 @@ export interface IStartEventEntity extends IEventEntity {
 }
 
 export interface IUserTaskEntity extends INodeInstanceEntity {
+  getUserTaskData(context: ExecutionContext): Promise<IUserTaskMessageData>;
 }
 
 export interface IParamImportFromFile {
@@ -266,9 +267,10 @@ export interface IParamUpdateDefs {
 }
 
 export interface IProcessEngineService {
+  config: any;
   initialize(): Promise<void>;
   start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
-  config: any;
+  getUserTaskData(context: ExecutionContext, userTaskId: string): Promise<IUserTaskMessageData>;
 }
 
 export interface IProcessEntry {
