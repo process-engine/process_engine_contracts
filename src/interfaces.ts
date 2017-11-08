@@ -51,6 +51,7 @@ export interface INodeInstanceEntityTypeService {
   createNextNode(context: ExecutionContext, source: any, nextDef: any, token: any): Promise<IEntity>;
   continueExecution(context: ExecutionContext, nodeInstance: IEntity): Promise<void>;
   continueFromRemote(context: ExecutionContext, params: IParamsContinueFromRemote, options?: IPublicGetOptions): Promise<void>;
+  continueTask(context: ExecutionContext, nodeInstanceEntity: INodeInstanceEntity): void;
 }
 
 export interface IImportFromXmlOptions extends IImportFromFileOptions {}
