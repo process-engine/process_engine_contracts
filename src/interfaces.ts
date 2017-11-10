@@ -278,7 +278,7 @@ export interface IProcessEngineService {
   initialize(): Promise<void>;
   start(context: ExecutionContext, data: any, options: IPublicGetOptions): Promise<string>;
   getUserTaskData(context: ExecutionContext, userTaskId: string): Promise<IUserTaskMessageData>;
-  executeProcess(context: ExecutionContext, id: string, key: string, initialToken: any): Promise<any>;
+  executeProcess(context: ExecutionContext, id: string, key: string, initialToken: any, version?: string): Promise<any>;
 }
 
 export interface IProcessEntry {
