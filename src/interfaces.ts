@@ -25,6 +25,8 @@ export interface IProcessDefEntityTypeService {
   importBpmnFromFile(context: ExecutionContext, param: IParamImportFromFile, options?: IImportFromFileOptions): Promise<void>;
   parseBpmnXml(xml: string): Promise<IBpmnDiagram>;
   start(context: ExecutionContext, param: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
+  getProcessDefinitionByKey(context: ExecutionContext, processDefinitionKey: string, version?: string, versionlessFallback?: boolean): Promise<IProcessDefEntity>;
+  getProcessDefinitionById(context: ExecutionContext, processDefinitionId: string, version?: string, versionlessFallback?: boolean): Promise<IProcessDefEntity>;
 }
 
 export enum BpmnType {
@@ -225,6 +227,7 @@ export interface IProcessDefEntity extends IEntity {
   getFlowDefCollection(context: ExecutionContext): Promise<IEntityCollection<IFlowDefEntity>>;
   laneCollection: IEntityCollection<ILaneEntity>;
   getLaneCollection(context: ExecutionContext): Promise<IEntityCollection<ILaneEntity>>;
+  createProcessInstance(context: ExecutionContext): Promise<IProcessEntity>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
   features: Array<IFeature>;
