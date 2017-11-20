@@ -2,7 +2,7 @@ import {ExecutionContext, IEntity, IEntityReference, IPublicGetOptions} from '@e
 import {IEntityCollection, IEntityType} from '@essential-projects/data_model_contracts';
 import {IFeature} from '@essential-projects/feature_contracts';
 import {IFlowDefEntity, ILaneEntity, INodeDefEntity} from '../index';
-import {IParamStart, IParamUpdateDefs, IProcessDefEntity} from './index';
+import {IParamStart, IParamUpdateDefs, IProcessDefEntity, IProcessEntity} from './index';
 
 export interface IProcessDefEntity extends IEntity {
   name: string;
@@ -24,6 +24,7 @@ export interface IProcessDefEntity extends IEntity {
   features: Array<IFeature>;
   extensions: any;
   persist: boolean;
+  createProcessInstance(context: ExecutionContext): Promise<IProcessEntity>;
   getNodeDefCollection(context: ExecutionContext): Promise<IEntityCollection<INodeDefEntity>>;
   getFlowDefCollection(context: ExecutionContext): Promise<IEntityCollection<IFlowDefEntity>>;
   getLaneCollection(context: ExecutionContext): Promise<IEntityCollection<ILaneEntity>>;
