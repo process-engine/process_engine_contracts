@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "0.2.0-alpha.feature-3d0b4a64",
+  "version": "0.3.0",
   "description": "the referencable contracts for metadata",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -14,7 +14,7 @@
     "Simon Reymann <simon.reymann@quantusflow.com>"
   ],
   "dependencies": {
-    "@essential-projects/core_contracts": "^0.1.0",
+    "@essential-projects/core_contracts": "^0.2.1",
     "@essential-projects/data_model_contracts": "^0.2.0",
     "@essential-projects/event_aggregator_contracts": "^0.1.0",
     "@essential-projects/feature_contracts": "^0.1.0",
