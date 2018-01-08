@@ -34,4 +34,5 @@ export interface IProcessDefEntity extends IEntity {
   getDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
   getLatest(context: ExecutionContext): Promise<IProcessDefEntity>;
   publishDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
+  equals(processDef: IProcessDefEntity): boolean;
 }
