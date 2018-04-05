@@ -1,4 +1,4 @@
-import { StructureReference } from '../base/structure';
+import { StructureReference } from '../base/index';
 
 export class Error {
   public id: ErrorId;

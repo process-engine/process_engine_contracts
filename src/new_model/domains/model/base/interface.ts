@@ -1,4 +1,5 @@
-import { RootElement, Operation } from './index';
+import { Operation } from '../types/index';
+import { RootElement } from './index';
 
 export class Interface extends RootElement<InterfaceId> {
   public name: string;

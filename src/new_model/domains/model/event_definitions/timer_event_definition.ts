@@ -1,4 +1,4 @@
-import { EventDefinition } from "./index";
+import { EventDefinition } from './index';
 
 export class TimerEventDefinition extends EventDefinition {
   public timerType: TimerType;
@@ -7,5 +7,5 @@ export class TimerEventDefinition extends EventDefinition {
 export enum TimerType {
   timeCycle = 0,
   timeDate = 1,
-  timeDuration = 2
+  timeDuration = 2,
 }

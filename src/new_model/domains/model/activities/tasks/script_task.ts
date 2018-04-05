@@ -1,4 +1,4 @@
-import { Task } from "./task";
+import { Task } from './index';
 
 export class ScriptTask extends Task {
   public scriptFormat: string;

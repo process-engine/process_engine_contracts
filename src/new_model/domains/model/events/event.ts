@@ -1,4 +1,4 @@
-import { FlowNode } from "./base/flow_node";
+import { FlowNode } from './../base/index';
 
 export abstract class Event extends FlowNode<EventId> {
 

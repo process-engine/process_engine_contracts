@@ -1,4 +1,4 @@
-import { CatchEvent } from "./catch_event";
+import { CatchEvent } from './index';
 
 export class StartEvent extends CatchEvent {
   public isInterrupting: boolean;

@@ -1,5 +1,5 @@
-import { MessageReference, ErrorReference } from "../type_references/index";
-import { BaseElement } from "../base/index";
+import { BaseElement } from '../base/index';
+import { ErrorReference, MessageReference } from '../type_references/index';
 
 export class Operation extends BaseElement<OperationId> {
   public name: string;

@@ -1,7 +1,8 @@
-import { EventDefinition, EventDefinitionReference } from "./event_definitions/event_definition";
-import { Event } from "./event";
+import { Event } from './index';
+import { EventDefinition } from '../event_definitions/index';
+import { EventDefinitionReference } from '../type_references/index';
 
-export class CatchEvent extends Event {
+export abstract class CatchEvent extends Event {
   public items: Array<EventDefinition> = [];
   public eventDefinitionReference: Array<EventDefinitionReference>;
 }

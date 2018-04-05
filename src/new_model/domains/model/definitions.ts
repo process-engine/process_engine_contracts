@@ -1,4 +1,4 @@
-import { RootElement } from "./base";
+import { RootElement } from './base/index';
 
 export class Definitions {
   public items: Array<RootElement>;

@@ -1,4 +1,4 @@
-import { EventDefinition } from "./index";
+import { EventDefinition } from './index';
 
 export class TerminateEventDefinition extends EventDefinition {
 }

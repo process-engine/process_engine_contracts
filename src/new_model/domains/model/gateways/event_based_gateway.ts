@@ -1,4 +1,4 @@
-import { Gateway } from "./gateway";
+import { Gateway } from './index';
 
 export class EventBasedGateway extends Gateway {
 
