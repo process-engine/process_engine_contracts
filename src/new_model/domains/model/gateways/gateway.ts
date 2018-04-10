@@ -1,4 +1,6 @@
-export abstract class Gateway {
+import { FlowNode } from '../base/index';
+
+export abstract class Gateway extends FlowNode {
   public gatewayDirection: GatewayDirection;
 }
 
@@ -6,5 +8,5 @@ export enum GatewayDirection {
   Unspecified = 0,
   Converging = 1,
   Diverging = 2,
-  Mixed = 3
+  Mixed = 3,
 }
