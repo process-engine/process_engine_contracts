@@ -1,6 +1,6 @@
-import * as activities from './activities/index';
+import * as activities from '../model/activities/index';
 // import * as eventDefinitions from './event_definitions/index';
-import * as events from './events/index';
+import * as events from '../model/events/index';
 // import * as gateways from './gateways/index';
 // import * as tasks from './tasks/index';
 import * as typeReferences from './type_references/index';

@@ -1,6 +1,6 @@
-import {Runtime} from './index';
+import {IPredicate} from '../shared';
 import {Model} from './../index';
-import { IPredicate } from '../shared';
+import {Runtime} from './index';
 
 export interface IRuntimeFascade {
   createProcessToken(data: any): Runtime.Types.ProcessToken;

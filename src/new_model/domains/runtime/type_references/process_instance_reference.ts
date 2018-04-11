@@ -1,4 +1,5 @@
+import {ProcessInstanceId} from '../types/process_instance';
 
 export class ProcessInstanceReference {
-  processInstanceId: ProcessInstanceId;
+  public processInstanceId: ProcessInstanceId;
 }
