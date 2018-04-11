@@ -25,3 +25,8 @@ export const Model2 = {
   TypeReferences: typeReferences,
   Types: types,
 };
+
+export * from './definitions';
+export * from './imodel_fascade';
+export * from './imodel_reader';
+export * from './imodel_service';
