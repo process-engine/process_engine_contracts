@@ -1,7 +1,5 @@
 import { RootElement } from '../base/index';
 
-export abstract class EventDefinition extends RootElement<EventDefinitionId> {
+export abstract class EventDefinition extends RootElement {
 
 }
-
-export type EventDefinitionId = string;

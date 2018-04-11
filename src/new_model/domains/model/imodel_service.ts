@@ -1,5 +1,5 @@
-import { Process, ProcessId } from './types/index';
+import { Process } from './types/index';
 
-export interface IModelRepository {
-  getProcessById(processId: ProcessId): Promise<Process>;
+export interface IModelService {
+  getProcessById(processId: string): Promise<Process>;
 }

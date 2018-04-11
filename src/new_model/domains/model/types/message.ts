@@ -1,7 +1,4 @@
-
 export class Message {
-  public id: MessageId;
+  public id: string;
   public name: string;
 }
-
-export type MessageId = string;

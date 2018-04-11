@@ -1,7 +1,4 @@
 import { FlowNode } from './../base/index';
 
-export abstract class Event extends FlowNode<EventId> {
-
+export abstract class Event extends FlowNode {
 }
-
-export type EventId = string;

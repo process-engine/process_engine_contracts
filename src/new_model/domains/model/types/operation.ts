@@ -1,7 +1,7 @@
 import { BaseElement } from '../base/index';
 import { ErrorReference, MessageReference } from '../type_references/index';
 
-export class Operation extends BaseElement<OperationId> {
+export class Operation extends BaseElement {
   public name: string;
   public inMessageReference: MessageReference;
   public outMessageReference: MessageReference;
@@ -10,5 +10,3 @@ export class Operation extends BaseElement<OperationId> {
   //       or if we want to reference a web service (default in the spec)
   public implementationReference: any;
 }
-
-export type OperationId = string;

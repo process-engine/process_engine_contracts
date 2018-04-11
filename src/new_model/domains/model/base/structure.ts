@@ -8,7 +8,7 @@ export class Structure {
   // we need to identify what the use case for the structure is to decide
   // whether we need a JSON Schema or just a design time type reference
   // (generics)
-  public jsonSchemaOrType: any; 
+  public jsonSchemaOrType: any;
 }
 
 export class StructureReference {

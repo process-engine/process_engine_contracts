@@ -1,7 +1,7 @@
 import { Operation } from '../types/index';
 import { RootElement } from './index';
 
-export class Interface extends RootElement<InterfaceId> {
+export class Interface extends RootElement {
   public name: string;
   public operations: Array<Operation>;
   // TODO: see operation

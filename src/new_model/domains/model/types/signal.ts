@@ -1,7 +1,4 @@
-
 export class Signal {
-  public id: SignalId;
+  public id: string;
   public name: string;
 }
-
-export type SignalId = string;
