@@ -1,6 +1,6 @@
-import { FlowElement } from '../base/index';
+import {FlowElement, RootElement} from '../base/index';
 
-export class Process {
+export class Process extends RootElement {
   public id: ProcessId;
   public items: Array<FlowElement> = [];
   public laneSets: Array<FlowElement> = [];
