@@ -6,6 +6,7 @@ import * as gateways from './gateways/index';
 import * as typeReferences from './type_references/index';
 import * as types from './types/index';
 
+// tslint:disable-next-line:no-namespace
 export namespace Model {
   export import Activities = activities;
   export import Base = base;
@@ -16,20 +17,7 @@ export namespace Model {
   export import Types = types;
 }
 
-export * from './imodel_fascade';
-export * from './imodel_reader';
-
-export const Model2 = {
-  Activities: activities,
-  Base: base,
-  EventDefinitions: eventDefinitions,
-  Events: events,
-  Gateways: gateways,
-  TypeReferences: typeReferences,
-  Types: types,
-};
-
 export * from './definitions';
 export * from './imodel_fascade';
-export * from './imodel_reader';
+export * from './imodel_parser';
 export * from './imodel_service';
