@@ -1,4 +1,4 @@
-import { BaseElement } from './index';
+import { BaseElement } from './base_element';
 
-export abstract class RootElement extends BaseElement {
+export class RootElement extends BaseElement {
 }

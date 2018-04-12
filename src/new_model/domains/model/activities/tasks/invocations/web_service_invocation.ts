@@ -1,4 +1,4 @@
-import { Invocation } from './index';
+import { Invocation } from './invocation';
 
 export class WebServiceInvocation extends Invocation {
   public service: string;

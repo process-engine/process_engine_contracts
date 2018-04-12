@@ -1,4 +1,4 @@
-import { Activity } from './index';
+import { Activity } from './activity';
 
 export class CallActivity extends Activity {
 

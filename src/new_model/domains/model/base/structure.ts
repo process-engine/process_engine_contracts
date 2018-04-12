@@ -3,16 +3,10 @@
 //
 // A reference to a structure might be necessary for serialization purposes
 export class Structure {
-  public structureId: StructureId;
+  public structureId: string;
   // this is defined as an XSD Complex Type
   // we need to identify what the use case for the structure is to decide
   // whether we need a JSON Schema or just a design time type reference
   // (generics)
   public jsonSchemaOrType: any;
 }
-
-export class StructureReference {
-  public structureId: StructureId;
-}
-
-export type StructureId = string;

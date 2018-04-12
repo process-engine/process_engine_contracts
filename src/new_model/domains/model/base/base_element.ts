@@ -1,6 +1,6 @@
-import { Documentation } from './index';
+import { Documentation } from './documentation';
 
-export abstract class BaseElement {
+export class BaseElement {
   public id: string;
   // public extensionElements: ExtensionElements;
   public documentation: Array<Documentation>;

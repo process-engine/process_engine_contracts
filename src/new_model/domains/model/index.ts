@@ -1,5 +1,5 @@
 import * as activities from './activities/index';
-import * as base from './base';
+import * as base from './base/index';
 import * as eventDefinitions from './event_definitions/index';
 import * as events from './events/index';
 import * as gateways from './gateways/index';

@@ -1,5 +1,5 @@
-import { CatchEvent } from './index';
+import { Event } from './event';
 
-export class StartEvent extends CatchEvent {
+export class StartEvent extends Event {
   public isInterrupting: boolean;
 }
