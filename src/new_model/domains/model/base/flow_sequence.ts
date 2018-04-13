@@ -5,5 +5,5 @@ export class FlowSequence extends BaseElement {
   public name: string;
   public sourceRef: string;
   public targetRef: string;
-  public conditionExpression: ConditionExpression;
+  public conditionExpression?: ConditionExpression;
 }
