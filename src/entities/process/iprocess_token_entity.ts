@@ -5,4 +5,5 @@ export interface IProcessTokenEntity extends IEntity {
   data: any;
   process: IProcessEntity;
   getProcess(context: ExecutionContext): Promise<IProcessEntity>;
+  clone(): Promise<IProcessTokenEntity>;
 }
