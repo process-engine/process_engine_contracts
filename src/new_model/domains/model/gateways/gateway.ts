@@ -1,7 +1,18 @@
 import { FlowNode } from '../base/index';
 
 export abstract class Gateway extends FlowNode {
-  public gatewayDirection: GatewayDirection = GatewayDirection.Unspecified;
+
+  public get gatewayDirection(): GatewayDirection {
+    if (!this.incoming || !this.outgoing) {
+      return GatewayDirection.Unspecified;
+    } else if (this.incoming.length > this.outgoing.length) {
+      return GatewayDirection.Converging;
+    } else if (this.outgoing.length > this.incoming.length) {
+      return GatewayDirection.Diverging;
+    } else {
+      return GatewayDirection.Mixed;
+    }
+  }
 }
 
 export enum GatewayDirection {
