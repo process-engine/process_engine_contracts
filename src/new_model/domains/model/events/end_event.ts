@@ -1,5 +1,6 @@
 import { Event } from './event';
 
 export class EndEvent extends Event {
-  public isInterrupting: boolean;
+  // TODO: Clarify if necessary and how to implement this.
+  // public isInterrupting: boolean;
 }
