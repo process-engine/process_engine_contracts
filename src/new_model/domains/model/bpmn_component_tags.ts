@@ -5,6 +5,16 @@ export enum RootElement {
   Diagram = 'bpmndi:BPMNDiagram',
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
+  SequenceFlow = 'bpmn:sequenceFlow',
+}
+
+export enum XmlnsProperty {
+  bpmn = 'xmlns:bpmn',
+  bpmndi = 'xmlns:bpmndi',
+  di = 'xmlns:di',
+  dc = 'xmlns:dc',
+  camunda = 'xmlns:camunda',
+  xsi = 'xmlns:xsi',
 }
 
 export enum Lane {
@@ -17,27 +27,45 @@ export enum LaneProperty {
   FlowNodeRef = 'bpmn:flowNodeRef',
 }
 
-export enum Event {
-  StartEvent = 'bpmn:startEvent',
-  EndEvent = 'bpmn:endEvent',
-  IntermediateCatchEvent = 'bpmn:intermediateCatchEvent',
-}
-
-export enum EventProperty {
-  ErrorEventDefinition = 'bpmn:errorEventDefinition',
-  MessageEventDefinition = 'bpmn:messageEventDefinition',
-  SignalEventDefinition = 'bpmn:signalEventDefinition',
-}
-
-export enum FlowElement {
-  SequenceFlow = 'bpmn:sequenceFlow',
-
+export enum GatewayElement {
+  ComplexGateway = 'bpmn:complexGateway',
   EventBasedGateway = 'bpmn:eventBasedGateway',
   ExclusiveGateway = 'bpmn:exclusiveGateway',
+  InclusiveGateway = 'bpmn:inclusiveGateway',
   ParallelGateway = 'bpmn:parallelGateway',
 }
 
+export enum EventElement {
+  StartEvent = 'bpmn:startEvent',
+  EndEvent = 'bpmn:endEvent',
+  Boundary = 'bpmn:boundaryEvent',
+  IntermediateCatchEvent = 'bpmn:intermediateCatchEvent',
+  IntermediateThrowEvent = 'bpmn:intermediateThrowEvent',
+}
+
+export enum TaskElement {
+  CallActivity = 'bpmn:callActivity',
+  SubProcess = 'bpmn:subProcess',
+
+  ManualTask = 'bpmn:manualTask',
+  ScriptTask = 'bpmn:scriptTask',
+  ServiceTask = 'bpmn:serviceTask',
+  UserTask = 'bpmn:userTask',
+
+  MethodInvocation = 'bpmn:methodInvocation',
+  WebServiceInvocation = 'bpmn:webServiceInvocation',
+}
+
 export enum FlowElementProperty {
+  ErrorEventDefinition = 'bpmn:errorEventDefinition',
+  MessageEventDefinition = 'bpmn:messageEventDefinition',
+  SignalEventDefinition = 'bpmn:signalEventDefinition',
+
+  CamundaExpression = 'camunda:expression',
+  CamundaExecutionListener = 'camunda:executionListener',
+  CamundaProperties = 'camunda:properties',
+  CamundaProperty = 'camunda:property',
+
   ConditionExpression = 'bpmn:conditionExpression',
   Documentation = 'bpmn:documentation',
   ExtensionElements = 'bpmn:extensionElements',
@@ -46,13 +74,4 @@ export enum FlowElementProperty {
   SequenceFlowOutgoing = 'bpmn:outgoing',
 
   XsiType = 'xsi:type',
-}
-
-export enum XmlnsProperty {
-  bpmn = 'xmlns:bpmn',
-  bpmndi = 'xmlns:bpmndi',
-  di = 'xmlns:di',
-  dc = 'xmlns:dc',
-  camunda = 'xmlns:camunda',
-  xsi = 'xmlns:xsi',
 }
