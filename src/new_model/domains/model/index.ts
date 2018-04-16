@@ -19,9 +19,9 @@ export namespace Model {
 }
 
 export namespace BpmnTags {
-  export import Event = bpmnTags.Event;
-  export import EventProperty = bpmnTags.EventProperty;
-  export import FlowElement = bpmnTags.FlowElement;
+  export import GatewayElement = bpmnTags.GatewayElement;
+  export import EventElement = bpmnTags.EventElement;
+  export import TaskElement = bpmnTags.TaskElement;
   export import FlowElementProperty = bpmnTags.FlowElementProperty;
   export import Lane = bpmnTags.Lane;
   export import LaneProperty = bpmnTags.LaneProperty;

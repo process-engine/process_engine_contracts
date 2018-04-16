@@ -1,7 +1,7 @@
 import { FlowNode } from '../base/index';
 
 export abstract class Gateway extends FlowNode {
-  public gatewayDirection: GatewayDirection;
+  public gatewayDirection: GatewayDirection = GatewayDirection.Unspecified;
 }
 
 export enum GatewayDirection {
