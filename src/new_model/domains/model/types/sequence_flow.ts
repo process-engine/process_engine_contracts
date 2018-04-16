@@ -1,7 +1,7 @@
-import { BaseElement } from './base_element';
+import { BaseElement } from '../base/index';
 import { ConditionExpression } from './condition_expression';
 
-export class FlowSequence extends BaseElement {
+export class SequenceFlow extends BaseElement {
   public name: string;
   public sourceRef: string;
   public targetRef: string;

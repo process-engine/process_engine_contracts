@@ -1,8 +1,3 @@
-import * as Activities from './activities';
-import * as Events from './events';
-import * as Gateways from './gateways/index';
-import * as Types from './types';
-
 // TODO: Expand these enums as needed
 export enum RootElement {
   Collaboration = 'bpmn:collaboration',
@@ -30,6 +25,7 @@ export enum Event {
 
 export enum EventProperty {
   ErrorEventDefinition = 'bpmn:errorEventDefinition',
+  MessageEventDefinition = 'bpmn:messageEventDefinition',
   SignalEventDefinition = 'bpmn:signalEventDefinition',
 }
 
