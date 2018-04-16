@@ -19,13 +19,13 @@ export namespace Model {
 }
 
 export namespace BpmnTags {
+  export import CommonElement = bpmnTags.CommonElement;
   export import GatewayElement = bpmnTags.GatewayElement;
   export import EventElement = bpmnTags.EventElement;
   export import TaskElement = bpmnTags.TaskElement;
   export import FlowElementProperty = bpmnTags.FlowElementProperty;
   export import Lane = bpmnTags.Lane;
   export import LaneProperty = bpmnTags.LaneProperty;
-  export import RootElement = bpmnTags.RootElement;
   export import XmlnsProperty = bpmnTags.XmlnsProperty;
 }
 

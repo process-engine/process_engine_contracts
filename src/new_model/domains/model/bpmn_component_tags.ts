@@ -1,11 +1,13 @@
 // TODO: Expand these enums as needed
-export enum RootElement {
+export enum CommonElement {
+  Association = 'bpmn:association',
   Collaboration = 'bpmn:collaboration',
   Definitions = 'bpmn:definitions',
   Diagram = 'bpmndi:BPMNDiagram',
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
   SequenceFlow = 'bpmn:sequenceFlow',
+  TextAnnotation = 'bpmn:textAnnotation',
 }
 
 export enum XmlnsProperty {
