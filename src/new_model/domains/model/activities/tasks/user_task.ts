@@ -5,6 +5,6 @@ export class UserTask extends Task {
   public assignee: string;
   public candidateUsers: string;
   public candidateGroups: string;
-  public dueDate: string;
-  public followUpDate: string;
+  public dueDate?: Date;
+  public followUpDate?: Date;
 }
