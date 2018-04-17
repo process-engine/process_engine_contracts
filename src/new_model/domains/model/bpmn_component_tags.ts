@@ -62,11 +62,15 @@ export enum FlowElementProperty {
   ErrorEventDefinition = 'bpmn:errorEventDefinition',
   MessageEventDefinition = 'bpmn:messageEventDefinition',
   SignalEventDefinition = 'bpmn:signalEventDefinition',
+  TerminateEventDefinition = 'bpmn:terminateEventDefinition',
+  TimerEventDefinition = 'bpmn:timerEventDefinition',
 
+  BpmnScript = 'bpmn:script',
   CamundaExpression = 'camunda:expression',
   CamundaExecutionListener = 'camunda:executionListener',
   CamundaProperties = 'camunda:properties',
   CamundaProperty = 'camunda:property',
+  CamundaResultVariable = 'camunda:resultVariable',
 
   CamundaAssignee = 'camunda:assignee',
   CamundaCandidateUsers = 'camunda:candidateUsers',
