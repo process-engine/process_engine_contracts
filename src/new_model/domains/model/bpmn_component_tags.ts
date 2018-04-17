@@ -68,6 +68,12 @@ export enum FlowElementProperty {
   CamundaProperties = 'camunda:properties',
   CamundaProperty = 'camunda:property',
 
+  CamundaAssignee = 'camunda:assignee',
+  CamundaCandidateUsers = 'camunda:candidateUsers',
+  CamundaCandidateGroups = 'camunda:candidateGroups',
+  CamundaDueDate = 'camunda:dueDate',
+  CamundaFollowupDate = 'camunda:followUpDate',
+
   ConditionExpression = 'bpmn:conditionExpression',
   Documentation = 'bpmn:documentation',
   ExtensionElements = 'bpmn:extensionElements',
