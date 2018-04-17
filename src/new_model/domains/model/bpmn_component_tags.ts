@@ -1,13 +1,10 @@
 // TODO: Expand these enums as needed
 export enum CommonElement {
-  Association = 'bpmn:association',
   Collaboration = 'bpmn:collaboration',
   Definitions = 'bpmn:definitions',
   Diagram = 'bpmndi:BPMNDiagram',
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
-  SequenceFlow = 'bpmn:sequenceFlow',
-  TextAnnotation = 'bpmn:textAnnotation',
 }
 
 export enum XmlnsProperty {
@@ -58,6 +55,12 @@ export enum TaskElement {
   WebServiceInvocation = 'bpmn:webServiceInvocation',
 }
 
+export enum OtherElements {
+  Association = 'bpmn:association',
+  SequenceFlow = 'bpmn:sequenceFlow',
+  TextAnnotation = 'bpmn:textAnnotation',
+}
+
 export enum FlowElementProperty {
   ErrorEventDefinition = 'bpmn:errorEventDefinition',
   MessageEventDefinition = 'bpmn:messageEventDefinition',
@@ -78,6 +81,9 @@ export enum FlowElementProperty {
 }
 
 export enum CamundaProperty {
+  CalledElementBinding = 'camunda:calledElementBinding',
+  CalledElementVersion = 'camunda:calledElementVersion',
+  CalledElementTenantId = 'camunda:calledElementTenantId',
   Assignee = 'camunda:assignee',
   CandidateUsers = 'camunda:candidateUsers',
   CandidateGroups = 'camunda:candidateGroups',
@@ -88,5 +94,6 @@ export enum CamundaProperty {
   Properties = 'camunda:properties',
   Property = 'camunda:property',
   ResultVariable = 'camunda:resultVariable',
-
+  VariableMappingClass = 'camunda:variableMappingClass',
+  VariableMappingDelegateExpression = 'camunda:variableMappingDelegateExpression',
 }

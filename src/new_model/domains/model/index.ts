@@ -27,6 +27,7 @@ export namespace BpmnTags {
   export import FlowElementProperty = bpmnTags.FlowElementProperty;
   export import Lane = bpmnTags.Lane;
   export import LaneProperty = bpmnTags.LaneProperty;
+  export import OtherElements = bpmnTags.OtherElements;
   export import XmlnsProperty = bpmnTags.XmlnsProperty;
 }
 
