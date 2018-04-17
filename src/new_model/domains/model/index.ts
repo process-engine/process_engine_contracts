@@ -19,6 +19,7 @@ export namespace Model {
 }
 
 export namespace BpmnTags {
+  export import CamundaProperty = bpmnTags.CamundaProperty;
   export import CommonElement = bpmnTags.CommonElement;
   export import GatewayElement = bpmnTags.GatewayElement;
   export import EventElement = bpmnTags.EventElement;

@@ -66,17 +66,6 @@ export enum FlowElementProperty {
   TimerEventDefinition = 'bpmn:timerEventDefinition',
 
   BpmnScript = 'bpmn:script',
-  CamundaExpression = 'camunda:expression',
-  CamundaExecutionListener = 'camunda:executionListener',
-  CamundaProperties = 'camunda:properties',
-  CamundaProperty = 'camunda:property',
-  CamundaResultVariable = 'camunda:resultVariable',
-
-  CamundaAssignee = 'camunda:assignee',
-  CamundaCandidateUsers = 'camunda:candidateUsers',
-  CamundaCandidateGroups = 'camunda:candidateGroups',
-  CamundaDueDate = 'camunda:dueDate',
-  CamundaFollowupDate = 'camunda:followUpDate',
 
   ConditionExpression = 'bpmn:conditionExpression',
   Documentation = 'bpmn:documentation',
@@ -86,4 +75,18 @@ export enum FlowElementProperty {
   SequenceFlowOutgoing = 'bpmn:outgoing',
 
   XsiType = 'xsi:type',
+}
+
+export enum CamundaProperty {
+  Assignee = 'camunda:assignee',
+  CandidateUsers = 'camunda:candidateUsers',
+  CandidateGroups = 'camunda:candidateGroups',
+  DueDate = 'camunda:dueDate',
+  ExecutionListener = 'camunda:executionListener',
+  Expression = 'camunda:expression',
+  FollowupDate = 'camunda:followUpDate',
+  Properties = 'camunda:properties',
+  Property = 'camunda:property',
+  ResultVariable = 'camunda:resultVariable',
+
 }
