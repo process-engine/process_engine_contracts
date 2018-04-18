@@ -27,6 +27,7 @@ export interface INodeInstanceEntity extends IEntity {
   error(context: ExecutionContext, error: any): void;
   execute(context: ExecutionContext): Promise<void>;
   end(context: ExecutionContext, cancelFlow: boolean): Promise<void>;
+  terminate(context: ExecutionContext, processToken: any): Promise<void>;
   wait(context: ExecutionContext): Promise<void>;
   proceed(context: ExecutionContext, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
   event(context: ExecutionContext, event: string, data: any, source: IEntity, applicationId: string, participant: string): Promise<void>;
