@@ -11,3 +11,5 @@ export * from './iprocess_engine_service';
 export * from './iprocess_entry';
 export * from './iprocess_repository';
 export * from './iuser_task_message_data';
+
+export * from './new_model';
