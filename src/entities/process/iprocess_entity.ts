@@ -12,7 +12,7 @@ export interface IProcessEntity extends IEntity {
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   initializeProcess(): Promise<void>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
-  end(context: ExecutionContext, processToken: any): Promise<void>;
+  end(context: ExecutionContext, processToken: any, endEventKey?: string): Promise<void>;
   error(context: ExecutionContext, error: any): Promise<void>;
   addActiveInstance(entity: IEntity): void;
   removeActiveInstance(entity: IEntity): void;
