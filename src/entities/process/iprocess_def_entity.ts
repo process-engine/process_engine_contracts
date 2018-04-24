@@ -16,8 +16,7 @@ export interface IProcessDefEntity extends IEntity {
   readonly: boolean;
   version: string;
   counter: number;
-  draft: boolean;
-  latest: boolean;
+  isExecutable: boolean;
   nodeDefCollection: IEntityCollection<INodeDefEntity>;
   flowDefCollection: IEntityCollection<IFlowDefEntity>;
   laneCollection: IEntityCollection<ILaneEntity>;
@@ -31,8 +30,5 @@ export interface IProcessDefEntity extends IEntity {
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<IEntityReference>;
   updateDefinitions(context: ExecutionContext, params?: IParamUpdateDefs): Promise<void>;
   updateBpmn(context: ExecutionContext, xml: string): Promise<any>;
-  getDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
-  getLatest(context: ExecutionContext): Promise<IProcessDefEntity>;
-  publishDraft(context: ExecutionContext): Promise<IProcessDefEntity>;
   equals(processDef: IProcessDefEntity): boolean;
 }
