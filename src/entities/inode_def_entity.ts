@@ -32,6 +32,7 @@ export interface INodeDefEntity extends IEntity {
   persist: boolean;
   errorName: string;
   errorCode: string;
+  belongsToSubProcessKey: string;
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   getLane(context: ExecutionContext): Promise<ILaneEntity>;
   getAttachedToNode(context: ExecutionContext): Promise<INodeDefEntity>;
