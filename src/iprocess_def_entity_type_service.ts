@@ -16,4 +16,8 @@ export interface IProcessDefEntityTypeService {
                            processDefinitionId: string,
                            version?: string,
                            versionlessFallback?: boolean): Promise<IProcessDefEntity>;
+  getProcessDefinitionByName(context: ExecutionContext,
+                          processDefinitionName: string,
+                          version?: string,
+                          versionlessFallback?: boolean): Promise<IProcessDefEntity>;
 }
