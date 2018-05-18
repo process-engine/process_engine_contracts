@@ -10,7 +10,6 @@ import {FlowNode} from './../base/index';
 
 export abstract class Event extends FlowNode {
   public name: string;
-  public incoming: Array<string> = [];
   public errorEventDefinition?: ErrorEventDefinition;
   public messageEventDefinition?: MessageEventDefinition;
   public signalEventDefinition?: SignalEventDefinition;
