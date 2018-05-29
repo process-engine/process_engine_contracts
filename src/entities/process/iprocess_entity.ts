@@ -9,6 +9,9 @@ export interface IProcessEntity extends IEntity {
   activeInstances: any;
   allInstances: any;
   boundProcesses: any;
+  isSubProcess: boolean;
+  callerId: string;
+  correlationId: string;
   getProcessDef(context: ExecutionContext): Promise<IProcessDefEntity>;
   initializeProcess(): Promise<void>;
   start(context: ExecutionContext, params: IParamStart, options?: IPublicGetOptions): Promise<void>;
