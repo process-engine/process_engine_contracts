@@ -1,5 +1,5 @@
-import { INodeDefEntity, IProcessTokenEntity, Model, Runtime } from '@process-engine/process_engine_contracts';
 import { IProcessTokenFascade } from '../index';
+import { Model } from './../../model';
 
 export class NextFlowNodeInfo {
 

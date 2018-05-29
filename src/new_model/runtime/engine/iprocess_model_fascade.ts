@@ -1,4 +1,4 @@
-import { Model } from '@process-engine/process_engine_contracts';
+import { Model } from './../../model';
 
 export interface IProcessModelFascade {
   getStartEvent(): Model.Events.StartEvent;
