@@ -1,4 +1,4 @@
-import { Definitions, Model, Runtime } from '@process-engine/process_engine_contracts';
+import { Definitions, Model, Runtime } from './../../index';
 
 export interface IProcessEngineStorageService {
   saveProcessInstance(processInstance: Runtime.Types.ProcessInstance): Promise<void>;
