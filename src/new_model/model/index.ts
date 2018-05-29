@@ -32,7 +32,5 @@ export namespace BpmnTags {
 }
 
 export * from './definitions';
-export * from './imodel_fascade';
-export * from './imodel_parser';
-export * from './imodel_service';
 export * from './xmlns';
+export * from './imodel_parser';

@@ -1,5 +1,5 @@
+import { BpmnType } from '../../../constants';
 import {Activity} from './activity';
-import { BpmnType } from '../../../../constants';
 
 export class CallActivity extends Activity {
   public get bpmnType(): BpmnType {

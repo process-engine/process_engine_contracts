@@ -1,5 +1,5 @@
+import { BpmnType } from '../../../constants';
 import { Event } from './event';
-import { BpmnType } from '../../../../constants';
 
 export class EndEvent extends Event {
   public get bpmnType(): BpmnType {

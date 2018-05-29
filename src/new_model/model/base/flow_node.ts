@@ -1,4 +1,4 @@
-import { BpmnType } from '../../../../constants';
+import { BpmnType } from '../../../constants';
 import { BaseElement } from './base_element';
 
 export abstract class FlowNode extends BaseElement {

@@ -1,5 +1,5 @@
+import { BpmnType } from '../../../../constants';
 import { Task } from './task';
-import { BpmnType } from '../../../../../constants';
 
 export class UserTask extends Task {
   public get bpmnType(): BpmnType {

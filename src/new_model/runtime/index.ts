@@ -6,6 +6,7 @@ import * as events from '../model/events/index';
 import * as typeReferences from './type_references/index';
 import * as types from './types/index';
 
+// tslint:disable-next-line:no-namespace
 export namespace Runtime {
   export import Activities = activities;
   // export import EventDefinitions = eventDefinitions;
@@ -16,4 +17,4 @@ export namespace Runtime {
   export import Types = types;
 }
 
-export * from './iruntime_fascade';
+export * from './engine';
