@@ -1,12 +1,12 @@
-import { IProcessTokenFascade } from '../index';
+import { IProcessTokenFacade } from '../index';
 import { Model } from './../../model';
 
 export class NextFlowNodeInfo {
 
   public flowNode: Model.Base.FlowNode;
-  public processTokenFascade: IProcessTokenFascade;
+  public processTokenFascade: IProcessTokenFacade;
 
-  constructor(flowNode: Model.Base.FlowNode, processTokenFascade: IProcessTokenFascade) {
+  constructor(flowNode: Model.Base.FlowNode, processTokenFascade: IProcessTokenFacade) {
     this.flowNode = flowNode;
     this.processTokenFascade = processTokenFascade;
   }
