@@ -1,10 +1,10 @@
 import { Model } from './../../model';
 import { IProcessTokenResult } from './iprocess_token_result';
 
-export interface IProcessTokenFascade {
+export interface IProcessTokenFacade {
   addResultForFlowNode(flowNodeId: string, result: any): Promise<void>;
-  getProcessTokenFascadeForParallelBranch(): Promise<IProcessTokenFascade>;
-  mergeTokenHistory(processTokenToMerge: IProcessTokenFascade): Promise<void>;
+  getProcessTokenFacadeForParallelBranch(): Promise<IProcessTokenFacade>;
+  mergeTokenHistory(processTokenToMerge: IProcessTokenFacade): Promise<void>;
   getAllResults(): Promise<Array<IProcessTokenResult>>;
   getOldTokenFormat(): Promise<any>;
   evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): Promise<void>;

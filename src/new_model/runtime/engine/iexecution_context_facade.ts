@@ -1,6 +1,6 @@
 import { ExecutionContext } from '@essential-projects/core_contracts';
 
-export interface IExecutionContextFascade {
+export interface IExecutionContextFacade {
   getIdentityToken(): string;
   getExecutionContext(): ExecutionContext;
 }
