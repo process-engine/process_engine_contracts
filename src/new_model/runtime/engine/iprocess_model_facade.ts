@@ -9,5 +9,5 @@ export interface IProcessModelFacade {
   getBoundaryEventsFor(flowNode: Model.Base.FlowNode): Array<Model.Events.BoundaryEvent>;
   getJoinGatewayFor(parallelGatewayNode: Model.Gateways.ParallelGateway): Model.Gateways.ParallelGateway;
   getSequenceFlowBetween(flowNode: Model.Base.FlowNode, nextFlowNode: Model.Base.FlowNode): Model.Types.SequenceFlow;
-  getSubProcessModelFascade(subProcessNode: Model.Activities.SubProcess): IProcessModelFacade;
+  getSubProcessModelFacade(subProcessNode: Model.Activities.SubProcess): IProcessModelFacade;
 }
