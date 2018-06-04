@@ -34,3 +34,4 @@ export namespace BpmnTags {
 export * from './definitions';
 export * from './xmlns';
 export * from './imodel_parser';
+export * from './iparsed_object_model';
