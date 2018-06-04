@@ -1,6 +1,11 @@
 import { ProcessInstanceReference } from '../type_references/index';
 
 export class ProcessToken {
-  processInstanceReference: ProcessInstanceReference;
-  data: any;
+  public processInstanceReference: ProcessInstanceReference;
+  public current: any;
+  public history: ProcessTokenHistory;
 }
+
+export type ProcessTokenHistory = {
+  [bpmnElementId: string]: any;
+};
