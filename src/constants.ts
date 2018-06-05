@@ -11,6 +11,10 @@ export enum BpmnType {
   boundaryEvent = 'bpmn:BoundaryEvent',
   callActivity = 'bpmn:CallActivity',
   subProcess = 'bpmn:SubProcess',
+  manualTask = 'bpmn:ManualTask',
+  complexGateway = 'bpmn:ComplexGateway',
+  inclusiveGateway = 'bpmn:InclusiveGateway',
+  eventBasedGateway = 'bpmn:EventBasedGateway',
 }
 
 export enum TimerDefinitionType {
