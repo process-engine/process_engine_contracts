@@ -1,4 +1,5 @@
 import { BpmnType } from '../../../../constants';
+import { FormField } from '../../types';
 import { Task } from './task';
 
 export class UserTask extends Task {
@@ -11,4 +12,5 @@ export class UserTask extends Task {
   public candidateGroups: string;
   public dueDate?: Date;
   public followUpDate?: Date;
+  public formFields: Array<FormField>;
 }

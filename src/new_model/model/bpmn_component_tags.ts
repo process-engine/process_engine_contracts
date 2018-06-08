@@ -90,6 +90,8 @@ export enum CamundaProperty {
   DueDate = 'camunda:dueDate',
   ExecutionListener = 'camunda:executionListener',
   Expression = 'camunda:expression',
+  FormData = 'camunda:formData',
+  FormField = 'camunda:formField',
   FollowupDate = 'camunda:followUpDate',
   Properties = 'camunda:properties',
   Property = 'camunda:property',
