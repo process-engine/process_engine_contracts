@@ -1,11 +1,12 @@
-import { ProcessInstanceReference } from '../type_references/index';
+import { ProcessInstance } from './process_instance';
 
 export class ProcessToken {
-  public processInstanceReference: ProcessInstanceReference;
-  public current: any;
-  public history: ProcessTokenHistory;
+  // header
+  public processInstanceId: string;
+  public correlationId: string;
+  public identity: any;
+  public createdAt: Date;
+  public flowNodeId: string;
+  // payload
+  public payload: any;
 }
-
-export type ProcessTokenHistory = {
-  [bpmnElementId: string]: any;
-};

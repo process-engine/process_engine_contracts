@@ -1,5 +1,5 @@
 export class ProcessInstance {
-  public processInstanceId: ProcessInstanceId;
+  public id: ProcessInstanceId;
 }
 
 export type ProcessInstanceId = string;
