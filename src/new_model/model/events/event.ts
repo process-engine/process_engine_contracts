@@ -7,7 +7,7 @@ import {
 } from '../event_definitions/index';
 
 import {FlowNode} from './../base/index';
-import { Error } from "../types/error";
+import {Error} from "../types/error";
 
 export abstract class Event extends FlowNode {
   public name: string;
