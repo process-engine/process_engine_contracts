@@ -1,5 +1,6 @@
 import { BpmnType } from '../../../constants';
 import { Event } from './event';
+
 import {
   ErrorEventDefinition,
   MessageEventDefinition,
@@ -20,4 +21,3 @@ export class EndEvent extends Event {
   // TODO: Clarify if necessary and how to implement this.
   // public isInterrupting: boolean;
 }
-ss

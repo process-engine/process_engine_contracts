@@ -1,5 +1,6 @@
 import { BpmnType } from '../../../constants';
 import {Event} from './event';
+
 import {
   ErrorEventDefinition,
   SignalEventDefinition,

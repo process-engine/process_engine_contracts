@@ -6,6 +6,7 @@ import {
   SignalEventDefinition,
   TimerEventDefinition,
 } from '../event_definitions/index';
+
 export class StartEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.startEvent;
