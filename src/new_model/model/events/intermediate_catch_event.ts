@@ -1,13 +1,10 @@
 import {
-  ErrorEventDefinition,
   MessageEventDefinition,
   SignalEventDefinition,
-  TerminateEventDefinition,
   TimerEventDefinition,
 } from '../event_definitions/index';
 
-import { BpmnType } from '../../../constants';
-import {FlowNode} from './../base/index';
+import {BpmnType} from '../../../constants';
 import {Event} from './event';
 
 export class IntermediateCatchEvent extends Event {
@@ -15,7 +12,7 @@ export class IntermediateCatchEvent extends Event {
     return BpmnType.intermediateCatchEvent;
   }
 
-  public signalEventDefinition?: SignalEventDefinition;
   public messageEventDefinition?: MessageEventDefinition;
+  public signalEventDefinition?: SignalEventDefinition;
   public timerEventDefinition?: TimerEventDefinition;
 }

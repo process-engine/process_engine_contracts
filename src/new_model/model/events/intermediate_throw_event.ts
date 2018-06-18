@@ -3,7 +3,7 @@ import {
   SignalEventDefinition,
 } from '../event_definitions/index';
 
-import { BpmnType } from '../../../constants';
+import {BpmnType} from '../../../constants';
 import {FlowNode} from './../base/index';
 import {Event} from './event';
 

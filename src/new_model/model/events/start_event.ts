@@ -1,5 +1,5 @@
-import { BpmnType } from '../../../constants';
-import { Event } from './event';
+import {BpmnType} from '../../../constants';
+import {Event} from './event';
 
 import {
   MessageEventDefinition,
@@ -16,6 +16,4 @@ export class StartEvent extends Event {
   public timerEventDefinition?: TimerEventDefinition;
   public signalEventDefinition?: SignalEventDefinition;
 
-  // TODO: Clarify if necessary and how to implement this.
-  // public isInterrupting: boolean;
 }

@@ -1,12 +1,12 @@
-import { BpmnType } from '../../../constants';
+import {BpmnType} from '../../../constants';
 import {Event} from './event';
 
 import {
   ErrorEventDefinition,
+  MessageEventDefinition,
   SignalEventDefinition,
   TimerEventDefinition,
-  MessageEventDefinition
-} from '../../../../dist/new_model/model/event_definitions';
+} from '../event_definitions/index';
 
 export class BoundaryEvent extends Event {
   public get bpmnType(): BpmnType {
