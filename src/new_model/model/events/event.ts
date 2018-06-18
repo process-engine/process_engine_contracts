@@ -7,11 +7,10 @@ import {
 } from '../event_definitions/index';
 
 import {FlowNode} from './../base/index';
-import { Error } from "../types/error";
 
 export abstract class Event extends FlowNode {
   public name: string;
-  public errorEventDefinition?: Error;
+  public errorEventDefinition?: ErrorEventDefinition;
   public messageEventDefinition?: MessageEventDefinition;
   public signalEventDefinition?: SignalEventDefinition;
   public terminateEventDefinition?: TerminateEventDefinition;
