@@ -3,7 +3,7 @@ import { IProcessTokenResult } from './iprocess_token_result';
 import { ProcessToken } from './../types';
 
 export interface IProcessTokenFacade {
-  createProcessToken(flowNodeId: string, payload?: any): ProcessToken;
+  createProcessToken(payload?: any): ProcessToken;
   addResultForFlowNode(flowNodeId: string, result: any): Promise<void>;
   getProcessTokenFacadeForParallelBranch(): Promise<IProcessTokenFacade>;
   mergeTokenHistory(processTokenToMerge: IProcessTokenFacade): Promise<void>;
