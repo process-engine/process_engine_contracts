@@ -14,4 +14,8 @@ export class IntermediateCatchEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.intermediateCatchEvent;
   }
+
+  public signalEventDefinition?: SignalEventDefinition;
+  public messageEventDefinition?: MessageEventDefinition;
+  public timerEventDefinition?: TimerEventDefinition;
 }

@@ -1,9 +1,6 @@
 import {
-  ErrorEventDefinition,
   MessageEventDefinition,
   SignalEventDefinition,
-  TerminateEventDefinition,
-  TimerEventDefinition,
 } from '../event_definitions/index';
 
 import { BpmnType } from '../../../constants';
@@ -14,4 +11,7 @@ export class IntermediateThrowEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.intermediateThrowEvent;
   }
+
+  public messageEventDefinition?: MessageEventDefinition;
+  public signalEventDefinition?: SignalEventDefinition;
 }
