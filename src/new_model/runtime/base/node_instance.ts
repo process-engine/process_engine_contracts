@@ -1,9 +1,8 @@
-import { ProcessInstanceId } from '../types/index';
 
 export class NodeInstance {
   public id: string;
   public state: NodeInstanceState;
-  public processInstanceId: ProcessInstanceId;
+  public processInstanceId: string;
   public flowElementId: string;
 }
 

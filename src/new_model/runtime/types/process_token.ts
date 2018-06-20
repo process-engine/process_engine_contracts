@@ -1,4 +1,3 @@
-import { ProcessInstance } from './process_instance';
 import { IIdentity } from '@essential-projects/core_contracts';
 
 export class ProcessToken {
