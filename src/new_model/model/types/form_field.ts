@@ -4,4 +4,5 @@ export class FormField {
   public label: string;
   public type: string;
   public defaultValue: string;
+  public preferredControl?: string;
 }

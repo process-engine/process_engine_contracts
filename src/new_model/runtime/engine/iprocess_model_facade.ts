@@ -1,8 +1,9 @@
 import { Model } from './../../model';
 
 export interface IProcessModelFacade {
-  getStartEvent(): Model.Events.StartEvent;
+  getStartEvents(): Array<Model.Events.StartEvent>;
   getEndEvents(): Array<Model.Events.EndEvent>;
+  getUserTasks(): Array<Model.Activities.UserTask>;
   getFlowNodeById(flowNodeId: string): Model.Base.FlowNode;
   getIncomingSequenceFlowsFor(flowNodeId: string): Array<Model.Types.SequenceFlow>;
   getOutgoingSequenceFlowsFor(flowNodeId: string): Array<Model.Types.SequenceFlow>;
