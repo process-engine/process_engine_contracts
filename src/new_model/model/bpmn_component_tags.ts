@@ -5,6 +5,7 @@ export enum CommonElement {
   Diagram = 'bpmndi:BPMNDiagram',
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
+  Error = 'bpmn:error',
 }
 
 export enum XmlnsProperty {
