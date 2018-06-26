@@ -5,6 +5,7 @@ export enum CommonElement {
   Diagram = 'bpmndi:BPMNDiagram',
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
+  Error = 'bpmn:error',
 }
 
 export enum XmlnsProperty {
@@ -90,6 +91,8 @@ export enum CamundaProperty {
   DueDate = 'camunda:dueDate',
   ExecutionListener = 'camunda:executionListener',
   Expression = 'camunda:expression',
+  FormData = 'camunda:formData',
+  FormField = 'camunda:formField',
   FollowupDate = 'camunda:followUpDate',
   Properties = 'camunda:properties',
   Property = 'camunda:property',
