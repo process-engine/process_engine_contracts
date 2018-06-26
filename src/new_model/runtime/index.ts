@@ -7,3 +7,4 @@ export namespace Runtime {
 
 export * from './engine';
 export * from './storage';
+export * from './messages';
