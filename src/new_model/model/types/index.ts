@@ -2,6 +2,7 @@ export * from './association';
 export * from './collaboration';
 export * from './condition_expression';
 export * from './error';
+export * from './form_field';
 export * from './lane';
 export * from './lane_set';
 export * from './message';
