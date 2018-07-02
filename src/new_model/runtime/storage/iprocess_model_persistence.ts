@@ -1,4 +1,4 @@
-import { Definitions, Model, Runtime } from '../..';
+import {Definitions, Model} from '../..';
 
 export interface IProcessModelPersistence {
   persistProcessDefinitions(definitions: Definitions): Promise<void>;
