@@ -1,6 +1,6 @@
 import {FlowNodeInstance, ProcessToken} from './../types';
 
-export interface IFlowNodeInstancePersistence {
+export interface IFlowNodeInstancePersistenceRepository {
   persistOnEnter(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   persistOnExit(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   suspend(token: ProcessToken, flowNodeInstanceId: string, correlationHash?: string): Promise<FlowNodeInstance>;
