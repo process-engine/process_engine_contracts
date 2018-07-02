@@ -3,6 +3,6 @@ import { LaneSet } from './lane_set';
 
 export class Lane extends BaseElement {
   public name: string;
-  public flowNodeReferences: Array<FlowNode> = [];
+  public flowNodeReferences: Array<string> = [];
   public childLaneSet?: LaneSet;
 }
