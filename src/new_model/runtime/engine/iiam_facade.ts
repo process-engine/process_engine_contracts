@@ -1,3 +1,5 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 export interface IIamFacade {
-  checkIfUserCanAccessLane(laneId: string): Promise<boolean>;
+  checkIfUserCanAccessLane(identity: IIdentity, laneId: string): Promise<boolean>;
 }
