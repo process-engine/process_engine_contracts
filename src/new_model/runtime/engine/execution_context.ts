@@ -8,6 +8,11 @@ export class ExecutionContext {
     this._identity = identity;
   }
 
+  // For backwards compatibility: Required by the messagebus service.
+  public get encryptedToken(): string {
+    return this._identity.token;
+  }
+
   public get identity(): IIdentity {
     return this._identity;
   }
