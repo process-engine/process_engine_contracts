@@ -1,5 +1,6 @@
 export * from './iexecute_process_service';
 export * from './iexecution_context_facade';
+export * from './iexecution_context_facade_factory';
 export * from './iflow_node_handler_factory';
 export * from './iflow_node_handler';
 export * from './iiam_facade';
