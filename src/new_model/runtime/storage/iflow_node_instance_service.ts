@@ -2,7 +2,7 @@ import {FlowNodeInstance, ProcessToken} from './../types/index';
 
 import {IExecutionContextFacade} from '../engine/index';
 
-export interface IFlowNodeInstancePersistenceService {
+export interface IFlowNodeInstanceService {
   persistOnEnter(executionContextFacade: IExecutionContextFacade,
                  token: ProcessToken,
                  flowNodeId: string,
