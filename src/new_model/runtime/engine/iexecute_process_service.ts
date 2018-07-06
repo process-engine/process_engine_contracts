@@ -1,21 +1,21 @@
-import {ExecutionContext} from '@essential-projects/core_contracts';
 import {Model} from './../../model';
+import {IExecutionContextFacade} from './iexecution_context_facade';
 
 export interface IExecuteProcessService {
-  start(context: ExecutionContext,
+  start(context: IExecutionContextFacade,
         processModel: Model.Types.Process,
         startEventId: string,
         correlationId: string,
         initialPayload?: any,
         caller?: string): Promise<any>;
-  startAndAwaitSpecificEndEvent(context: ExecutionContext,
+  startAndAwaitSpecificEndEvent(context: IExecutionContextFacade,
                                 processModel: Model.Types.Process,
                                 startEventId: string,
                                 correlationId: string,
                                 endEventId: string,
                                 initialPayload?: any,
                                 caller?: string): Promise<any>;
-  startAndAwaitEndEvent(context: ExecutionContext,
+  startAndAwaitEndEvent(context: IExecutionContextFacade,
                         processModel: Model.Types.Process,
                         startEventId: string,
                         correlationId: string,

@@ -1,2 +1,4 @@
-export * from './iflow_node_instance_persistence';
-export * from './iprocess_model_persistence';
+export * from './iflow_node_instance_repository';
+export * from './iflow_node_instance_service';
+export * from './iprocess_model_repository';
+export * from './iprocess_model_service';

@@ -1,6 +1,8 @@
-import { Model } from './../../model';
-import { IProcessTokenResult } from './iprocess_token_result';
-import { ProcessToken } from './../types';
+import {Model} from './../../model';
+
+import {ProcessToken} from './../types';
+
+import {IProcessTokenResult} from './iprocess_token_result';
 
 export interface IProcessTokenFacade {
   createProcessToken(payload?: any): ProcessToken;
