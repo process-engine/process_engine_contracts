@@ -1,6 +1,7 @@
 import {Model} from './../../model';
 
 export interface IProcessModelFacade {
+  getIsExecutable(): boolean;
   getStartEvents(): Array<Model.Events.StartEvent>;
   getStartEventById(startEventId: string): Model.Events.StartEvent;
   getEndEvents(): Array<Model.Events.EndEvent>;

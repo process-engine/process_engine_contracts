@@ -1,5 +1,6 @@
-import { IProcessTokenFacade } from '../index';
-import { Model, Runtime } from './../../../index';
+import {IProcessTokenFacade} from '../index';
+
+import {Model, Runtime} from './../../../index';
 
 export class NextFlowNodeInfo {
 
