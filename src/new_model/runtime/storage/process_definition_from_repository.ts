@@ -1,4 +1,4 @@
 export class ProcessDefinitionFromRepository {
-  public id: string;
+  public name: string;
   public xml: string;
 }
