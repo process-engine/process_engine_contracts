@@ -4,4 +4,5 @@ export class FlowNodeInstance {
   public id: string;
   public flowNodeId: string;
   public token: ProcessToken;
+  public isSuspended: boolean;
 }
