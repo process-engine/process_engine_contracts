@@ -5,4 +5,5 @@ export interface ITimerRepository {
   getById(id: string): Promise<Timer>;
   create(timerToStore: Timer): Promise<string>;
   removeById(id: string): Promise<void>;
+  setLastElapsedById(id: string, lastElapsed: Date): Promise<void>;
 }
