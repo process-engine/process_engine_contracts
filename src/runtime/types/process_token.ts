@@ -1,4 +1,4 @@
-import {IIdentity} from '@essential-projects/core_contracts';
+import {IIdentity} from '@essential-projects/iam_contracts';
 
 export class ProcessToken {
   // header
