@@ -1,6 +1,6 @@
 import {Timer} from '../types/index';
 
-export interface ITimingRepository {
+export interface ITimerRepository {
   getAll(): Promise<Array<Timer>>;
   getById(id: string): Promise<Timer>;
   create(): Promise<void>;
