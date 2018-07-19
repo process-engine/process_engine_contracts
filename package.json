@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "13.0.1",
+  "version": "14.0.0",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -15,12 +15,7 @@
     "Simon Reymann <simon.reymann@quantusflow.com>"
   ],
   "dependencies": {
-    "@essential-projects/core_contracts": "^2.0.0",
-    "@essential-projects/data_model_contracts": "^3.0.0",
-    "@essential-projects/event_aggregator_contracts": "^2.0.0",
-    "@essential-projects/feature_contracts": "^2.0.0",
-    "@essential-projects/iam_contracts": "^3.0.0",
-    "@essential-projects/messagebus_contracts": "^2.0.0"
+    "@essential-projects/iam_contracts": "^3.0.0"
   },
   "devDependencies": {
     "@essential-projects/tslint-config": "^1.0.0",
@@ -28,6 +23,7 @@
     "gulp": "^3.9.1",
     "gulptraum": "^2.2.4",
     "gulptraum-typescript": "^1.3.9",
+    "moment": "^2.22.2",
     "tsconfig": "^7.0.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
