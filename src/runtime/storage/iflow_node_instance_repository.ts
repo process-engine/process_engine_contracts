@@ -1,10 +1,11 @@
-import {FlowNodeInstance, ProcessToken} from './../types';
+import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types';
 
 export interface IFlowNodeInstanceRepository {
   persistOnEnter(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   persistOnExit(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   suspend(token: ProcessToken, flowNodeInstanceId: string, correlationHash?: string): Promise<FlowNodeInstance>;
   resume(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
+  queryByState(state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
   queryByCorrelation(correlationId: string): Promise<Array<FlowNodeInstance>>;
   queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
