@@ -6,6 +6,5 @@ export namespace Runtime {
 }
 
 export * from './engine';
-export * from './iimport_process_service';
 export * from './storage';
 export * from './messages';
