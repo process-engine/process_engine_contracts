@@ -1,6 +1,7 @@
 export * from './association';
 export * from './collaboration';
 export * from './condition_expression';
+export * from './enum_value';
 export * from './error';
 export * from './form_field';
 export * from './lane';
