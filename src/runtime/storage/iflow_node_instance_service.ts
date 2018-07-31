@@ -11,7 +11,13 @@ export interface IFlowNodeInstanceService {
                 token: ProcessToken,
                 flowNodeId: string,
                 flowNodeInstanceId: string,
-               ): Promise<FlowNodeInstance>;
+                ): Promise<FlowNodeInstance>;
+  persistOnError(executionContextFacade: IExecutionContextFacade,
+                 token: ProcessToken,
+                 flowNodeId: string,
+                 flowNodeInstanceId: string,
+                 error: Error,
+              ): Promise<FlowNodeInstance>;
   suspend(executionContextFacade: IExecutionContextFacade,
           token: ProcessToken,
           flowNodeInstanceId: string,
