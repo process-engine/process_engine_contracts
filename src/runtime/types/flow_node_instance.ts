@@ -7,4 +7,5 @@ export class FlowNodeInstance {
   public token: ProcessToken;
   public state: FlowNodeInstanceState = FlowNodeInstanceState.running;
   public isSuspended: boolean;
+  public error?: string;
 }
