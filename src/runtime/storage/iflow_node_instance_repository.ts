@@ -3,6 +3,7 @@ import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types'
 export interface IFlowNodeInstanceRepository {
   persistOnEnter(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   persistOnExit(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
+  persistOnError(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string, error: Error): Promise<FlowNodeInstance>;
   suspend(token: ProcessToken, flowNodeInstanceId: string, correlationHash?: string): Promise<FlowNodeInstance>;
   resume(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   queryByState(state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
