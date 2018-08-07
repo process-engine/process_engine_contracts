@@ -6,7 +6,7 @@ export class UserTask extends Task {
   public get bpmnType(): BpmnType {
     return BpmnType.userTask;
   }
-  public preferedControl?: string;
+  public preferredControl?: string;
   public assignee: string;
   public candidateUsers: string;
   public candidateGroups: string;

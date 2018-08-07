@@ -6,5 +6,5 @@ export class FormField {
   public type: string;
   public defaultValue: string;
   public enumValues?: Array<EnumValue>;
-  public preferedControl?: string;
+  public preferredControl?: string;
 }
