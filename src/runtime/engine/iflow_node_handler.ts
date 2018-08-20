@@ -7,6 +7,7 @@ import {
 } from './index';
 
 export interface IFlowNodeHandler<TFlowNode extends Model.Base.FlowNode> {
+  flowNodeInstanceId: string;
   execute(flowNode: TFlowNode,
           token: Runtime.Types.ProcessToken,
           processTokenFacade: IProcessTokenFacade,
