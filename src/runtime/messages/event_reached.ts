@@ -12,7 +12,7 @@ export abstract class EventReachedMessage {
   }
 
   public get eventId(): string {
-    return this.eventId;
+    return this._eventId;
   }
 
   public get tokenPayload(): any {
