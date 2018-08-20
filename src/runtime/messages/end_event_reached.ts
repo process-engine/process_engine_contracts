@@ -1,10 +1,11 @@
-export class EndEventReachedMessage {
+import {EventMessageType} from './event_message_types';
+import {EventReachedMessage} from './event_reached';
 
-  public endEventId: string;
-  public tokenPayload: string;
+export class EndEventReachedMessage extends EventReachedMessage {
 
   constructor(endEventId: string, tokenPayload: any) {
-    this.endEventId = endEventId;
-    this.tokenPayload = tokenPayload;
+    super(endEventId, tokenPayload);
+
+    this._messageType = EventMessageType.end;
   }
 }
