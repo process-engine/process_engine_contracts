@@ -7,6 +7,7 @@ export interface IFlowNodeInstanceService {
   persistOnTerminate(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
   suspend(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
   resume(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  queryByInstanceId(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   queryByCorrelation(correlationId: string): Promise<Array<FlowNodeInstance>>;
   queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
