@@ -1,6 +1,7 @@
 export enum FlowNodeInstanceState {
-  running = 1,
-  finished = 2,
-  terminated = 3,
-  error = 4,
+  running = 'running',
+  suspended = 'suspended',
+  finished = 'finished',
+  terminated = 'terminated',
+  error = 'error',
 }
