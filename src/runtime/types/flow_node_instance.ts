@@ -4,7 +4,6 @@ import {ProcessToken} from './process_token';
 export class FlowNodeInstance {
   public id: string;
   public flowNodeId: string;
-  public previousFlowNodeInstanceId: string;
   public token: ProcessToken;
   public state: FlowNodeInstanceState = FlowNodeInstanceState.running;
   public isSuspended: boolean;
