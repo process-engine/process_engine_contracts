@@ -7,9 +7,9 @@ import {
 } from './index';
 
 export interface IFlowNodeHandler<TFlowNode extends Model.Base.FlowNode> {
-  execute(flowNode: NextFlowNodeInfo<TFlowNode>,
+  execute(flowNode: TFlowNode,
           token: Runtime.Types.ProcessToken,
           processTokenFacade: IProcessTokenFacade,
           processModelFacade: IProcessModelFacade,
-          executionContextFacade: IExecutionContextFacade): Promise<NextFlowNodeInfo<Model.Base.FlowNode>>;
+          executionContextFacade: IExecutionContextFacade): Promise<NextFlowNodeInfo>;
 }
