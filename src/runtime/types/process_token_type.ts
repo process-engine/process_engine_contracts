@@ -4,6 +4,6 @@
 export enum ProcessTokenType {
   onEnter = 'onEnter',
   onExit = 'onExit',
-  onSuspend = 'onEnter',
-  onResume = 'onExit',
+  onSuspend = 'onSuspend',
+  onResume = 'onResume',
 }
