@@ -15,5 +15,4 @@ export interface IFlowNodeInstanceRepository {
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
   querySuspendedByCorrelation(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
   queryProcessTokensByProcessInstance(processInstanceId: string): Promise<Array<ProcessToken>>;
-  getFlowNodeInstanceById(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
 }
