@@ -13,4 +13,5 @@ export interface IProcessTokenFacade {
   getOldTokenFormat(): Promise<any>;
   evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): Promise<void>;
   evaluateMapperForFlowNode(flowNode: Model.Base.FlowNode): Promise<void>;
+  importResults(processTokenResults: Array<IProcessTokenResult>): Promise<void>;
 }

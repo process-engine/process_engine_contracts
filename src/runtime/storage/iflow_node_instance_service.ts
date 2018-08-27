@@ -1,36 +1,16 @@
-import {IExecutionContextFacade} from '../engine/index';
 import {FlowNodeInstance, ProcessToken} from '../types/index';
 
 export interface IFlowNodeInstanceService {
-  persistOnEnter(executionContextFacade: IExecutionContextFacade,
-                 token: ProcessToken,
-                 flowNodeId: string,
-                 flowNodeInstanceId: string,
-                ): Promise<FlowNodeInstance>;
-  persistOnExit(executionContextFacade: IExecutionContextFacade,
-                token: ProcessToken,
-                flowNodeId: string,
-                flowNodeInstanceId: string,
-               ): Promise<FlowNodeInstance>;
-  persistOnError(executionContextFacade: IExecutionContextFacade,
-                 token: ProcessToken,
-                 flowNodeId: string,
-                 flowNodeInstanceId: string,
-                 error: Error,
-                ): Promise<FlowNodeInstance>;
-  persistOnTerminate(executionContextFacade: IExecutionContextFacade,
-                     token: ProcessToken,
-                     flowNodeId: string,
-                     flowNodeInstanceId: string,
-                    ): Promise<FlowNodeInstance>;
-  suspend(executionContextFacade: IExecutionContextFacade,
-          token: ProcessToken,
-          flowNodeInstanceId: string,
-          correlationHash?: string,
-         ): Promise<FlowNodeInstance>;
-  resume(executionContextFacade: IExecutionContextFacade, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
-  queryByCorrelation(executionContextFacade: IExecutionContextFacade, correlationId: string): Promise<Array<FlowNodeInstance>>;
-  queryByProcessModel(executionContextFacade: IExecutionContextFacade, processModelId: string): Promise<Array<FlowNodeInstance>>;
-  querySuspendedByProcessModel(executionContextFacade: IExecutionContextFacade, processModelId: string): Promise<Array<FlowNodeInstance>>;
-  querySuspendedByCorrelation(executionContextFacade: IExecutionContextFacade, processInstanceId: string): Promise<Array<FlowNodeInstance>>;
+  persistOnEnter(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnExit(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnError(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken, error: Error): Promise<FlowNodeInstance>;
+  persistOnTerminate(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  suspend(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  resume(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  queryByInstanceId(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
+  queryByCorrelation(correlationId: string): Promise<Array<FlowNodeInstance>>;
+  queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
+  querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
+  querySuspendedByCorrelation(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
+  queryProcessTokensByProcessInstanceId(processInstanceId: string): Promise<Array<ProcessToken>>;
 }
