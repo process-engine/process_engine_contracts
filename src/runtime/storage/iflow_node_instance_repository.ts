@@ -1,17 +1,18 @@
 import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types';
 
 export interface IFlowNodeInstanceRepository {
-  persistOnEnter(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
-  persistOnExit(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
-  persistOnError(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string, error: Error): Promise<FlowNodeInstance>;
-  persistOnTerminate(token: ProcessToken, flowNodeId: string, flowNodeInstanceId: string): Promise<FlowNodeInstance>;
-  suspend(token: ProcessToken, flowNodeInstanceId: string, correlationHash?: string): Promise<FlowNodeInstance>;
-  resume(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
+  persistOnEnter(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnExit(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnError(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken, error: Error): Promise<FlowNodeInstance>;
+  persistOnTerminate(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  suspend(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  resume(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  queryByFlowNodeId(flowNodeId: string): Promise<FlowNodeInstance>;
+  queryByInstanceId(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
   queryByState(state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
   queryByCorrelation(correlationId: string): Promise<Array<FlowNodeInstance>>;
   queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
   querySuspendedByCorrelation(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
-  queryProcessTokensByProcessInstance(processInstanceId: string): Promise<Array<ProcessToken>>;
-  getFlowNodeInstanceById(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
+  queryProcessTokensByProcessInstanceId(processInstanceId: string): Promise<Array<ProcessToken>>;
 }
