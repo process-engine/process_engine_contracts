@@ -1,5 +1,5 @@
 import {Model} from '../..';
-import {ProcessDefinitionRaw} from './process_definition_raw';
+import {ProcessDefinitionRaw} from '../types';
 
 import {IExecutionContextFacade} from '../engine/index';
 
