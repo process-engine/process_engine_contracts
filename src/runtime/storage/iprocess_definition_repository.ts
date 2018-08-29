@@ -1,8 +1,8 @@
-import {ProcessDefinitionRaw} from '../types';
+import {ProcessDefinitionFromRepository} from '../types';
 
 export interface IProcessDefinitionRepository {
   persistProcessDefinitions(name: string, xml: string, overwriteExisting?: boolean): Promise<void>;
-  getProcessDefinitions(): Promise<Array<ProcessDefinitionRaw>>;
-  getProcessDefinitionByName(definitionId: string): Promise<ProcessDefinitionRaw>;
-  getByHash(hash: string): Promise<ProcessDefinitionRaw>;
+  getProcessDefinitions(): Promise<Array<ProcessDefinitionFromRepository>>;
+  getProcessDefinitionByName(definitionId: string): Promise<ProcessDefinitionFromRepository>;
+  getByHash(hash: string): Promise<ProcessDefinitionFromRepository>;
 }
