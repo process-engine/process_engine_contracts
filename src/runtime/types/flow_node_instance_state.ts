@@ -1,5 +1,5 @@
 /**
- * Lists the various states that a flow node instance can have.
+ * Lists the various states that a FlowNodeInstance can be in.
  */
 export enum FlowNodeInstanceState {
   running = 'running',

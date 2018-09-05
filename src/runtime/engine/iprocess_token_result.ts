@@ -1,4 +1,7 @@
 
+/**
+ * Contains information about a FlowNodeInstances result.
+ */
 export interface IProcessTokenResult {
   // TODO: hash ermitteln
   // correlationId: string;

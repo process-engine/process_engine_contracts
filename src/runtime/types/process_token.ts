@@ -4,7 +4,7 @@ import {ProcessTokenType} from './process_token_type';
 /**
  * The process token contains information for each FlowNodeInstance that was
  * executed during a process.
- * Each FlowNodeInstance will produce its own tokens. No token is ever shared.
+ * Each FlowNodeInstance will produce its own tokens.
  */
 export class ProcessToken {
   public processInstanceId: string;
@@ -13,8 +13,20 @@ export class ProcessToken {
   public flowNodeInstanceId: string;
   public identity: IIdentity;
   public createdAt: Date;
-  public caller: string; // empty if this started the correlation
+  /**
+   * If the tokeb belongs to a Subprocess, this will contain the ID of the
+   * parent process.
+   *
+   * Will be empty, if the process started the correlation.
+   */
+  public caller: string;
+  /**
+   * Determines when the token was recorded.
+   * Can bei either onEnter, onExit, onSuspend, or onResume.
+   */
   public type: ProcessTokenType;
-  // payload
+  /**
+   * Contains the ProcessToken's values.
+   */
   public payload: any;
 }
