@@ -2,6 +2,7 @@
 // this use case before
 //
 // A reference to a structure might be necessary for serialization purposes
+// TODO: Not used anywhere - Do we still need this?
 export class Structure {
   public structureId: string;
   // this is defined as an XSD Complex Type

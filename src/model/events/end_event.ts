@@ -8,6 +8,13 @@ import {
   TerminateEventDefinition,
 } from '../event_definitions/index';
 
+/**
+ * Describes a BPMN EndEvent.
+ * These are used to finish a process.
+ *
+ * Depending on the type of EndEvent used, the process will either be finished
+ * with a success message or an error.
+ */
 export class EndEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.endEvent;

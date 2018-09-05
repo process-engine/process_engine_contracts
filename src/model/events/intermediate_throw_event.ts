@@ -6,11 +6,24 @@ import {
 import {BpmnType} from '../../constants';
 import {Event} from './event';
 
+/**
+ * Describes a BPMN IntermediateThrowEvent.
+ *
+ * These are used to raise events during ProcessModel execution.
+ */
 export class IntermediateThrowEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.intermediateThrowEvent;
   }
 
+  /**
+   * When using a IntermediateMessageThrowEvent, this will contain the message
+   * to throw.
+   */
   public messageEventDefinition?: MessageEventDefinition;
+  /**
+   * When using a IntermediateMessageThrowEvent, this will contain the signal
+   * to throw.
+   */
   public signalEventDefinition?: SignalEventDefinition;
 }
