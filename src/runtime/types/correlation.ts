@@ -16,4 +16,7 @@ export class Correlation {
    * The current state of the correlation. This is based on the state of the currently active flow node instance.
    */
   public state: FlowNodeInstanceState;
+  public processModelHash?: string;
+  public processModelXml?: string;
+  public createdAt?: Date;
 }
