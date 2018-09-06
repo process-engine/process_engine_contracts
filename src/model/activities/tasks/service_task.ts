@@ -6,7 +6,7 @@ import {Task} from './task';
 /**
  * Describes a BPMN ServiceTask.
  * A service task is used to call either a function from a specific class,
- * or for performing Web Requests.
+ * or for performing web requests.
  */
 export class ServiceTask extends Task {
   public get bpmnType(): BpmnType {

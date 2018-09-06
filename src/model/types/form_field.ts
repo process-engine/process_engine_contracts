@@ -32,7 +32,7 @@ export class FormField {
    */
   public enumValues?: Array<EnumValue>;
   /**
-   * Determines the preferred type of control to use with theis FormField.
+   * Determines the preferred type of control to use with the FormField.
    * For instance, when using string, this will most likely be 'TextBox', or
    * something similar.
    */

@@ -1,6 +1,6 @@
 
 /**
- * Contains a list of all known bpmn types and maps them to their corresponding xml tag.
+ * Contains a list of all known BPMN types and maps them to their corresponding XML tag.
  */
 export enum BpmnType {
   userTask = 'bpmn:UserTask',

@@ -4,7 +4,7 @@ import {FlowNodeInstance, ProcessToken} from '../types/index';
  * The Service used to access the FlowNodeInstance repository.
  *
  * This is the key repository for handling ProcessInstances, for this repository
- * contains any and all Information pertaining to the execution of all the
+ * contains any and all information pertaining to the execution of all the
  * FlowNodes that belong to the ProcessInstance.
  */
 export interface IFlowNodeInstanceService {
@@ -74,8 +74,8 @@ export interface IFlowNodeInstanceService {
   /**
    * Resumes executing a suspended FlowNodeInstance.
    *
-   * This only works on FlowNodeInstances, which have previously been placed
-   * in a 'suspended' state.
+   * This only works on FlowNodeInstances, which have previously been put
+   * into a 'suspended' state.
    *
    * @async
    * @param   flowNodeId         The ID of the FlowNode to resume.

@@ -1,7 +1,7 @@
 import {EventMessageType} from './event_message_types';
 
 /**
- * The base class for all event based messages that can be send/received
+ * The base class for all event based messages that can be sent/received
  * through the internal EventAggregator.
  */
 export abstract class EventReachedMessage {

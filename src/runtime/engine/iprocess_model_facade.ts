@@ -22,7 +22,7 @@ export interface IProcessModelFacade {
   getStartEvents(): Array<Model.Events.StartEvent>;
 
   /**
-   * Gets all the ProcessModels StartEvents.
+   * Gets a StartEvent by its ID.
    *
    * @param startEventId The ID of the StartEvent to get.
    * @returns            The retrieved StartEvent.

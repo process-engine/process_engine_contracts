@@ -10,7 +10,7 @@ export interface IModelParser {
    * the internal ProcessModel type.
    *
    * @async
-   * @param   bpmnXml The raw xml code to parse.
+   * @param   bpmnXml The raw XML code to parse.
    * @returns         A fully parsed ProcessModel.
    */
   parseXmlToObjectModel(bpmnXml: string): Promise<Definitions> ;

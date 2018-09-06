@@ -15,7 +15,7 @@ export interface IProcessModelService {
    * @param executionContextFacade Contains the requesting users identity.
    * @param name                   The name with which to persist the
    *                               ProcessDefinition.
-   * @param xml                    The ProcessDefinitions raw xml code.
+   * @param xml                    The ProcessDefinitions raw XML code.
    * @param overwriteExisting      If true, any existing ProcessDefinition with
    *                               the same name will be overwritten.
    * @throws                       403, if the User is forbidden to persist

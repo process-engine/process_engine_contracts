@@ -34,7 +34,7 @@ export enum CallActivityType {
 }
 
 /**
- * Contains all possible types of binding that can be used with a CallActvity.
+ * Contains all possible types of binding that can be used with a CallActivity.
  */
 export enum CallActivityBindingType {
   latest = 0,
@@ -43,7 +43,7 @@ export enum CallActivityBindingType {
 }
 
 /**
- * Determines the type of mapping used by the CallActvity, when passing on its
+ * Determines the type of mapping used by the CallActivity, when passing on its
  * parameters to the called process.
  */
 export enum CallActivityDelegateVariableMapping {

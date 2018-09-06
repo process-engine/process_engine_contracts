@@ -4,7 +4,7 @@ import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types'
  * Accesses the FlowNodeInstance database.
  *
  * This is the key database for handling ProcessInstances, for it
- * contains any and all Information pertaining to the execution of all the
+ * contains any and all information pertaining to the execution of all the
  * FlowNodes that belong to the respective ProcessInstance.
  */
 export interface IFlowNodeInstanceRepository {
@@ -74,8 +74,8 @@ export interface IFlowNodeInstanceRepository {
   /**
    * Resumes executing a suspended FlowNodeInstance.
    *
-   * This only works on FlowNodeInstances, which have previously been placed
-   * in a 'suspended' state.
+   * This only works on FlowNodeInstances, which have previously been put
+   * into a 'suspended' state.
    *
    * @async
    * @param   flowNodeId         The ID of the FlowNode to resume.

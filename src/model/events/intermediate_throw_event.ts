@@ -17,12 +17,12 @@ export class IntermediateThrowEvent extends Event {
   }
 
   /**
-   * When using a IntermediateMessageThrowEvent, this will contain the message
+   * When using an IntermediateMessageThrowEvent, this will contain the message
    * to throw.
    */
   public messageEventDefinition?: MessageEventDefinition;
   /**
-   * When using a IntermediateMessageThrowEvent, this will contain the signal
+   * When using an IntermediateMessageThrowEvent, this will contain the signal
    * to throw.
    */
   public signalEventDefinition?: SignalEventDefinition;

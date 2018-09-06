@@ -2,7 +2,7 @@ import {BpmnType} from '../../constants';
 import {Gateway} from './gateway';
 
 /**
- * Describes an event based gateway.
+ * Describes an EventBasedGateway.
  *
  * Currently not evaluated during runtime.
  */

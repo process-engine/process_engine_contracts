@@ -14,7 +14,7 @@ export class ProcessToken {
   public identity: IIdentity;
   public createdAt: Date;
   /**
-   * If the tokeb belongs to a Subprocess, this will contain the ID of the
+   * If the token belongs to a Subprocess, this will contain the ID of the
    * parent process.
    *
    * Will be empty, if the process started the correlation.

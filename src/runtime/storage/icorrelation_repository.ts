@@ -4,8 +4,8 @@ import {CorrelationFromRepository} from '../types/index';
  * The repository for accessing and manipulating correlations.
  *
  * Correlations combine a correlation ID with a ProcessModel Hash.
- * This allows for implementing versioning of ProcessModels, aswell
- * as keeping record on how a ProcessModel looked at the time a certain
+ * This allows for implementing versioning of ProcessModels, as well
+ * as keeping track on how a ProcessModel looked at the time a certain
  * Correlation was run.
  */
 export interface ICorrelationRepository {

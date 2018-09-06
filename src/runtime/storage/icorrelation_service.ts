@@ -5,7 +5,7 @@ import {Correlation} from '../types/index';
  *
  * Correlations combine a correlation ID with a ProcessModel Hash.
  * This allows for implementing versioning of ProcessModels, aswell
- * as keeping record on how a ProcessModel looked at the time a certain
+ * as keeping track on how a ProcessModel looked at the time a certain
  * Correlation was run.
  */
 export interface ICorrelationService {

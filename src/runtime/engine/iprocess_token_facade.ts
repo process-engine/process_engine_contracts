@@ -22,7 +22,7 @@ export interface IProcessTokenFacade {
   createProcessToken(payload?: any): ProcessToken;
 
   /**
-   * Adds the results of a given FlowNode to the ProcessToken..
+   * Adds the results of a given FlowNode to the ProcessToken.
    *
    * @async
    * @param flowNodeId The ID of the FlowNode for which to add a result.
@@ -31,7 +31,7 @@ export interface IProcessTokenFacade {
   addResultForFlowNode(flowNodeId: string, result: any): Promise<void>;
 
   /**
-   * Creates a Copy of this ProcessTokenFacade, including all currently
+   * Creates a copy of this ProcessTokenFacade, including all currently
    * stored values.
    *
    * This is used to allow for the TokenHistory to be passed across multiple

@@ -21,17 +21,17 @@ export class IntermediateCatchEvent extends Event {
   }
 
   /**
-   * When using a IntermediateMessageCatchEvent, this will contain the message
+   * When using an IntermediateMessageCatchEvent, this will contain the message
    * to wait for.
    */
   public messageEventDefinition?: MessageEventDefinition;
   /**
-   * When using a IntermediateMessageCatchEvent, this will contain the signal
+   * When using an IntermediateMessageCatchEvent, this will contain the signal
    * to wait for.
    */
   public signalEventDefinition?: SignalEventDefinition;
   /**
-   * When using a IntermediateTimerCatchEvent, this will contain the definiton
+   * When using an IntermediateTimerCatchEvent, this will contain the definiton
    * of the timer that is used to pause the execution.
    */
   public timerEventDefinition?: TimerEventDefinition;

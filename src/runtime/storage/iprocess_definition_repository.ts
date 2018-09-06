@@ -11,7 +11,7 @@ export interface IProcessDefinitionRepository {
    * @async
    * @param name              The name with which to persist the
    *                          ProcessDefinition.
-   * @param xml               The ProcessDefinitions raw xml code.
+   * @param xml               The ProcessDefinitions raw XML code.
    * @param overwriteExisting If true, any existing ProcessDefinition with
    *                          the same name will be overwritten.
    * @throws                  409, if a ProcessDefinition with the name already
