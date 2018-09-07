@@ -1,4 +1,3 @@
-
 /**
  * This contains the raw BPMN process, as it was parsed by
  * xml2json.

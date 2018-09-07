@@ -1,4 +1,3 @@
-
 /**
  * Contains a list of all known BPMN types and maps them to their corresponding XML tag.
  */

@@ -1,4 +1,3 @@
-
 /**
  * Contains information about a FlowNodeInstances result.
  */

@@ -1,4 +1,3 @@
-
 /**
  * The base class for all invocation types.
  */
