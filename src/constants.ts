@@ -1,3 +1,6 @@
+/**
+ * Contains a list of all known BPMN types and maps them to their corresponding XML tag.
+ */
 export enum BpmnType {
   userTask = 'bpmn:UserTask',
   exclusiveGateway = 'bpmn:ExclusiveGateway',
@@ -17,10 +20,20 @@ export enum BpmnType {
   eventBasedGateway = 'bpmn:EventBasedGateway',
 }
 
+/**
+ * Contains a list of possible timer definition types.
+ */
 export enum TimerDefinitionType {
+  /**
+   * The timer will run once and expire at the given date and time.
+   */
   date = 0,
+  /**
+   * The timer will run once and expire after a given amount of time.
+   */
   duration = 1,
+  /**
+   * The timer will run repeatedly in the given interval.
+   */
   cycle = 2,
 }
-
-export type EntityTypeName = string;

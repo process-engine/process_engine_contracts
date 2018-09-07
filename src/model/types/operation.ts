@@ -1,6 +1,7 @@
-import { BaseElement } from '../base/index';
-import { ErrorReference, MessageReference } from '../type_references/index';
+import {BaseElement} from '../base/index';
+import {ErrorReference, MessageReference} from '../type_references/index';
 
+// TODO: Not used anywhere - Do we still need this?
 export class Operation extends BaseElement {
   public name: string;
   public inMessageReference: MessageReference;

@@ -1,7 +1,17 @@
-import { FlowNode } from '../base/index';
+import {FlowNode} from '../base/index';
 
+/**
+ * The base class for gateways.
+ */
 export abstract class Gateway extends FlowNode {
 
+  /**
+   * Determines the direction of the gateway.
+   *
+   * If no incoming and/or no outgoing SequenceFlows are associated with the
+   * gateway, the direction will be 'unspecified', effectively rendering this
+   * gateway non-executable.
+   */
   public get gatewayDirection(): GatewayDirection {
     if (!this.incoming || !this.outgoing) {
       return GatewayDirection.Unspecified;
@@ -15,9 +25,14 @@ export abstract class Gateway extends FlowNode {
   }
 }
 
+/**
+ * Contains all possible types of Gateway direction.
+ *
+ * Currently only Converging and Diverging are supported.
+ * */
 export enum GatewayDirection {
-  Unspecified = 0,
-  Converging = 1,
-  Diverging = 2,
-  Mixed = 3,
+  Unspecified = 'unspecified',
+  Converging = 'converging',
+  Diverging = 'diverging',
+  Mixed = 'mixed',
 }

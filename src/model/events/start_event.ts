@@ -7,6 +7,9 @@ import {
   TimerEventDefinition,
 } from '../event_definitions/index';
 
+/**
+ * Describes a BPMN StartEvent.
+ */
 export class StartEvent extends Event {
   public get bpmnType(): BpmnType {
     return BpmnType.startEvent;

@@ -3,4 +3,3 @@ export * from './runtime/index';
 
 export * from './constants';
 export * from './ierror_deserializer';
-export * from './shared';

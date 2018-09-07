@@ -1,4 +1,7 @@
-// TODO: Expand these enums as needed
+/**
+ * Contains all BPMN tags which are commonly used with all processes.
+ * These tags are usually found at the root level of the process.
+ */
 export enum CommonElement {
   Collaboration = 'bpmn:collaboration',
   Definitions = 'bpmn:definitions',
@@ -8,6 +11,9 @@ export enum CommonElement {
   Error = 'bpmn:error',
 }
 
+/**
+ * Contains all XML tags contained within the "xmlns" header tag.
+ */
 export enum XmlnsProperty {
   bpmn = 'xmlns:bpmn',
   bpmndi = 'xmlns:bpmndi',
@@ -17,16 +23,25 @@ export enum XmlnsProperty {
   xsi = 'xmlns:xsi',
 }
 
+/**
+ * Contains all tags associated with lanes and lane sets.
+ */
 export enum Lane {
   Lane = 'bpmn:lane',
   LaneSet = 'bpmn:laneSet',
 }
 
+/**
+ * Contains all tags that a lane can have.
+ */
 export enum LaneProperty {
   ChildLaneSet = 'bpmn:childLaneSet',
   FlowNodeRef = 'bpmn:flowNodeRef',
 }
 
+/**
+ * Contains the tags for all known gateway types.
+ */
 export enum GatewayElement {
   ComplexGateway = 'bpmn:complexGateway',
   EventBasedGateway = 'bpmn:eventBasedGateway',
@@ -35,6 +50,9 @@ export enum GatewayElement {
   ParallelGateway = 'bpmn:parallelGateway',
 }
 
+/**
+ * Contains the tags for all known event types.
+ */
 export enum EventElement {
   StartEvent = 'bpmn:startEvent',
   EndEvent = 'bpmn:endEvent',
@@ -43,6 +61,9 @@ export enum EventElement {
   IntermediateThrowEvent = 'bpmn:intermediateThrowEvent',
 }
 
+/**
+ * Contains the tags for all known task types.
+ */
 export enum TaskElement {
   CallActivity = 'bpmn:callActivity',
   SubProcess = 'bpmn:subProcess',
@@ -56,12 +77,9 @@ export enum TaskElement {
   WebServiceInvocation = 'bpmn:webServiceInvocation',
 }
 
-export enum OtherElements {
-  Association = 'bpmn:association',
-  SequenceFlow = 'bpmn:sequenceFlow',
-  TextAnnotation = 'bpmn:textAnnotation',
-}
-
+/**
+ * Contains all BPMN tags that a BPMN element can have.
+ */
 export enum FlowElementProperty {
   ErrorEventDefinition = 'bpmn:errorEventDefinition',
   MessageEventDefinition = 'bpmn:messageEventDefinition',
@@ -81,6 +99,9 @@ export enum FlowElementProperty {
   XsiType = 'xsi:type',
 }
 
+/**
+ * Contains all Camunda tags that a BPMN element can have.
+ */
 export enum CamundaProperty {
   CalledElementBinding = 'camunda:calledElementBinding',
   CalledElementVersion = 'camunda:calledElementVersion',
@@ -100,4 +121,13 @@ export enum CamundaProperty {
   Value = 'camunda:value',
   VariableMappingClass = 'camunda:variableMappingClass',
   VariableMappingDelegateExpression = 'camunda:variableMappingDelegateExpression',
+}
+
+/**
+ * Contains miscellaneous tags that do not fit anywhere else.
+ */
+export enum OtherElements {
+  Association = 'bpmn:association',
+  SequenceFlow = 'bpmn:sequenceFlow',
+  TextAnnotation = 'bpmn:textAnnotation',
 }

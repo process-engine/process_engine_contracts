@@ -1,6 +1,10 @@
-import { BpmnType } from '../../constants';
-import { BaseElement } from './base_element';
+import {BpmnType} from '../../constants';
+import {BaseElement} from './base_element';
 
+/**
+ * Base class for all FlowNodes.
+ * These include Events, Gateways and Activities.
+ */
 export abstract class FlowNode extends BaseElement {
   public abstract readonly bpmnType: BpmnType;
   public name: string;

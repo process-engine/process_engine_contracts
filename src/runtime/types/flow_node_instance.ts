@@ -1,6 +1,9 @@
 import {FlowNodeInstanceState} from './flow_node_instance_state';
 import {ProcessToken} from './process_token';
 
+/**
+ * Describes a single FlowNodeInstance.
+ */
 export class FlowNodeInstance {
   public id: string;
   public flowNodeId: string;
