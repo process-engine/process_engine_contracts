@@ -26,7 +26,7 @@ export class IntermediateCatchEvent extends Event {
    */
   public messageEventDefinition?: MessageEventDefinition;
   /**
-   * When using an IntermediateMessageCatchEvent, this will contain the signal
+   * When using an IntermediateSignalCatchEvent, this will contain the signal
    * to wait for.
    */
   public signalEventDefinition?: SignalEventDefinition;

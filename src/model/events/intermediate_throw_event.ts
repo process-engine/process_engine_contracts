@@ -22,7 +22,7 @@ export class IntermediateThrowEvent extends Event {
    */
   public messageEventDefinition?: MessageEventDefinition;
   /**
-   * When using an IntermediateMessageThrowEvent, this will contain the signal
+   * When using an IntermediateSignalThrowEvent, this will contain the signal
    * to throw.
    */
   public signalEventDefinition?: SignalEventDefinition;
