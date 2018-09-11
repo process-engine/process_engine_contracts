@@ -86,6 +86,19 @@ export interface IFlowNodeInstanceRepository {
   resume(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
 
   /**
+   * Gets the FlowNode belonging to a specific ProcessModel within a specific
+   * Correlation.
+   *
+   * @async
+   * @param   correlationId  The ID of the Correlation to query.
+   * @param   processModelId The ID of the ProcessModel to query.
+   * @param   flowNodeId     The ID of the flowNode for which to retrieve
+   *                         FlowNodeInstances.
+   * @returns                The retrieved FlowNodeInstance.
+   */
+  querySpecificFlowNode(correlationId: string, processModelId: string, flowNodeId: string): Promise<FlowNodeInstance>;
+
+  /**
    * Gets all FlowNodeInstances with a specific flowNodeId.
    *
    * @async
@@ -93,7 +106,7 @@ export interface IFlowNodeInstanceRepository {
    *                     FlowNodeInstances.
    * @returns            The retrieved FlowNodeInstances.
    */
-  queryByFlowNodeId(flowNodeId: string): Promise<FlowNodeInstance>; // TODO: Change to an Array.
+  queryByFlowNodeId(flowNodeId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
    * Gets a FlowNodeInstance by its flowNodeInstanceId.
