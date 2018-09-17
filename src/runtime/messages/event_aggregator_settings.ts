@@ -9,6 +9,8 @@ const messagePaths = {
 const routePaths = {
   finishUserTask: '/processengine/correlation/:correlation_id/processinstance/:process_instance_id/node/:user_task_id/finish',
   userTaskFinished: '/processengine/correlation/:correlation_id/processinstance/:process_instance_id/node/:user_task_id/finished',
+  processTerminated: '/processengine/process/:process_instance_id/terminated',
+  processEnded: '/processengine/process/:process_instance_id/ended',
 };
 
 const routeParams = {
