@@ -11,12 +11,15 @@ const routePaths = {
   userTaskFinished: '/processengine/correlation/:correlation_id/processinstance/:process_instance_id/node/:user_task_id/finished',
   processTerminated: '/processengine/process/:process_instance_id/terminated',
   processEnded: '/processengine/process/:process_instance_id/ended',
+  intermediateMessageEvent: '/processengine/process/:process_instance_id/message/:message_ref',
+  messageBoundaryEvent: '/processengine/process/:process_instance_id/message/:message_ref',
 };
 
 const routeParams = {
   processInstanceId: ':process_instance_id',
   correlationId: ':correlation_id',
   userTaskId: ':user_task_id',
+  messageRef: ':message_ref',
 }
 
 export const eventAggregatorSettings = {
