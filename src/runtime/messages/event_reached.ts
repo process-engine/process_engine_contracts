@@ -29,7 +29,6 @@ export abstract class EventReachedMessage {
     return this._tokenPayload;
   }
 
-
   /**
    * The type of EventMessage.
    */
