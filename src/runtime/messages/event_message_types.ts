@@ -3,5 +3,7 @@
  */
 export enum EventMessageType {
   end = 'end',
-  terminate = 'terminate'
+  message = 'message',
+  signal = 'signal',
+  terminate = 'terminate',
 }
