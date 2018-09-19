@@ -3,9 +3,9 @@ import {EventReachedMessage} from './event_reached';
 
 /**
  * Encapsulates a Message for the EventAggregator, describing a
- * MessageEndEvent.
+ * MessageEvent.
  */
-export class MessageEndEventReachedMessage extends EventReachedMessage {
+export class MessageEventReachedMessage extends EventReachedMessage {
 
   constructor(messageEventId: string, tokenPayload: any) {
     super(messageEventId, tokenPayload);

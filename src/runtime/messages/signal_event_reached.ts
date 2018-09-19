@@ -3,9 +3,9 @@ import {EventReachedMessage} from './event_reached';
 
 /**
  * Encapsulates a Message for the EventAggregator, describing a
- * SignalEndEvent.
+ * SignalEvent.
  */
-export class SignalEndEventReachedMessage extends EventReachedMessage {
+export class SignalEventReachedMessage extends EventReachedMessage {
 
   constructor(signalEventId: string, tokenPayload: any) {
     super(signalEventId, tokenPayload);
