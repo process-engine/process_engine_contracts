@@ -1,5 +1,6 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {Model} from './../../model';
-import {IExecutionContextFacade} from './iexecution_context_facade';
 
 /**
  * This service handles the execution of ProcessModels.
@@ -14,7 +15,7 @@ export interface IExecuteProcessService {
    * ProcessModel, this method must not be awaited.
    *
    * @async
-   * @param context        The requesting users Auth Context.
+   * @param identity       The requesting users identity.
    * @param processModel   The ProcessModel to execute.
    * @param startEventId   The ID of the StartEvent by which to start the
    *                       ProcessModel.
@@ -24,7 +25,7 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  start(context: IExecutionContextFacade,
+  start(identity: IIdentity,
         processModel: Model.Types.Process,
         startEventId: string,
         correlationId: string,
@@ -36,7 +37,7 @@ export interface IExecuteProcessService {
    * Resolves when the first EndEvent was reached.
    *
    * @async
-   * @param context        The requesting users Auth Context.
+   * @param identity       The requesting users identity.
    * @param processModel   The ProcessModel to execute.
    * @param startEventId   The ID of the StartEvent by which to start the
    *                       ProcessModel.
@@ -46,7 +47,7 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  startAndAwaitEndEvent(context: IExecutionContextFacade,
+  startAndAwaitEndEvent(identity: IIdentity,
                         processModel: Model.Types.Process,
                         startEventId: string,
                         correlationId: string,
@@ -58,7 +59,7 @@ export interface IExecuteProcessService {
    * Resolves when a given EndEvent was reached.
    *
    * @async
-   * @param context        The requesting users Auth Context.
+   * @param identity       The requesting users identity.
    * @param processModel   The ProcessModel to execute.
    * @param startEventId   The ID of the StartEvent by which to start the
    *                       ProcessModel.
@@ -69,7 +70,7 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  startAndAwaitSpecificEndEvent(context: IExecutionContextFacade,
+  startAndAwaitSpecificEndEvent(identity: IIdentity,
                                 processModel: Model.Types.Process,
                                 startEventId: string,
                                 correlationId: string,

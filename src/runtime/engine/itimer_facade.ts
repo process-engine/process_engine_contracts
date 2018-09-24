@@ -22,7 +22,6 @@ export interface ITimerFacade {
                   timerValue: string,
                   callback: Function): Promise<ISubscription>;
 
-
   /**
    * Takes an event definition and parsed it into a comprehensive
    * TimerDefinitionType.
