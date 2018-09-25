@@ -24,12 +24,12 @@ export interface ICorrelationRepository {
   createEntry(correlationId: string, processModelHash: string): Promise<void>;
 
   /**
-   * Gets a specific Correlation by its ID.
+   * Gets all entries with a specific CorrelationId.
    *
    * @async
    * @param   correlationId The ID of the Correlation to retrieve.
-   * @returns               The retrieved Correlation.
+   * @returns               The retrieved Correlations.
    * @throws                404, If the Correlation was not found.
    */
-  getByCorrelationId(correlationId: string): Promise<CorrelationFromRepository>;
+  getByCorrelationId(correlationId: string): Promise<Array<CorrelationFromRepository>>;
 }
