@@ -138,6 +138,17 @@ export interface IFlowNodeInstanceRepository {
   queryByCorrelation(correlationId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
+   * Gets all FlowNodeInstances of the given Correlation that are in a specific state.
+   *
+   * @async
+   * @param   correlationId The ID of the Correlation for which to get the
+   *                        FlowNodeInstances.
+   * @param   state         The state by which to retrieve the FlowNodeInstances.
+   * @returns               The retrieved FlowNodeInstances.
+   */
+  queryByCorrelationAndState(correlationId: string, state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
+
+  /**
    * Gets all FlowNodeInstances of a specific ProcessModel.
    *
    * @async
