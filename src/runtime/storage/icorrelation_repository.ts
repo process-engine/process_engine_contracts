@@ -7,6 +7,9 @@ import {CorrelationFromRepository} from '../types/index';
  * This allows for implementing versioning of ProcessModels, as well
  * as keeping track on how a ProcessModel looked at the time a certain
  * Correlation was run.
+ *
+ * Note that a ProcessModel instance will only belong to one Correlation,
+ * but a Correlation can have multiple ProcessModel instances.
  */
 export interface ICorrelationRepository {
 
