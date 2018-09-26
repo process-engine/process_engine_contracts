@@ -4,6 +4,8 @@
 export class CorrelationFromRepository {
   public id: string;
   public processModelHash: string;
+  public processModelId: string;
+  public processInstanceId: string;
   public createdAt: Date;
   public updatedAt: Date;
 }
