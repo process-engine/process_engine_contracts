@@ -14,15 +14,6 @@ import {Correlation} from '../types/index';
 export interface ICorrelationService {
 
   /**
-   * Returns a list of all Correlations that contain at least one active
-   * ProcessInstance.
-   *
-   * @async
-   * @returns A list of Correlations.
-   */
-  getAllActiveCorrelations(): Promise<Array<Correlation>>;
-
-  /**
    * Stores a new Correlation in the database.
    *
    * @async
@@ -33,6 +24,15 @@ export interface ICorrelationService {
   createEntry(correlationId: string, processModelHash: string): Promise<void>;
 
   /**
+   * Returns a list of all Correlations that contain at least one active
+   * ProcessInstance.
+   *
+   * @async
+   * @returns A list of Correlations.
+   */
+  getAllActiveCorrelations(): Promise<Array<Correlation>>;
+
+  /**
    * Gets a specific Correlation by its ID.
    *
    * @async
@@ -41,4 +41,14 @@ export interface ICorrelationService {
    * @throws                404, If the Correlation was not found.
    */
   getByCorrelationId(correlationId: string): Promise<Correlation>;
+
+  /**
+   * Retrieves all Correlations in which the given ProcessModel was executed.
+   *
+   * @async
+   * @param processModelId The ID of the ProcessModel for which to get the
+   *                       Correlations.
+   * @returns              The retrieved Correlations.
+   */
+  getCorrelationsForProcessModel(processModelId: string): Promise<Array<Correlation>>;
 }

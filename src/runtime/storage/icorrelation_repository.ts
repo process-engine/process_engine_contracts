@@ -32,4 +32,25 @@ export interface ICorrelationRepository {
    * @throws                404, If the Correlation was not found.
    */
   getByCorrelationId(correlationId: string): Promise<Array<CorrelationFromRepository>>;
+
+  /**
+   * Retrieves all Correlations associated with the given ProcessModelHash.
+   *
+   * @async
+   * @param processModelHash The ProcessModel Hash for which to get the
+   *                         Correlations.
+   * @returns                The retrieved Correlations.
+   */
+  getByProcessModelHash(processModelHashes: string): Promise<Array<CorrelationFromRepository>>;
+
+  /**
+   * Retrieves all Correlations associated with the given list of
+   * ProcessModelHashes.
+   *
+   * @async
+   * @param processModelHashes The ProcessModel Hashes for which to get the
+   *                           Correlations.
+   * @returns                  The retrieved Correlations.
+   */
+  getByProcessModelHashes(processModelHashes: Array<string>): Promise<Array<CorrelationFromRepository>>;
 }
