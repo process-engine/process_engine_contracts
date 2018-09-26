@@ -1,12 +1,12 @@
+import {CorrelationProcessModel} from './correlation_process_model';
 import {FlowNodeInstanceState} from './flow_node_instance_state';
-import {ProcessDefinitionFromRepository} from './process_definition_from_repository';
 
 /**
- * Describes a Correlation with an active ProcessInstance.
+ * Describes a Correlation.
  */
-export class Correlation {
+export declare class Correlation {
   public id: string;
-  public processModels: Array<ProcessDefinitionFromRepository>;
+  public processModels: Array<CorrelationProcessModel>;
   public state: FlowNodeInstanceState;
   public createdAt?: Date;
 }

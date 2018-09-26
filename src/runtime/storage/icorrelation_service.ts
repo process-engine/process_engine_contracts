@@ -24,6 +24,14 @@ export interface ICorrelationService {
   createEntry(correlationId: string, processModelHash: string): Promise<void>;
 
   /**
+   * Returns a list of all Correlations.
+   *
+   * @async
+   * @returns A list of Correlations.
+   */
+  getAll(): Promise<Array<Correlation>>;
+
+  /**
    * Returns a list of all Correlations that contain at least one active
    * ProcessInstance.
    *
