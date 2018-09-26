@@ -4,7 +4,7 @@ import {FlowNodeInstanceState} from './flow_node_instance_state';
 /**
  * Describes a Correlation.
  */
-export declare class Correlation {
+export class Correlation {
   public id: string;
   public processModels: Array<CorrelationProcessModel>;
   public state: FlowNodeInstanceState;
