@@ -42,7 +42,7 @@ export interface ICorrelationService {
    * @async
    * @returns A list of Correlations.
    */
-  getAllActiveCorrelations(): Promise<Array<Correlation>>;
+  getActive(): Promise<Array<Correlation>>;
 
   /**
    * Gets a specific Correlation by its ID.
