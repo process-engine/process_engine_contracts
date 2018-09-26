@@ -55,12 +55,25 @@ export interface ICorrelationService {
   getByCorrelationId(correlationId: string): Promise<Correlation>;
 
   /**
-   * Retrieves all Correlations in which the given ProcessModel was executed.
+   * Gets all entries with a specific ProcessModelId.
    *
    * @async
-   * @param processModelId The ID of the ProcessModel for which to get the
-   *                       Correlations.
-   * @returns              The retrieved Correlations.
+   * @param   processmodelId The ID of the ProcessModel for which to retrieve
+   *                         the Correlations.
+   * @returns                The retrieved Correlations.
    */
-  getCorrelationsForProcessModel(processModelId: string): Promise<Array<Correlation>>;
+  getByProcessModelId(processmodelId: string): Promise<Array<Correlation>>;
+
+  /**
+   * Gets the entry that belongs to the given ProcessInstanceId.
+   * Note that ProcessInstanceIds are always unique, so this will always
+   * return only one entry.
+   *
+   * @async
+   * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
+   *                            the Correlations.
+   * @returns                   The retrieved Correlation.
+   * @throws                    404, If the Correlation was not found.
+   */
+  getByProcessInstanceId(processInstanceId: string): Promise<Correlation>;
 }
