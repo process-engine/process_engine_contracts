@@ -41,7 +41,7 @@ export interface ICorrelationRepository {
    *                         Correlations.
    * @returns                The retrieved Correlations.
    */
-  getByProcessModelHash(processModelHashes: string): Promise<Array<CorrelationFromRepository>>;
+  getByProcessModelHash(processModelHash: string): Promise<Array<CorrelationFromRepository>>;
 
   /**
    * Retrieves all Correlations associated with the given list of
