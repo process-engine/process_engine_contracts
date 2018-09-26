@@ -17,11 +17,15 @@ export interface ICorrelationRepository {
    * Stores a new Correlation in the database.
    *
    * @async
-   * @param correlationId    The ID of the Correlation to store.
-   * @param processModelHash The Hash of the ProcessModel to associate with
-   *                         the Correlation.
+   * @param correlationId     The ID of the Correlation to store.
+   * @param processinstanceId The ID of the ProcessInstance to associate with
+   *                          the Correlation.
+   * @param processModelId    The ID of the ProcessModel to associate with
+   *                          the Correlation.
+   * @param processModelHash  The Hash of the ProcessModel to associate with
+   *                          the Correlation.
    */
-  createEntry(correlationId: string, processModelHash: string): Promise<void>;
+  createEntry(correlationId: string, processinstanceId: string, processModelId: string, processModelHash: string): Promise<void>;
 
   /**
    * Returns a list of all Correlations.
