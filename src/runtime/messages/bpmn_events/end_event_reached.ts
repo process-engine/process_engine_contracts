@@ -1,4 +1,4 @@
-import { BaseBpmnEventMessage } from "../base_bpmn_event_message";
+import {BaseBpmnEventMessage} from './base_bpmn_event_message';
 
 /**
  * Encapsulates a Message for the EventAggregator, describing a

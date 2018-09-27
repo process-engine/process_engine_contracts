@@ -1,5 +1,5 @@
-import { BaseSystemEventMessage } from "../base_system_event_message";
-import { UserTaskResult } from "../../engine/user_task_result";
+import {UserTaskResult} from '../../engine/user_task_result';
+import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
  * The message sent when a user task has been finished.

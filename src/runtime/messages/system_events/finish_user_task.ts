@@ -1,10 +1,10 @@
-import { BaseSystemEventMessage } from "../base_system_event_message";
+import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
  * The message used to finish a waiting user task.
  */
 export class FinishUserTaskMessage extends BaseSystemEventMessage {
-  
+
   /**
    * The flow node id of the user task being finished.
    */
@@ -22,7 +22,7 @@ export class FinishUserTaskMessage extends BaseSystemEventMessage {
               flowNodeInstanceId: string,
               currentToken: any) {
     super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, currentToken);
-    
+
     this.result = result;
   }
 }

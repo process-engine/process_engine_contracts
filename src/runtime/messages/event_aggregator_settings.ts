@@ -24,7 +24,7 @@ const routeParams = {
   userTaskId: ':user_task_id',
   messageReference: ':message_ref',
   signalReference: ':signal_ref',
-}
+};
 
 export const eventAggregatorSettings = {
   messagePaths: messagePaths,
