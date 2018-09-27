@@ -6,9 +6,9 @@ import { BaseBpmnEventMessage } from "../base_bpmn_event_message";
  */
 export class MessageEventReachedMessage extends BaseBpmnEventMessage {
 
-  public messageName: string;
+  public messageReference: string;
 
-  constructor(messageName: string,
+  constructor(messageReference: string,
               correlationId: string,
               processModelId: string,
               processInstanceId: string,
@@ -16,6 +16,6 @@ export class MessageEventReachedMessage extends BaseBpmnEventMessage {
               currentToken: any) {
     super(correlationId, processModelId, processInstanceId, flowNodeId, currentToken);
     
-    this.messageName = messageName;
+    this.messageReference = messageReference;
   }
 }
