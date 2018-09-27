@@ -1,6 +1,6 @@
 // tslint:disable:typedef
 const messagePaths = {
-  userTaskWaiting: 'user_task_waiting',
+  userTaskReached: 'user_task_reached',
   userTaskFinished: 'user_task_finished',
   processTerminated: 'process_terminated',
   processEnded: 'process_ended',
@@ -11,8 +11,7 @@ const routePaths = {
   userTaskFinished: '/processengine/correlation/:correlation_id/processinstance/:process_instance_id/node/:user_task_id/finished',
   processTerminated: '/processengine/process/:process_instance_id/terminated',
   processEnded: '/processengine/process/:process_instance_id/ended',
-  intermediateMessageEvent: '/processengine/process/:process_instance_id/message/:message_ref',
-  messageBoundaryEvent: '/processengine/process/:process_instance_id/message/:message_ref',
+  messageEventReached: '/processengine/process/:process_instance_id/message/:message_ref',
 };
 
 const routeParams = {
