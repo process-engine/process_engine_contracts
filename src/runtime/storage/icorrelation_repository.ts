@@ -21,14 +21,14 @@ export interface ICorrelationRepository {
    * @async
    * @param identity          The executing users identity.
    * @param correlationId     The ID of the Correlation to store.
-   * @param processinstanceId The ID of the ProcessInstance to associate with
+   * @param processInstanceId The ID of the ProcessInstance to associate with
    *                          the Correlation.
    * @param processModelId    The ID of the ProcessModel to associate with
    *                          the Correlation.
    * @param processModelHash  The Hash of the ProcessModel to associate with
    *                          the Correlation.
    */
-  createEntry(identity: IIdentity, correlationId: string, processinstanceId: string, processModelId: string, processModelHash: string): Promise<void>;
+  createEntry(identity: IIdentity, correlationId: string, processInstanceId: string, processModelId: string, processModelHash: string): Promise<void>;
 
   /**
    * Returns a list of all Correlations.
@@ -52,11 +52,11 @@ export interface ICorrelationRepository {
    * Gets all entries with a specific ProcessModelId.
    *
    * @async
-   * @param   processmodelId The ID of the ProcessModel for which to retrieve
+   * @param   processModelId The ID of the ProcessModel for which to retrieve
    *                         the Correlations.
    * @returns                The retrieved Correlations.
    */
-  getByProcessModelId(processmodelId: string): Promise<Array<CorrelationFromRepository>>;
+  getByProcessModelId(processModelId: string): Promise<Array<CorrelationFromRepository>>;
 
   /**
    * Gets the entry that belongs to the given ProcessInstanceId.
