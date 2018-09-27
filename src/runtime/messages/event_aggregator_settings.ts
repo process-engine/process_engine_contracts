@@ -13,7 +13,7 @@ const routePaths = {
   messageEventReached: '/processengine/process/message/:message_ref',
   signalEventReached: '/processengine/process/signal/:signal_ref',
   terminateEndEventReached: '/processengine/process/:process_instance_id/terminated',
-  endEventReached: '/processengine/correlation/:correlation_id/process/:process_model_id/node/:end_event_id',
+  endEventReached: '/processengine/process/:process_instance_id/ended',
 };
 
 const routeParams = {
