@@ -1,22 +1,15 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
+import {CorrelationProcessModel} from './correlation_process_model';
 import {FlowNodeInstanceState} from './flow_node_instance_state';
 
 /**
- * Describes a Correlation with an active ProcessInstance.
+ * Describes a Correlation.
  */
 export class Correlation {
-  /**
-   * The id of the Correlation.
-   */
   public id: string;
-  /**
-   * The id of the ProcessModel beloging to the Correlation.
-   */
-  public processModelId: string;
-  /**
-   * The current state of the Correlation. This is based on the state of the currently active FlowNodeInstance.
-   */
+  public identity: IIdentity;
+  public processModels: Array<CorrelationProcessModel>;
   public state: FlowNodeInstanceState;
-  public processModelHash?: string;
-  public processModelXml?: string;
   public createdAt?: Date;
 }
