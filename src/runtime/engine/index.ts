@@ -8,3 +8,4 @@ export * from './iprocess_token_facade';
 export * from './iprocess_token_result';
 export * from './itimer_facade';
 export * from './next_flow_node_info';
+export * from './user_task_result';
