@@ -35,7 +35,17 @@ export interface IProcessDefinitionRepository {
    * @returns     The retrieved ProcessDefinition.
    * @throws      404, if the ProcessDefinition was not found.
    */
-  getProcessDefinitionByName(definitionId: string): Promise<ProcessDefinitionFromRepository>;
+  getProcessDefinitionByName(name: string): Promise<ProcessDefinitionFromRepository>;
+
+  /**
+   * Retrieves all ProcessDefinitions that were saved with the given name.
+   *
+   * @async
+   * @param  name The name of the ProcessDefinition to get.
+   * @returns     The retrieved ProcessDefinitions.
+   * @throws      404, if the ProcessDefinition was not found.
+   */
+  getHistoryByName(name: string): Promise<Array<ProcessDefinitionFromRepository>>;
 
   /**
    * Retrieves a ProcessDefinition by its hash.
