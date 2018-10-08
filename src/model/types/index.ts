@@ -7,7 +7,6 @@ export * from './form_field';
 export * from './lane';
 export * from './lane_set';
 export * from './message';
-export * from './operation';
 export * from './participant';
 export * from './process';
 export * from './sequence_flow';
