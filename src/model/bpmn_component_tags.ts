@@ -118,6 +118,8 @@ export enum CamundaProperty {
   Properties = 'camunda:properties',
   Property = 'camunda:property',
   ResultVariable = 'camunda:resultVariable',
+  Topic = 'camunda:topic',
+  Type = 'camunda:type',
   Value = 'camunda:value',
   VariableMappingClass = 'camunda:variableMappingClass',
   VariableMappingDelegateExpression = 'camunda:variableMappingDelegateExpression',
