@@ -14,6 +14,7 @@ const routeParams = {
   userTaskId: ':user_task_id',
   messageReference: ':message_ref',
   signalReference: ':signal_ref',
+  externalTaskTopic: ':external_task_topic',
 };
 
 const routePaths = {
@@ -21,6 +22,7 @@ const routePaths = {
     `/processengine/correlation/${routeParams.correlationId}/processmodel/${routeParams.processModelId}/node/${routeParams.userTaskId}/finish`,
   userTaskFinished:
     `/processengine/correlation/${routeParams.correlationId}/processmodel/${routeParams.processModelId}/node/${routeParams.userTaskId}/finished`,
+  externalTaskCreatedForTopic: `/processengine/external_task/topic/${routeParams.externalTaskTopic}/created`,
   endEventReached: `/processengine/correlation/${routeParams.correlationId}/processmodel/${routeParams.processModelId}/ended`,
   messageEventReached: `/processengine/process/message/${routeParams.messageReference}`,
   signalEventReached: `/processengine/process/signal/${routeParams.signalReference}`,
