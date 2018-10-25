@@ -24,6 +24,10 @@ export class ServiceTask extends Task {
    * The topic to use in conjunction with external ServiceTasks.
    */
   public topic?: string;
+  /**
+   * The payload to use in conjunction with external ServiceTasks.
+   */
+  public payload?: string;
 }
 
 /**
