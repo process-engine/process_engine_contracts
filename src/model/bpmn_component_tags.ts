@@ -9,6 +9,8 @@ export enum CommonElement {
   Participant = 'bpmn:participant',
   Process = 'bpmn:process',
   Error = 'bpmn:error',
+  Signal = 'bpmn:signal',
+  Message = 'bpmn:message',
 }
 
 /**
