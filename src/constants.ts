@@ -18,6 +18,8 @@ export enum BpmnType {
   complexGateway = 'bpmn:ComplexGateway',
   inclusiveGateway = 'bpmn:InclusiveGateway',
   eventBasedGateway = 'bpmn:EventBasedGateway',
+  sendTask = 'bpmn:SendTask',
+  receiveTask = 'bpmn:ReceiveTask',
 }
 
 /**
