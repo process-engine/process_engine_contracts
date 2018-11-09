@@ -1,6 +1,6 @@
 import {BpmnType} from '../../../constants';
-import {Task} from './task';
 import {MessageEventDefinition} from '../../event_definitions';
+import {Task} from './task';
 
 /**
  * Describes a BPMN ReceiveTask.
@@ -9,8 +9,8 @@ import {MessageEventDefinition} from '../../event_definitions';
  */
 export class ReceiveTask extends Task {
   public get bpmnType(): BpmnType {
-    return BpmnType.sendTask;
-  };
+    return BpmnType.receiveTask;
+  }
 
  /**
    * When using an IntermediateMessageCatchEvent, this will contain the message
