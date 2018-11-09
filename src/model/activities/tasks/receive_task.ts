@@ -5,7 +5,15 @@ import {Task} from './task';
 /**
  * Describes a BPMN ReceiveTask.
  *
- * Task is used for receiving messages.
+ * A ReceiveTask is basically the opposite of a SendTask.
+ * It will block the Process Execution, until an expected Message is
+ * received.
+ *
+ * In contrast to an IntermediateCatchEvent, a ReceiveTask will
+ * throw back a confirmation Message that the ReceiveTask received the
+ * defined message.
+ * Therefore, a ReceiveTask will only accept messages, that where send by
+ * a SendTask.
  */
 export class ReceiveTask extends Task {
   public get bpmnType(): BpmnType {
@@ -13,9 +21,8 @@ export class ReceiveTask extends Task {
   }
 
  /**
-   * When using an IntermediateMessageCatchEvent, this will contain the message
-   * to wait for.
+   * This is the user defined Message which is expected by this
+   * ReceiveTask.
    */
-  public messageEventDefinition?: MessageEventDefinition;
-
+  public messageEventDefinition: MessageEventDefinition;
 }
