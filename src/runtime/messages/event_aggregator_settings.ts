@@ -26,7 +26,7 @@ const routePaths = {
   endEventReached: `/processengine/correlation/${routeParams.correlationId}/processmodel/${routeParams.processModelId}/ended`,
   messageEventReached: `/processengine/process/message/${routeParams.messageReference}`,
   sendTaskReached: `/processengine/process/sendtask/${routeParams.messageReference}`,
-  sendTaskReceived: `/processengine/process/receivetask/${routeParams.messageReference}`,
+  receiveTaskReceived: `/processengine/process/receivetask/${routeParams.messageReference}`,
   signalEventReached: `/processengine/process/signal/${routeParams.signalReference}`,
   terminateEndEventReached: `/processengine/process/${routeParams.processInstanceId}/terminated`,
 };
