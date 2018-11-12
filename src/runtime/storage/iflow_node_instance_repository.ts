@@ -1,4 +1,5 @@
 import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types';
+import {Model} from '../../model';
 
 /**
  * Accesses the FlowNodeInstance database.
@@ -13,23 +14,23 @@ export interface IFlowNodeInstanceRepository {
    * Persists the state of a FlowNodeInstance when it was first started.
    *
    * @async
-   * @param   flowNodeId         The ID of the FlowNode to persist.
+   * @param   flowNode           The FlowNode to persist.
    * @param   flowNodeInstanceId The ID of the FlowNodeInstance to persist.
    * @param   token              Contains the FlowNodeInstances ProcessToken.
    * @returns                    The persisted FlowNodeInstance.
    */
-  persistOnEnter(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnEnter(flowNode: Model.Base.FlowNode, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
 
   /**
    * Persists the state of a FlowNodeInstance when it was successfully finished.
    *
    * @async
-   * @param   flowNodeId         The ID of the FlowNode to persist.
+   * @param   flowNode           The FlowNode to persist.
    * @param   flowNodeInstanceId The ID of the FlowNodeInstance to persist.
    * @param   token              Contains the FlowNodeInstances ProcessToken.
    * @returns                    The persisted FlowNodeInstance.
    */
-  persistOnExit(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnExit(flowNode: Model.Base.FlowNode, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
 
   /**
    * Persists the state of a FlowNodeInstance when it encountered an error.
@@ -37,13 +38,13 @@ export interface IFlowNodeInstanceRepository {
    * Only used by ErrorEndEvents, ServiceTasks and ScriptTasks.
    *
    * @async
-   * @param   flowNodeId         The ID of the FlowNode to persist.
+   * @param   flowNode           The FlowNode to persist.
    * @param   flowNodeInstanceId The ID of the FlowNodeInstance to persist.
    * @param   token              Contains the FlowNodeInstances ProcessToken.
    * @param   error              The error that was encountered.
    * @returns                    The persisted FlowNodeInstance.
    */
-  persistOnError(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken, error: Error): Promise<FlowNodeInstance>;
+  persistOnError(flowNode: Model.Base.FlowNode, flowNodeInstanceId: string, token: ProcessToken, error: Error): Promise<FlowNodeInstance>;
 
   /**
    * Persists the state of a FlowNodeInstance when it was terminated.
@@ -52,12 +53,12 @@ export interface IFlowNodeInstanceRepository {
    * through a TerminateEndEvent.
    *
    * @async
-   * @param   flowNodeId         The ID of the FlowNode to persist.
+   * @param   flowNode           The FlowNode to persist.
    * @param   flowNodeInstanceId The ID of the FlowNodeInstance to persist.
    * @param   token              Contains the FlowNodeInstances ProcessToken.
    * @returns                    The persisted FlowNodeInstance.
    */
-  persistOnTerminate(flowNodeId: string, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnTerminate(flowNode: Model.Base.FlowNode, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
 
   /**
    * Moves the FlowNodeInstance into a suspended state, effectively putting the
