@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "30.1.0",
+  "version": "31.0.1",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -30,8 +30,6 @@
   "scripts": {
     "build": "gulp build",
     "prepare": "npm run build",
-    "build-doc": "gulp doc",
-    "build-schemas": "gulp typescript-schema",
     "lint": "gulp lint",
     "test": "gulp test"
   }

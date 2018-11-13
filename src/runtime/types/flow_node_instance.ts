@@ -7,6 +7,7 @@ import {ProcessToken} from './process_token';
 export class FlowNodeInstance {
   public id: string;
   public flowNodeId: string;
+  public flowNodeType: string;
   public processInstanceId: string;
   public processModelId: string;
   public correlationId: string;
