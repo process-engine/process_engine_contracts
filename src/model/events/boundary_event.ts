@@ -47,6 +47,8 @@ export class BoundaryEvent extends Event {
 
       return EventType.timerEvent;
     }
+
+    return undefined;
   }
 
   public errorEventDefinition?: ErrorEventDefinition;

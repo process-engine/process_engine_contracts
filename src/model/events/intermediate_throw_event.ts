@@ -30,6 +30,8 @@ export class IntermediateThrowEvent extends Event {
 
       return EventType.signalEvent;
     }
+
+    return undefined;
   }
 
   /**

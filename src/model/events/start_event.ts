@@ -36,6 +36,8 @@ export class StartEvent extends Event {
 
       return EventType.timerEvent;
     }
+
+    return undefined;
   }
 
   public messageEventDefinition?: MessageEventDefinition;

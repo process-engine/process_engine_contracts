@@ -41,6 +41,8 @@ export class IntermediateCatchEvent extends Event {
 
       return EventType.timerEvent;
     }
+
+    return undefined;
   }
 
   /**

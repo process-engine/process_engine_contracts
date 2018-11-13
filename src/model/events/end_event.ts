@@ -1,7 +1,6 @@
 import {BpmnType, EventType} from '../../constants';
 import {Event} from './event';
 
-import { textChangeRangeIsUnchanged } from 'typescript';
 import {
   ErrorEventDefinition,
   MessageEventDefinition,
@@ -49,6 +48,8 @@ export class EndEvent extends Event {
 
       return EventType.terminateEvent;
     }
+
+    return undefined;
   }
 
   public errorEventDefinition?: ErrorEventDefinition;
