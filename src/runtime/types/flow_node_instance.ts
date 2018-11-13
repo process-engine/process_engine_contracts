@@ -14,4 +14,5 @@ export class FlowNodeInstance {
   public tokens: Array<ProcessToken>;
   public state: FlowNodeInstanceState = FlowNodeInstanceState.running;
   public error?: string;
+  public eventType?: string;
 }
