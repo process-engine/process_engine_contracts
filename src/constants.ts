@@ -37,3 +37,14 @@ export enum TimerDefinitionType {
    */
   cycle = 2,
 }
+
+/**
+ * Contains a list of all supported event types.
+ */
+export enum EventType {
+  messageEvent = 'MessageEvent',
+  signalEvent = 'SignalEvent',
+  terminateEvent = 'TerminateEvent',
+  timerEvent = 'TimerEvent',
+  errorEvent = 'ErrorEvent',
+}
