@@ -72,10 +72,10 @@ export interface ICorrelationRepository {
   getByProcessInstanceId(processInstanceId: string): Promise<CorrelationFromRepository>;
 
   /**
-   * Removes the correlation.
+   * Removes all correlations with a specific ProcessModelId.
    *
    * @async
-   * @param   processModelId The ID of the processModel whichs correlations should be removed.
+   * @param   processModelId The ID of the processModel, by which correlations should be removed.
    */
   deleteCorrelationByProcessModelId(correlationId: string): Promise<void>;
 }

@@ -169,12 +169,11 @@ export interface IFlowNodeInstanceService {
   queryProcessTokensByProcessInstanceId(processInstanceId: string): Promise<Array<ProcessToken>>;
 
   /**
-   * TODO
+   * Delets all FlowNodeInstance and ProcessTokens with a specific ProcessModelId
    *
    * @async
-   * @param   processModelId The ID of the ProcessModel for which to get the
-   *                         FlowNodeInstances.
-   * @returns                The retrieved FlowNodeInstances.
+   * @param   processModelId The ID of the ProcessModel, by which the FlowNodeInstances and the
+   *                          ProcessTokens should be removed
    */
   deleteByProcessModelId(processModelId: string): Promise<void>;
 }
