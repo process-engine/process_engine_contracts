@@ -23,7 +23,8 @@ const routeParams = {
 const routePaths = {
   finishUserTask:
     `/processengine/correlation/${routeParams.correlationId}/processinstance/
-    ${routeParams.processInstanceId}/usertask/${routeParams.flowNodeInstanceId}/finish`,
+    `/processengine/correlation/${routeParams.correlationId}/processinstance/` +
+    `${routeParams.processInstanceId}/usertask/${routeParams.flowNodeInstanceId}/finish`,
   userTaskFinished:
     `/processengine/correlation/${routeParams.correlationId}/processinstance/
     ${routeParams.processInstanceId}/usertask/${routeParams.flowNodeInstanceId}/finished`,
