@@ -28,11 +28,11 @@ const routePaths = {
     `/processengine/correlation/${routeParams.correlationId}/processinstance/` +
     `${routeParams.processInstanceId}/usertask/${routeParams.flowNodeInstanceId}/finished`,
   finishManualTask:
-    `/processengine/correlation/${routeParams.correlationId}/processinstance/` +
-    `${routeParams.processInstanceId}/manualtask/${routeParams.flowNodeInstanceId}/finish`,
+    `/processengine/correlation/${routeParams.correlationId}/processmodel/` +
+    `${routeParams.processModelId}/manualtask/${routeParams.manualTaskId}/finish`,
   manualTaskFinished:
-    `/processengine/correlation/${routeParams.correlationId}/processinstance/` +
-    `${routeParams.processInstanceId}/manualtask/${routeParams.flowNodeInstanceId}/finished`,
+    `/processengine/correlation/${routeParams.correlationId}/processmodel/` +
+    `${routeParams.processModelId}/manualtask/${routeParams.manualTaskId}/finished`,
   endEventReached: `/processengine/correlation/${routeParams.correlationId}/processmodel/${routeParams.processModelId}/ended`,
   messageEventReached: `/processengine/process/message/${routeParams.messageReference}`,
   sendTaskReached: `/processengine/process/sendtask/${routeParams.messageReference}`,
