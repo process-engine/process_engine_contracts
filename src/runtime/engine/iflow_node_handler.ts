@@ -22,16 +22,19 @@ export interface IFlowNodeHandler<TFlowNode extends Model.Base.FlowNode> {
    * returned.
    *
    * @async
-   * @param   flowNode           The FlowNode to execute.
-   * @param   token              The current ProcessToken.
-   * @param   processTokenFacade The Facade for the current ProcessToken.
-   * @param   processModelFacade The Facade for the ProcessModel.
-   * @param   identity           Contains the users identity.
-   * @returns                    Information about the next FlowNode to run.
+   * @param   flowNode                   The FlowNode to execute.
+   * @param   token                      The current ProcessToken.
+   * @param   processTokenFacade         The Facade for the current ProcessToken.
+   * @param   processModelFacade         The Facade for the ProcessModel.
+   * @param   identity                   Contains the users identity.
+   * @param   previousFlowNodeInstanceId The ID of the previously run FNI.
+   * @returns                            Info about the next FlowNode to run.
    */
   execute(flowNode: TFlowNode,
           token: Runtime.Types.ProcessToken,
           processTokenFacade: IProcessTokenFacade,
           processModelFacade: IProcessModelFacade,
-          identity: IIdentity): Promise<NextFlowNodeInfo>;
+          identity: IIdentity,
+          previousFlowNodeInstanceId?: string,
+         ): Promise<NextFlowNodeInfo>;
 }
