@@ -62,4 +62,14 @@ export interface IProcessModelService {
    * @throws         403, if the User is forbidden to read any ProcessModels.
    */
   getProcessModels(identity: IIdentity): Promise<Array<Model.Types.Process>>;
+
+  /**
+   * TODO
+   *
+   * @async
+   * @param  processModelId The hash of the ProcessDefinition to get.
+   * @returns     The retrieved ProcessDefinition.
+   * @throws      404, if the ProcessDefinition was not found.
+   */
+  deleteProcessDefinitionById(processModelId: string): Promise<void>;
 }

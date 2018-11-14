@@ -79,4 +79,12 @@ export interface ICorrelationService {
    * @throws                    404, If the Correlation was not found.
    */
   getByProcessInstanceId(processInstanceId: string): Promise<Correlation>;
+
+  /**
+   * Removes the correlation.
+   *
+   * @async
+   * @param    processModelId The ID of the processModel whichs correlations should be removed.
+   */
+  deleteCorrelationByProcessModelId(processModelId: string): Promise<void>;
 }

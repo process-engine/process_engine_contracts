@@ -176,4 +176,14 @@ export interface IFlowNodeInstanceRepository {
    * @returns                   The retrieved ProcessTokens.
    */
   queryProcessTokensByProcessInstanceId(processInstanceId: string): Promise<Array<ProcessToken>>;
+
+  /**
+   * TODO
+   *
+   * @async
+   * @param   processModelId The ID of the ProcessModel for which to get the
+   *                         FlowNodeInstances.
+   * @returns                The retrieved FlowNodeInstances.
+   */
+  deleteByProcessModelId(processModelId: string): Promise<void>;
 }

@@ -56,4 +56,14 @@ export interface IProcessDefinitionRepository {
    * @throws      404, if the ProcessDefinition was not found.
    */
   getByHash(hash: string): Promise<ProcessDefinitionFromRepository>;
+
+  /**
+   * TODO
+   *
+   * @async
+   * @param  processModelId The hash of the ProcessDefinition to get.
+   * @returns     The retrieved ProcessDefinition.
+   * @throws      404, if the ProcessDefinition was not found.
+   */
+  deleteProcessDefinitionById(processModelId: string): Promise<void>;
 }
