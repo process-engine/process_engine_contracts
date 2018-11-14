@@ -1,5 +1,5 @@
-import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types';
 import {Model} from '../../model';
+import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from './../types';
 
 /**
  * Accesses the FlowNodeInstance database.
@@ -14,12 +14,17 @@ export interface IFlowNodeInstanceRepository {
    * Persists the state of a FlowNodeInstance when it was first started.
    *
    * @async
-   * @param   flowNode           The FlowNode to persist.
-   * @param   flowNodeInstanceId The ID of the FlowNodeInstance to persist.
-   * @param   token              Contains the FlowNodeInstances ProcessToken.
-   * @returns                    The persisted FlowNodeInstance.
+   * @param   flowNode                   The FlowNode to persist.
+   * @param   flowNodeInstanceId         The ID of the FlowNodeInstance to persist.
+   * @param   token                      Contains the FlowNodeInstances ProcessToken.
+   * @param   previousFlowNodeInstanceId The ID of the FNI that was executed previously.
+   *                                     Will be undefined for StartEvents.
+   * @returns                            The persisted FlowNodeInstance.
    */
-  persistOnEnter(flowNode: Model.Base.FlowNode, flowNodeInstanceId: string, token: ProcessToken): Promise<FlowNodeInstance>;
+  persistOnEnter(flowNode: Model.Base.FlowNode,
+                 flowNodeInstanceId: string,
+                 token: ProcessToken,
+                 previousFlowNodeInstanceId?: string): Promise<FlowNodeInstance>;
 
   /**
    * Persists the state of a FlowNodeInstance when it was successfully finished.
