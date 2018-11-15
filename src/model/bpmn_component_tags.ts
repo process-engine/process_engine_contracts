@@ -75,6 +75,9 @@ export enum TaskElement {
   ServiceTask = 'bpmn:serviceTask',
   UserTask = 'bpmn:userTask',
 
+  SendTask = 'bpmn:sendTask',
+  ReceiveTask = 'bpmn:receiveTask',
+
   MethodInvocation = 'bpmn:methodInvocation',
   WebServiceInvocation = 'bpmn:webServiceInvocation',
 }
