@@ -56,4 +56,13 @@ export interface IProcessDefinitionRepository {
    * @throws      404, if the ProcessDefinition was not found.
    */
   getByHash(hash: string): Promise<ProcessDefinitionFromRepository>;
+
+  /**
+   * Deletes the ProcessDefinition with a specific ProcessModelId.
+   *
+   * @async
+   * @param  processModelId The ID of the processModel, by which correlations should be removed.
+   *
+   */
+  deleteProcessDefinitionById(processModelId: string): Promise<void>;
 }
