@@ -62,4 +62,13 @@ export interface IProcessModelService {
    * @throws         403, if the User is forbidden to read any ProcessModels.
    */
   getProcessModels(identity: IIdentity): Promise<Array<Model.Types.Process>>;
+
+ /**
+   * Deletes the ProcessDefinition with a specific ProcessModelId.
+   *
+   * @async
+   * @param  processModelId The ID of the processModel, by which correlations should be removed.
+   *
+   */
+  deleteProcessDefinitionById(processModelId: string): Promise<void>;
 }
