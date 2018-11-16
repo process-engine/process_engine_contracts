@@ -40,7 +40,7 @@ const routePaths = {
   receiveTaskReached: `/processengine/process/receivetask/${routeParams.messageReference}`,
   signalEventReached: `/processengine/process/signal/${routeParams.signalReference}`,
   terminateEndEventReached: `/processengine/process/${routeParams.processInstanceId}/terminated`,
-  processInstanceStarted: `/procesengine/process_started/${routeParams.processModelId},`
+  processInstanceStarted: `/processengine/process_started/${routeParams.processModelId},`
 };
 
 export const eventAggregatorSettings = {
