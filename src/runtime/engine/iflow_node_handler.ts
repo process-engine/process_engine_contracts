@@ -1,7 +1,7 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 import {FlowNode} from '../../model/base';
-import {FlowNodeInstanceState, ProcessToken} from '../types';
+import {FlowNodeInstance, ProcessToken} from '../types';
 import {
   IProcessModelFacade,
   IProcessTokenFacade,
@@ -24,7 +24,8 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
    */
   getFlowNode(): TFlowNode;
   /**
-   * Resumes the given FlowNode from the point at which it was interrupted.
+   * Resumes the given FlowNodeInstance from the point at which it was
+   * interrupted.
    * After execution is done, information about the next FlowNode in line is
    * returned.
    *
@@ -32,22 +33,14 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
    * This is meant to be run by the "ResumeProcessService" ONLY!
    *
    * @async
-   * @param   lastFlowNodeInstanceState  Contains the last know state of the
-   *                                     FlowNodeInstance before it was
-   *                                     interrupted.
-   * @param   token                      The current ProcessToken.
-   * @param   processTokenFacade         The Facade for the current ProcessToken.
-   * @param   processModelFacade         The Facade for the ProcessModel.
-   * @param   identity                   Contains the users identity.
-   * @param   previousFlowNodeInstanceId The ID of the previously run FNI.
-   * @returns                            Info about the next FlowNode to run.
+   * @param   flowNodeInstance   The FlowNodeInstance to resume.
+   * @param   processTokenFacade The Facade for the current ProcessToken.
+   * @param   processModelFacade The Facade for the ProcessModel.
+   * @returns                    Info about the next FlowNode to run.
    */
-  resume(lastFlowNodeInstanceState: FlowNodeInstanceState,
-         token: ProcessToken,
+  resume(flowNodeInstance: FlowNodeInstance,
          processTokenFacade: IProcessTokenFacade,
          processModelFacade: IProcessModelFacade,
-         identity: IIdentity,
-         previousFlowNodeInstanceId?: string,
         ): Promise<NextFlowNodeInfo>;
   /**
    * Executes the given FlowNode.
