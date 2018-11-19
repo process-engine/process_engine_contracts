@@ -36,11 +36,13 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
    * @param   flowNodeInstance   The FlowNodeInstance to resume.
    * @param   processTokenFacade The Facade for the current ProcessToken.
    * @param   processModelFacade The Facade for the ProcessModel.
+   * @param   identity           The Identity that started the FlowNodeInstance.
    * @returns                    Info about the next FlowNode to run.
    */
   resume(flowNodeInstance: FlowNodeInstance,
          processTokenFacade: IProcessTokenFacade,
          processModelFacade: IProcessModelFacade,
+         identity: IIdentity,
         ): Promise<NextFlowNodeInfo>;
   /**
    * Executes the given FlowNode.
