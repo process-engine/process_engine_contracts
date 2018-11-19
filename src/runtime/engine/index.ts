@@ -1,6 +1,7 @@
 export * from './iexecute_process_service';
 export * from './iflow_node_handler_factory';
 export * from './iflow_node_handler';
+export * from './iresume_process_service';
 export * from './iprocess_model_facade_factory';
 export * from './iprocess_model_facade';
 export * from './iprocess_token_facade_factory';
