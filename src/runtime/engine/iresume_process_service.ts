@@ -1,3 +1,3 @@
-export interface ResumeProcessService {
+export interface IResumeProcessService {
   findAndResumeInterruptedProcessInstances(): Promise<void>;
 }
