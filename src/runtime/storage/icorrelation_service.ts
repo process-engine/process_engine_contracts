@@ -89,8 +89,8 @@ export interface ICorrelationService {
   getByProcessInstanceId(processInstanceId: string): Promise<Correlation>;
 
   /**
-   * Gets a Correlation-Object that contains all Subprocesses for the given
-   * ProcessInstanceId.
+   * Gets all entries that describe a Subprocess for the ProcessInstance with the
+   * given ID.
    *
    * @async
    * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
@@ -98,7 +98,7 @@ export interface ICorrelationService {
    * @returns                   The retrieved Correlations.
    *                            If none are found, an empty Array is returned.
    */
-  getSubprocessesForProcessInstance(processInstanceId: string): Promise<Correlation>;
+  getSubprocessesForProcessInstance(processInstanceId: string): Promise<Array<Correlation>>;
 
   /**
    * Removes all correlations with a specific ProcessModelId.
