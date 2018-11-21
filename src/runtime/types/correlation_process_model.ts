@@ -9,5 +9,6 @@ export class CorrelationProcessModel {
   public xml: string;
   public processInstanceId?: string;
   public parentProcessInstanceId?: string;
+  public state: FlowNodeInstanceState;
   public createdAt?: Date;
 }
