@@ -1,5 +1,5 @@
 import {Model} from '../../model';
-import {FlowNodeInstance, FlowNodeInstanceState, ProcessToken} from '../types/index';
+import {FlowNodeInstance, ProcessToken, FlowNodeInstanceState} from '../types/index';
 
 /**
  * The Service used to access the FlowNodeInstance repository.
