@@ -8,8 +8,8 @@ export class BaseSystemEventMessage {
    * The id of the process instance the user task being finished belongs to.
    */
   public processInstanceId: string;
-  public flowNodeId: string;
-  public flowNodeInstanceId: string;
+  public flowNodeId?: string;
+  public flowNodeInstanceId?: string;
   public currentToken: any;
 
   constructor(correlationId: string,
