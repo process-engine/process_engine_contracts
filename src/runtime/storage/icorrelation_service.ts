@@ -19,16 +19,24 @@ export interface ICorrelationService {
    * Stores a new Correlation in the database.
    *
    * @async
-   * @param identity          The executing users identity.
-   * @param correlationId     The ID of the Correlation to store.
-   * @param processInstanceId The ID of the ProcessInstance to associate with
-   *                          the Correlation.
-   * @param processModelId    The ID of the ProcessModel to associate with
-   *                          the Correlation.
-   * @param processModelHash  The Hash of the ProcessModel to associate with
-   *                          the Correlation.
+   * @param identity                The executing users identity.
+   * @param correlationId           The ID of the Correlation to store.
+   * @param processInstanceId       The ID of the ProcessInstance to associate
+   *                                with the Correlation.
+   * @param processModelId           The ID of the ProcessModel to associate
+   *                                with the Correlation.
+   * @param processModelHash        The Hash of the ProcessModel to associate
+   *                                with the Correlation.
+   * @param parentProcessInstanceId Optional: If the ProcessInstance is a
+   *                                Subprocess, this contains the ID of the
+   *                                ProcessInstance that started it.
    */
-  createEntry(identity: IIdentity, correlationId: string, processInstanceId: string, processModelId: string, processModelHash: string): Promise<void>;
+  createEntry(identity: IIdentity,
+              correlationId: string,
+              processInstanceId: string,
+              processModelId: string,
+              processModelHash: string,
+              parentProcessInstanceId?: string): Promise<void>;
 
   /**
    * Returns a list of all Correlations.
@@ -79,6 +87,18 @@ export interface ICorrelationService {
    * @throws                    404, If the Correlation was not found.
    */
   getByProcessInstanceId(processInstanceId: string): Promise<Correlation>;
+
+  /**
+   * Gets a Correlation-Object that contains all Subprocesses for the given
+   * ProcessInstanceId.
+   *
+   * @async
+   * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
+   *                            the SubProcess-Correlations.
+   * @returns                   The retrieved Correlations.
+   *                            If none are found, an empty Array is returned.
+   */
+  getSubprocessesForProcessInstance(processInstanceId: string): Promise<Correlation>;
 
   /**
    * Removes all correlations with a specific ProcessModelId.

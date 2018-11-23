@@ -125,15 +125,6 @@ export interface IFlowNodeInstanceRepository {
   queryByInstanceId(flowNodeInstanceId: string): Promise<FlowNodeInstance>;
 
   /**
-   * Gets all FlowNodeInstances that are in the designated state.
-   *
-   * @async
-   * @param   state The state by which to retrieve the FlowNodeInstances.
-   * @returns       The retrieved FlowNodeInstances.
-   */
-  queryByState(state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
-
-  /**
    * Gets all FlowNodeInstances of a specific Correlation.
    *
    * @async
@@ -152,6 +143,35 @@ export interface IFlowNodeInstanceRepository {
    * @returns                The retrieved FlowNodeInstances.
    */
   queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
+
+  /**
+   * Gets all FlowNodeInstances that are in the designated state.
+   *
+   * @async
+   * @param   state The state by which to retrieve the FlowNodeInstances.
+   * @returns       The retrieved FlowNodeInstances.
+   */
+  queryByState(state: FlowNodeInstanceState): Promise<Array<FlowNodeInstance>>;
+
+  /**
+   * Gets all active FlowNodeInstances.
+   * A FlowNodeInstance is active, when it is in a "running" or "suspended"
+   * state.
+   *
+   * @async
+   * @returns The retrieved FlowNodeInstances.
+   */
+  queryActive(): Promise<Array<FlowNodeInstance>>;
+
+  /**
+   * Gets all active FlowNodeInstances of a specific ProcessInstance.
+   *
+   * @async
+   * @param   processInstanceId The ID of the ProcessInstance for which to get
+   *                            the active FlowNodeInstances.
+   * @returns                   The retrieved FlowNodeInstances.
+   */
+  queryActiveByProcessInstance(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
    * Gets all suspended FlowNodeInstances of a specific Correlation.

@@ -8,6 +8,7 @@ export class CorrelationFromRepository {
   public processModelHash: string;
   public processModelId: string;
   public processInstanceId: string;
+  public parentProcessInstanceId?: string;
   public identity: IIdentity;
   public createdAt: Date;
   public updatedAt: Date;
