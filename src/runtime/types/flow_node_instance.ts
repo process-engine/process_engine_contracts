@@ -1,4 +1,4 @@
-import {EventType} from '../../constants';
+import {BpmnType, EventType} from '../../constants';
 import {FlowNodeInstanceState} from './flow_node_instance_state';
 import {ProcessToken} from './process_token';
 
@@ -12,7 +12,7 @@ export class FlowNodeInstance {
    * Describes the type of FlowNode that this instance is executing.
    * Can be UserTask, ServiceTask, ScriptTask, etc.
    */
-  public flowNodeType: string;
+  public flowNodeType: BpmnType;
   /**
    * Optional: If the FlowNodeInstance is an Event, this will contain
    * the type of Event (Message, Signal, Timer, etc).
