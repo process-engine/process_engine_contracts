@@ -11,8 +11,9 @@ export interface IResumeProcessService {
    * Used primarily by CallActivities and Subprocesses.
    *
    * @async
+   * @param   processModelId    The ID of the ProcessModel to resume.
    * @param   processInstanceId The ID of the ProcessInstance to resume.
    * @returns                   The ProcessInstance's result.
    */
-  resumeProcessInstanceById(processInstanceId: string): Promise<any>;
+  resumeProcessInstanceById(processModelId: string, processInstanceId: string): Promise<any>;
 }
