@@ -145,6 +145,18 @@ export interface IFlowNodeInstanceService {
   queryByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
+   * Gets all FlowNodeInstances of a specific Correlation and ProcessModel.
+   *
+   * @async
+   * @param   correlationId The ID of the Correlation for which to get
+   *                            the active FlowNodeInstances.
+   * @param   processModelId The ID of the ProcessModel for which to get
+   *                            the active FlowNodeInstances.
+   * @returns                   The retrieved FlowNodeInstances.
+   */
+  queryByCorrelationAndProcessModel(correlationId: string, processModelId: string): Promise<Array<FlowNodeInstance>>;
+
+  /**
    * Gets all FlowNodeInstances that are in the designated state.
    *
    * @async
@@ -172,6 +184,18 @@ export interface IFlowNodeInstanceService {
    * @returns                   The retrieved FlowNodeInstances.
    */
   queryActiveByProcessInstance(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
+
+  /**
+   * Gets all active FlowNodeInstances of a specific Correlation and ProcessModel.
+   *
+   * @async
+   * @param   correlationId The ID of the Correlation for which to get
+   *                            the active FlowNodeInstances.
+   * @param   processModelId The ID of the ProcessModel for which to get
+   *                            the active FlowNodeInstances.
+   * @returns                   The retrieved FlowNodeInstances.
+   */
+  queryActiveByCorrelationAndProcessModel(correlationId: string, processModelId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
    * Gets all suspended FlowNodeInstances of a specific Correlation.
