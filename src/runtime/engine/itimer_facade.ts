@@ -9,7 +9,6 @@ export interface ITimerFacade {
   /**
    * Initializes a new timer that will be attached to the given flowNode.
    *
-   * @async
    * @param   flowNode   The FlowNode to which to attach the timer.
    * @param   timerType  The type of the timer (cycle, duration, etc).
    * @param   timerValue The value of the timer (interval, duration, etc).
@@ -17,10 +16,7 @@ export interface ITimerFacade {
    * @returns            A Subscription on the event aggreator, which can be used
    *                     to wait for the timer to elapse.
    */
-  initializeTimer(flowNode: Model.Base.FlowNode,
-                  timerType: TimerDefinitionType,
-                  timerValue: string,
-                  callback: Function): Promise<ISubscription>;
+  initializeTimer(flowNode: Model.Base.FlowNode, timerType: TimerDefinitionType, timerValue: string, callback: Function): ISubscription;
 
   /**
    * Takes an event definition and parsed it into a comprehensive
