@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "34.2.0",
+  "version": "34.3.0",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
