@@ -1,6 +1,7 @@
 import {BpmnType, EventType} from '../../constants';
 import {FlowNodeInstanceState} from './flow_node_instance_state';
 import {ProcessToken} from './process_token';
+import {ProcessTokenType} from './process_token_type';
 
 /**
  * Describes a single FlowNodeInstance.
@@ -33,4 +34,16 @@ export class FlowNodeInstance {
    * StartEvents will not have a predecessor, naturally.
    */
   public previousFlowNodeInstanceId?: string;
+
+  /**
+   * Gets the ProcessToken for this FlowNodeInstance that has the given type.
+   *
+   * @param   tokenType The type of the token to retrieve.
+   * @returns           The retrieved token.
+   */
+  public getTokenByType(tokenType: ProcessTokenType): ProcessToken {
+    return this.tokens.find((token: ProcessToken): boolean => {
+      return token.type === tokenType;
+    });
+  }
 }
