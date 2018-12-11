@@ -1,18 +1,16 @@
-import {FlowNode} from '../../model/base/flow_node';
 import {ProcessToken} from '../types/process_token';
-import {IFlowNodeHandler} from './iflow_node_handler';
 
 /**
- * Describes the signature a callback for an interruption event should have.
+ * Describes the signature a callback for an interruption should have.
  */
 export type onInterruptionCallback = (interruptionToken: ProcessToken) => void | Promise<void>;
 
 /**
- * Derived FlowNodeHandler, specialized for handling activities.
+ * Contains function definitions for interrupting a FlowNodeHandler.
  */
-export interface IActivityHandler<TFlowNode extends FlowNode> extends IFlowNodeHandler<TFlowNode> {
+export interface IInterruptable {
   /**
-   * This will interrupt the execution of the ActivityHandler, causing it to cease all
+   * This will interrupt the execution of a FlowNodeHandler, causing it to cease all
    * function and exiting.
    * Activities can be interrupted by BoundaryEvents or TerminateEndEvents.
    *
