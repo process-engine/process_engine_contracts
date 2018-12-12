@@ -24,11 +24,10 @@ export interface IProcessTokenFacade {
   /**
    * Adds the results of a given FlowNode to the ProcessToken.
    *
-   * @async
    * @param flowNodeId The ID of the FlowNode for which to add a result.
    * @param result     The payload to add to the ProcessToken.
    */
-  addResultForFlowNode(flowNodeId: string, result: any): Promise<void>;
+  addResultForFlowNode(flowNodeId: string, result: any): void;
 
   /**
    * Creates a copy of this ProcessTokenFacade, including all currently
@@ -37,61 +36,54 @@ export interface IProcessTokenFacade {
    * This is used to allow for the TokenHistory to be passed across multiple
    * branches running in parallel to each other.
    *
-   * @async
    * @returns The cloned ProcessTokenFacade.
    */
-  getProcessTokenFacadeForParallelBranch(): Promise<IProcessTokenFacade>;
+  getProcessTokenFacadeForParallelBranch(): IProcessTokenFacade;
 
   /**
    * Takes a second ProcessTokenFacade and merges its values into its own.
    *
-   * @async
    * @param processTokenToMerge The ProcessTokenFacade to merge into this one.
    */
-  mergeTokenHistory(processTokenToMerge: IProcessTokenFacade): Promise<void>;
+  mergeTokenHistory(processTokenToMerge: IProcessTokenFacade): void;
 
   /**
    * Gets all currently stored results.
    *
-   * @async
    * @returns A list of all results.
    */
-  getAllResults(): Promise<Array<IProcessTokenResult>>;
+  getAllResults(): Array<IProcessTokenResult>;
 
   /**
    * Returns the currently stored ProcessTokens into the old format.
    *
-   * @async
    * @returns The converted ProcessTokens.
    */
-  getOldTokenFormat(): Promise<any>;
+  getOldTokenFormat(): any;
 
   /**
    * Takes a SequenceFlow and checks if it contains a mapper.
    * If it does, the most recent ProcessToken is passed through that mapper
    * and stored in the resulting format.
    *
-   * @async
    * @param sequenceFlow The SequenceFlow for which to evaluate the mapper.
    */
-  evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): Promise<void>;
+  evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): void;
 
   /**
    * Takes a FlowNode and checks if it contains a mapper.
    * If it does, the most recent ProcessToken is passed through that mapper
    * and stored in the resulting format.
    *
-   * @async
    * @param flowNode The FlowNode for which to evaluate the mapper.
    */
-  evaluateMapperForFlowNode(flowNode: Model.Base.FlowNode): Promise<void>;
+  evaluateMapperForFlowNode(flowNode: Model.Base.FlowNode): void;
 
   /**
    * Takes a list of ProcessTokenResults and places them into the list of
    * results associated with this Facade.
    *
-   * @async
    * @param processTokenResults The results to import.
    */
-  importResults(processTokenResults: Array<IProcessTokenResult>): Promise<void>;
+  importResults(processTokenResults: Array<IProcessTokenResult>): void;
 }
