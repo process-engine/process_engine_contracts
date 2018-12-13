@@ -8,7 +8,7 @@ export type onInterruptionCallback = (interruptionToken: ProcessToken) => void |
 /**
  * Contains function definitions for interrupting a FlowNodeHandler.
  */
-export interface IInterruptable {
+export interface IInterruptible {
   /**
    * This will interrupt the execution of a FlowNodeHandler, causing it to cease all
    * function and exiting.
