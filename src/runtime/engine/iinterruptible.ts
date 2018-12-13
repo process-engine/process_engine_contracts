@@ -1,7 +1,9 @@
 import {ProcessToken} from '../types/process_token';
 
 /**
- * Describes the signature a callback for an interruption should have.
+ * The signature for the interruption callback function.
+ * This callback can be used by the derived FlowNodeHandlers to perform cleanup
+ * operations after being interrupted.
  */
 export type onInterruptionCallback = (interruptionToken: ProcessToken) => void | Promise<void>;
 
