@@ -1,3 +1,4 @@
+export * from './iinterruptible';
 export * from './iexecute_process_service';
 export * from './iflow_node_handler_factory';
 export * from './iflow_node_handler';
