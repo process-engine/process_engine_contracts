@@ -1,4 +1,4 @@
-import {ISubscription} from '@essential-projects/event_aggregator_contracts';
+import {Subscription} from '@essential-projects/event_aggregator_contracts';
 import {Model, TimerDefinitionType} from '@process-engine/process_engine_contracts';
 
 /**
@@ -16,7 +16,7 @@ export interface ITimerFacade {
    * @returns            A Subscription on the event aggreator, which can be used
    *                     to wait for the timer to elapse.
    */
-  initializeTimer(flowNode: Model.Base.FlowNode, timerType: TimerDefinitionType, timerValue: string, callback: Function): ISubscription;
+  initializeTimer(flowNode: Model.Base.FlowNode, timerType: TimerDefinitionType, timerValue: string, callback: Function): Subscription;
 
   /**
    * Takes an event definition and parsed it into a comprehensive
@@ -35,4 +35,11 @@ export interface ITimerFacade {
    * @returns                 The parsed timer value.
    */
   parseTimerDefinitionValue(eventDefinition: any): string;
+
+  /**
+   * Cancels the given timer subscription.
+   *
+   * @param subscription The subscription to cancel.
+   */
+  cancelTimerSubscription(subscription: Subscription): void;
 }

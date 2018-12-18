@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "36.0.0",
+  "version": "36.1.0",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -13,7 +13,7 @@
     "Sebastian Meier <sebastian.meier@5minds.de>"
   ],
   "dependencies": {
-    "@essential-projects/event_aggregator_contracts": "~3.1.0",
+    "@essential-projects/event_aggregator_contracts": "~4.0.0",
     "@essential-projects/iam_contracts": "~3.2.0"
   },
   "devDependencies": {
