@@ -44,6 +44,7 @@ export enum TimerDefinitionType {
  * Contains a list of all supported event types.
  */
 export enum EventType {
+  linkEvent = 'linkEvent',
   messageEvent = 'messageEvent',
   signalEvent = 'signalEvent',
   terminateEvent = 'terminateEvent',
