@@ -38,8 +38,8 @@ export class IntermediateThrowEvent extends Event {
   }
 
   /**
-   * When using an IntermediateLinkCatchEvent, this will contain the link by
-   * which to access this event.
+   * When using an IntermediateLinkThrowEvent, this will contain the link that
+   * gets called.
    */
   public linkEventDefinition?: LinkEventDefinition;
 
