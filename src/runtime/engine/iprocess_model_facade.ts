@@ -93,7 +93,17 @@ export interface IProcessModelFacade {
    * @param parallelSplitGateway The gateway for which to get the JoinGateway.
    * @returns                    The retrieved ParallelJoinGateway.
    */
-  getJoinGatewayFor(parallelSplitGateway: Model.Gateways.ParallelGateway): Model.Gateways.ParallelGateway; // TODO: Rename to getParallelJoinGatewayFor
+  getJoinGatewayFor(parallelSplitGateway: Model.Gateways.ParallelGateway): Model.Gateways.ParallelGateway;
+
+  /**
+   * Returns the IntermediateLinkCatchEvent with the given link name.
+   *
+   * @param   linkName The name of the link for which to retrieve the
+   *                   corresponding CatchEvent.
+   * @returns          The IntermediateLinkCatchEvent that handles the given
+   *                   link.
+   */
+  getLinkCatchEventByLinkName(linkName: string): Model.Events.IntermediateCatchEvent;
 
   /**
    * Gets the SequenceFlow that links two FlowNodes together.
