@@ -87,6 +87,7 @@ export enum TaskElement {
  */
 export enum FlowElementProperty {
   ErrorEventDefinition = 'bpmn:errorEventDefinition',
+  LinkEventDefinition = 'bpmn:linkEventDefinition',
   MessageEventDefinition = 'bpmn:messageEventDefinition',
   SignalEventDefinition = 'bpmn:signalEventDefinition',
   TerminateEventDefinition = 'bpmn:terminateEventDefinition',
