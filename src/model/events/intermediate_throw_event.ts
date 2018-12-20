@@ -1,4 +1,5 @@
 import {
+  LinkEventDefinition,
   MessageEventDefinition,
   SignalEventDefinition,
 } from '../event_definitions/index';
@@ -12,27 +13,35 @@ import {Event} from './event';
  * These are used to raise events during ProcessModel execution.
  */
 export class IntermediateThrowEvent extends Event {
+
   public get bpmnType(): BpmnType {
     return BpmnType.intermediateThrowEvent;
   }
 
   public get eventType(): EventType {
-    const eventIsMessageEvent: boolean = this.messageEventDefinition !== undefined &&
-                                         this.messageEventDefinition !== null;
+    const eventIsMessageEvent: boolean = this.messageEventDefinition !== undefined;
     if (eventIsMessageEvent) {
-
       return EventType.messageEvent;
     }
 
-    const eventIsSignalEvent: boolean = this.signalEventDefinition !== undefined &&
-                                        this.signalEventDefinition !== null;
+    const eventIsSignalEvent: boolean = this.signalEventDefinition !== undefined;
     if (eventIsSignalEvent) {
-
       return EventType.signalEvent;
+    }
+
+    const eventIsLinkEvent: boolean = this.linkEventDefinition !== undefined;
+    if (eventIsLinkEvent) {
+      return EventType.linkEvent;
     }
 
     return undefined;
   }
+
+  /**
+   * When using an IntermediateLinkThrowEvent, this will contain the link that
+   * gets called.
+   */
+  public linkEventDefinition?: LinkEventDefinition;
 
   /**
    * When using an IntermediateMessageThrowEvent, this will contain the message
