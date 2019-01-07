@@ -1,3 +1,5 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {BpmnType, EventType} from '../../constants';
 import {FlowNodeInstanceState} from './flow_node_instance_state';
 import {ProcessToken} from './process_token';
@@ -21,12 +23,18 @@ export class FlowNodeInstance {
    * If the FNI is a regular Start- or End- Event, this will be undefined.
    */
   public eventType?: EventType;
-  public processInstanceId: string;
-  public processModelId: string;
   public correlationId: string;
+  public processModelId: string;
+  public processInstanceId: string;
+  /**
+   * Optional: If the FNI belongs to a Subprocess, this will contain the ID of the
+   * parent process instance.
+   */
+  public parentProcessInstanceId?: string;
   public tokens: Array<ProcessToken>;
   public state: FlowNodeInstanceState = FlowNodeInstanceState.running;
   public error?: string;
+  public identity: IIdentity;
   /**
    * Optional: Contains the InstanceId of the FlowNodeInstance that was executed
    * before this one.
