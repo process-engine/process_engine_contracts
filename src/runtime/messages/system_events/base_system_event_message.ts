@@ -1,14 +1,15 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
+/**
+ * The base class for definining system event messages.
+ * System events are peripheral events that are not contained within a
+ * ProcessModel, but are relevant to its execution.
+ *
+ * For example: A UserTask was reached or finished.
+ */
 export class BaseSystemEventMessage {
-  /**
-   * The id of the correlation the user task being finished belongs to.
-   */
   public readonly correlationId: string;
   public readonly processModelId: string;
-  /**
-   * The id of the process instance the user task being finished belongs to.
-   */
   public readonly processInstanceId: string;
   public readonly flowNodeId: string;
   public readonly flowNodeInstanceId: string;
