@@ -34,7 +34,7 @@ export class FlowNodeInstance {
   public tokens: Array<ProcessToken>;
   public state: FlowNodeInstanceState = FlowNodeInstanceState.running;
   public error?: string;
-  public identity: IIdentity;
+  public owner: IIdentity;
   /**
    * Optional: Contains the InstanceId of the FlowNodeInstance that was executed
    * before this one.
