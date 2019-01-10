@@ -1,3 +1,5 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
@@ -9,7 +11,9 @@ export class ProcessStartedMessage extends BaseSystemEventMessage {
               processModelId: string,
               processInstanceId: string,
               startEventId: string,
+              startEventInstanceId: string,
+              processInstanceOwner: IIdentity,
               currentToken: any) {
-    super(correlationId, processModelId, processInstanceId, startEventId, undefined, currentToken);
+    super(correlationId, processModelId, processInstanceId, startEventId, startEventInstanceId, processInstanceOwner, currentToken);
   }
 }
