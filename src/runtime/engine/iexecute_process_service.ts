@@ -1,5 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
+import {EndEventReachedMessage, ProcessStartedMessage} from '../messages';
 import {Model} from './../../model';
 
 /**
@@ -30,7 +31,7 @@ export interface IExecuteProcessService {
         startEventId: string,
         correlationId: string,
         initialPayload?: any,
-        caller?: string): Promise<any>;
+        caller?: string): Promise<ProcessStartedMessage>;
 
   /**
    * Executes a ProcessModel.
@@ -52,7 +53,7 @@ export interface IExecuteProcessService {
                         startEventId: string,
                         correlationId: string,
                         initialPayload?: any,
-                        caller?: string): Promise<any>;
+                        caller?: string): Promise<EndEventReachedMessage>;
 
   /**
    * Executes a ProcessModel.
@@ -76,5 +77,5 @@ export interface IExecuteProcessService {
                                 correlationId: string,
                                 endEventId: string,
                                 initialPayload?: any,
-                                caller?: string): Promise<any>;
+                                caller?: string): Promise<EndEventReachedMessage>;
 }
