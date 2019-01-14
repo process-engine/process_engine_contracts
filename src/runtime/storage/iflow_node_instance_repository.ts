@@ -149,12 +149,22 @@ export interface IFlowNodeInstanceRepository {
    *
    * @async
    * @param   correlationId The ID of the Correlation for which to get
-   *                            the active FlowNodeInstances.
+   *                            the FlowNodeInstances.
    * @param   processModelId The ID of the ProcessModel for which to get
-   *                            the active FlowNodeInstances.
+   *                            the FlowNodeInstances.
    * @returns                   The retrieved FlowNodeInstances.
    */
   queryByCorrelationAndProcessModel(correlationId: string, processModelId: string): Promise<Array<FlowNodeInstance>>;
+
+  /**
+   * Gets all FlowNodeInstances of a specific ProcessInstance.
+   *
+   * @async
+   * @param   processInstanceId The ID of the ProcessInstance for which to get
+   *                            the FlowNodeInstances.
+   * @returns                   The retrieved FlowNodeInstances.
+   */
+  queryByProcessInstance(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
    * Gets all FlowNodeInstances that are in the designated state.
