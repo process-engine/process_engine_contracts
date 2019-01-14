@@ -5,4 +5,5 @@ export * from './user_task_finished';
 export * from './user_task_reached';
 export * from './manual_task_finished';
 export * from './manual_task_reached';
+export * from './process_ended';
 export * from './process_started';
