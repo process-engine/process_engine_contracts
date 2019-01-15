@@ -19,4 +19,6 @@ export class UserTask extends Task {
   public dueDate?: Date;
   public followUpDate?: Date;
   public formFields: Array<FormField>;
+  public description: string;
+  public finishedMessage: string;
 }
