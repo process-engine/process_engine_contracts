@@ -227,7 +227,6 @@ export interface IFlowNodeInstanceService {
    */
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
 
-
   /**
    * Gets all suspended FlowNodeInstances of a specific ProcessInstance.
    *
