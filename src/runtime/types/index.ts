@@ -7,3 +7,4 @@ export * from './process_definition_from_repository';
 export * from './process_end_type';
 export * from './process_token_type';
 export * from './process_token';
+export * from './user_task_result';
