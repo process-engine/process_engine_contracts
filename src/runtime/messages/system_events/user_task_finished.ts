@@ -1,6 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {UserTaskResult} from '../../engine/user_task_result';
+import {UserTaskResult} from '../../types/user_task_result';
 import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
