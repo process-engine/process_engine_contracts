@@ -1,6 +1,5 @@
 import {Model} from './../../model';
 import {IFlowNodeHandler} from './iflow_node_handler';
-import {IProcessModelFacade} from './iprocess_model_facade';
 
 /**
  * Creates instances of a FlowNodeHandler for a specific FlowNode type.

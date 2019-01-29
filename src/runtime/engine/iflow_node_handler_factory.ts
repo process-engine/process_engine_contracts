@@ -11,8 +11,8 @@ export interface IFlowNodeHandlerFactory {
    *
    * @async
    * @param   flowNode           The FlowNode for which to create a handler.
-   * @param   processModelFacade The ProcessModelFacade to use.
+   * @param   processModelFacade Optional: A ProcessModelFacade to use.
    * @returns                    The created FlowNodeHandler.
    */
-  create<TFlowNode extends Model.Base.FlowNode>(flowNode: TFlowNode, processModelFacade: IProcessModelFacade): Promise<IFlowNodeHandler<TFlowNode>>;
+  create<TFlowNode extends Model.Base.FlowNode>(flowNode: TFlowNode, processModelFacade?: IProcessModelFacade): Promise<IFlowNodeHandler<TFlowNode>>;
 }
