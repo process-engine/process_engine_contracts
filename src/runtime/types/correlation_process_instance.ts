@@ -1,15 +1,15 @@
-import {FlowNodeInstanceState} from './flow_node_instance_state';
+import {CorrelationState} from './correlation_state';
 
 /**
- * Describes a ProcessModel within a Correlation.
+ * Describes a ProcessInstance within a Correlation.
  */
-export class CorrelationProcessModel {
+export class CorrelationProcessInstance {
   public processDefinitionName: string;
   public hash: string;
   public xml: string;
   public processModelId: string;
   public processInstanceId?: string;
   public parentProcessInstanceId?: string;
-  public state: FlowNodeInstanceState;
+  public state: CorrelationState;
   public createdAt?: Date;
 }
