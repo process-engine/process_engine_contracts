@@ -125,5 +125,5 @@ export interface ICorrelationService {
    * @param error           OPTIONAL: The associated error object.
    * @throws NotFoundError  When no Correlation with the given ID was found.
    */
-  finishWithError(correlationId: string, error?: Error): Promise<void>;
+  finishWithError(correlationId: string, error: Error): Promise<void>;
 }
