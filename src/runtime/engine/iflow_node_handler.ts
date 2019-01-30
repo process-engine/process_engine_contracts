@@ -27,31 +27,14 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
   getFlowNode(): TFlowNode;
 
   /**
-   * Resumes the given FlowNodeInstance from the point at which it was
-   * interrupted.
-   *
-   * @async
-   * @param   flowNodeInstance   The FlowNodeInstance to resume.
-   * @param   processTokenFacade The Facade for the current ProcessToken.
-   * @param   processModelFacade The Facade for the ProcessModel.
-   * @param   identity           The Identity that started the FlowNodeInstance.
-   */
-  resume(
-    flowNodeInstance: FlowNodeInstance,
-    processTokenFacade: IProcessTokenFacade,
-    processModelFacade: IProcessModelFacade,
-    identity: IIdentity,
-  ): Promise<void>;
-
-  /**
    * Executes the FlowNode attached to this handler.
    *
    * @async
-   * @param   token                      The current ProcessToken.
-   * @param   processTokenFacade         The Facade for the current ProcessToken.
-   * @param   processModelFacade         The Facade for the ProcessModel.
-   * @param   identity                   Contains the users identity.
-   * @param   previousFlowNodeInstanceId The ID of the previously run FNI.
+   * @param token                      The current ProcessToken.
+   * @param processTokenFacade         The Facade for the current ProcessToken.
+   * @param processModelFacade         The Facade for the ProcessModel.
+   * @param identity                   Contains the users identity.
+   * @param previousFlowNodeInstanceId The ID of the previously run FNI.
    */
   execute(
     token: ProcessToken,
@@ -59,5 +42,23 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
     processModelFacade: IProcessModelFacade,
     identity: IIdentity,
     previousFlowNodeInstanceId?: string,
-    ): Promise<void>;
+  ): Promise<void>;
+
+  /**
+   * Resumes the given FlowNodeInstance from the point at which it was
+   * interrupted.
+   *
+   * @async
+   * @param flowNodeInstances  The FlowNodeInstances for the ProcessInstance
+   *                           in which the FlowNodeInstance runs.
+   * @param processTokenFacade The Facade for the current ProcessToken.
+   * @param processModelFacade The Facade for the ProcessModel.
+   * @param identity           The Identity that started the FlowNodeInstance.
+   */
+  resume(
+    flowNodeInstances: Array<FlowNodeInstance>,
+    processTokenFacade: IProcessTokenFacade,
+    processModelFacade: IProcessModelFacade,
+    identity: IIdentity,
+  ): Promise<void>;
 }
