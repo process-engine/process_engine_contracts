@@ -98,7 +98,7 @@ export interface ICorrelationRepository {
    * @async
    * @param state   state State of the Correlations which should be returned.
    */
-  getCorrelationsForState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
+  getCorrelationsByState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
 
   /**
    * Removes all correlations with a specific ProcessModelId.
