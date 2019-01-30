@@ -98,4 +98,13 @@ export interface ICorrelationRepository {
    * @param   processModelId The ID of the processModel, by which correlations should be removed.
    */
   deleteCorrelationByProcessModelId(correlationId: string): Promise<void>;
+
+  /**
+   * Marks the Correlation with the given CorrelationId as finished.
+   *
+   * @async
+   * @param correlationId   The ID of the Correlation which should be marked as finished.
+   * @throws NotFoundError  When no Correlation with the given ID was found.
+   */
+  finishCorrelation(correlationId: string): Promise<void>;
 }
