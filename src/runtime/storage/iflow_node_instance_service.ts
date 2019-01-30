@@ -228,6 +228,16 @@ export interface IFlowNodeInstanceService {
   querySuspendedByProcessModel(processModelId: string): Promise<Array<FlowNodeInstance>>;
 
   /**
+   * Gets all suspended FlowNodeInstances of a specific ProcessInstance.
+   *
+   * @async
+   * @param processInstanceId The ID of the ProcessInstance for which to get the
+   *                          FlowNodeInstances.
+   * @returns                 The retrieved FlowNodeInstances.
+   */
+  querySuspendedByProcessInstance(processInstanceId: string): Promise<Array<FlowNodeInstance>>;
+
+  /**
    * Gets all ProcessTokens of a specific ProcessInstance.
    *
    * @async

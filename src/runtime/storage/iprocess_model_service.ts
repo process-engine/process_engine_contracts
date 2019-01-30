@@ -42,6 +42,21 @@ export interface IProcessModelService {
   getProcessModelById(identity: IIdentity, processModelId: string): Promise<Model.Types.Process>;
 
   /**
+   * Retrieves a ProcessModel by a ProcessInstanceID.
+   * The user will only be able to see FlowNodes and Lanes that he is allowed
+   * to access.
+   *
+   * @async
+   * @param  identity          Contains the requesting users identity.
+   * @param  processInstanceId The ProcessInstanceID of the ProcessModel to retrieve.
+   * @returns                  The retrieved ProcessModel.
+   * @throws                   403, if the User is forbidden to see the
+   *                           ProcessModel.
+   * @throws                   404, if the ProcessModel was not found.
+   */
+  getProcessModelByProcessInstanceId(identity: IIdentity, processInstanceId: string): Promise<Model.Types.Process>;
+
+  /**
    * Retrieves a ProcessDefinition in its raw XML format.
    *
    * @async
