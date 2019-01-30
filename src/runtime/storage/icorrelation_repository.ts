@@ -107,4 +107,15 @@ export interface ICorrelationRepository {
    * @throws NotFoundError  When no Correlation with the given ID was found.
    */
   finishCorrelation(correlationId: string): Promise<void>;
+
+  /**
+   * Marks the Correlation with the given CorrelationID as erroneous and
+   * adds a serialized version of the passed error (if an error object is passed).
+   *
+   * @async
+   * @param correlationId   The ID of the Correlation which should be marked as erroneous.
+   * @param error           OPTIONAL: The associated error object.
+   * @throws NotFoundError  When no Correlation with the given ID was found.
+   */
+  finishWithError(correlationId: string, error?: Error): Promise<void>;
 }
