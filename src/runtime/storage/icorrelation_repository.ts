@@ -1,5 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
+import {CorrelationState} from '../types/correlation_state';
 import {CorrelationFromRepository} from '../types/index';
 
 /**
@@ -90,6 +91,14 @@ export interface ICorrelationRepository {
    *                            If none are found, an empty Array is returned.
    */
   getSubprocessesForProcessInstance(processInstanceId: string): Promise<Array<CorrelationFromRepository>>;
+
+  /**
+   * Returns a list of all Correlations with the desired state.
+   *
+   * @async
+   * @param state   state State of the Correlations which should be returned.
+   */
+  getCorrelationsForState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
 
   /**
    * Removes all correlations with a specific ProcessModelId.
