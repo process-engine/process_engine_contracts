@@ -96,7 +96,7 @@ export interface ICorrelationRepository {
    * Returns a list of all Correlations in the specified state.
    *
    * @async
-   * @param state   state The state by which to retrieve the correlations.
+   * @param   state   state The state by which to retrieve the correlations.
    * @returns             The retrieved correlations.
    */
   getCorrelationsByState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
@@ -113,8 +113,8 @@ export interface ICorrelationRepository {
    * Finishes the given correlation.
    *
    * @async
-   * @param correlationId   The ID of the Correlation to finish.
-   * @throws NotFoundError  When no matching correlation was found.
+   * @param   correlationId   The ID of the Correlation to finish.
+   * @throws  NotFoundError  When no matching correlation was found.
    */
   finishCorrelation(correlationId: string): Promise<void>;
 
@@ -122,9 +122,9 @@ export interface ICorrelationRepository {
    * Finishes the given correlation with an error.
    *
    * @async
-   * @param correlationId   The ID of the Correlation to finish erroneously.
-   * @param error           The error that occurred.
-   * @throws NotFoundError  When no matching correlation was found.
+   * @param   correlationId   The ID of the Correlation to finish erroneously.
+   * @param   error           The error that occurred.
+   * @throws  NotFoundError  When no matching correlation was found.
    */
   finishWithError(correlationId: string, error: Error): Promise<void>;
 }

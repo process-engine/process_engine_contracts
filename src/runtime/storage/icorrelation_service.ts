@@ -93,7 +93,7 @@ export interface ICorrelationService {
    * ProcessInstanceId.
    *
    * @async
-   * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
+   * @param  processInstanceId The ID of the ProcessInstance for which to retrieve
    *                            the SubProcess-Correlations.
    * @returns                   The retrieved Correlations.
    *                            If none are found, an empty Array is returned.
@@ -104,14 +104,14 @@ export interface ICorrelationService {
    * Removes all correlations with a specific ProcessModelId.
    *
    * @async
-   * @param    processModelId The ID of the processModel, by which correlations should be removed.
+   * @param  processModelId The ID of the processModel, by which correlations should be removed.
    */
   deleteCorrelationByProcessModelId(processModelId: string): Promise<void>;
   /**
    * Finishes the given correlation.
    *
    * @async
-   * @param correlationId   The ID of the Correlation to finish.
+   * @param  correlationId   The ID of the Correlation to finish.
    * @throws NotFoundError  When no matching correlation was found.
    */
   finishCorrelation(correlationId: string): Promise<void>;
@@ -120,8 +120,8 @@ export interface ICorrelationService {
    * Finishes the given correlation with an error.
    *
    * @async
-   * @param correlationId   The ID of the Correlation to finish erroneously.
-   * @param error           The error that occurred.
+   * @param  correlationId   The ID of the Correlation to finish erroneously.
+   * @param  error           The error that occurred.
    * @throws NotFoundError  When no matching correlation was found.
    */
   finishWithError(correlationId: string, error: Error): Promise<void>;
