@@ -11,5 +11,6 @@ export class Correlation {
   public identity: IIdentity;
   public processModels: Array<CorrelationProcessInstance>;
   public state: CorrelationState;
+  public error: Error;
   public createdAt?: Date;
 }

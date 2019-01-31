@@ -11,5 +11,6 @@ export class CorrelationProcessInstance {
   public processInstanceId?: string;
   public parentProcessInstanceId?: string;
   public state: CorrelationState;
+  public error: Error;
   public createdAt?: Date;
 }

@@ -12,6 +12,7 @@ export class CorrelationFromRepository {
   public processInstanceId: string;
   public parentProcessInstanceId?: string;
   public state: CorrelationState;
+  public error: Error;
   public identity: IIdentity;
   public createdAt: Date;
   public updatedAt: Date;
