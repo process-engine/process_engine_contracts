@@ -108,22 +108,21 @@ export interface ICorrelationService {
    */
   deleteCorrelationByProcessModelId(processModelId: string): Promise<void>;
   /**
-   * Marks the Correlation with the given CorrelationId as finished.
+   * Finishes the given correlation.
    *
    * @async
-   * @param correlationId   The ID of the Correlation which should be marked as finished.
-   * @throws NotFoundError  When no Correlation with the given ID was found.
+   * @param correlationId   The ID of the Correlation to finish.
+   * @throws NotFoundError  When no matching correlation was found.
    */
   finishCorrelation(correlationId: string): Promise<void>;
 
   /**
-   * Marks the Correlation with the given CorrelationID as erroneous and
-   * adds a serialized version of the passed error (if an error object is passed).
+   * Finishes the given correlation with an error.
    *
    * @async
-   * @param correlationId   The ID of the Correlation which should be marked as erroneous.
-   * @param error           OPTIONAL: The associated error object.
-   * @throws NotFoundError  When no Correlation with the given ID was found.
+   * @param correlationId   The ID of the Correlation to finish erroneously.
+   * @param error           The error that occurred.
+   * @throws NotFoundError  When no matching correlation was found.
    */
   finishWithError(correlationId: string, error: Error): Promise<void>;
 }

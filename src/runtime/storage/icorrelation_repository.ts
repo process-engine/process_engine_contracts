@@ -93,10 +93,11 @@ export interface ICorrelationRepository {
   getSubprocessesForProcessInstance(processInstanceId: string): Promise<Array<CorrelationFromRepository>>;
 
   /**
-   * Returns a list of all Correlations with the desired state.
+   * Returns a list of all Correlations in the specified state.
    *
    * @async
-   * @param state   state State of the Correlations which should be returned.
+   * @param state   state The state by which to retrieve the correlations.
+   * @returns             The retrieved correlations.
    */
   getCorrelationsByState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
 
@@ -109,11 +110,11 @@ export interface ICorrelationRepository {
   deleteCorrelationByProcessModelId(correlationId: string): Promise<void>;
 
   /**
-   * Marks the Correlation with the given CorrelationId as finished.
+   * Finishes the given correlation.
    *
    * @async
-   * @param correlationId   The ID of the Correlation which should be marked as finished.
-   * @throws NotFoundError  When no Correlation with the given ID was found.
+   * @param correlationId   The ID of the Correlation to finish.
+   * @throws NotFoundError  When no matching correlation was found.
    */
   finishCorrelation(correlationId: string): Promise<void>;
 
