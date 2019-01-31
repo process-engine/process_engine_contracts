@@ -96,7 +96,7 @@ export interface ICorrelationRepository {
    * Returns a list of all Correlations in the specified state.
    *
    * @async
-   * @param   state   state The state by which to retrieve the correlations.
+   * @param   state       The state by which to retrieve the correlations.
    * @returns             The retrieved correlations.
    */
   getCorrelationsByState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
