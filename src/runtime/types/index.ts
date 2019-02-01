@@ -1,6 +1,5 @@
 export * from './correlation_from_repository';
-export * from './correlation_process_instance';
-export * from './correlation_state';
+export * from './correlation_process_model';
 export * from './correlation';
 export * from './flow_node_instance_state';
 export * from './flow_node_instance';
