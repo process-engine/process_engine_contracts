@@ -1,6 +1,5 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {CorrelationState} from '../types/correlation_state';
 import {CorrelationFromRepository} from '../types/index';
 
 /**
@@ -93,38 +92,10 @@ export interface ICorrelationRepository {
   getSubprocessesForProcessInstance(processInstanceId: string): Promise<Array<CorrelationFromRepository>>;
 
   /**
-   * Returns a list of all Correlations in the specified state.
-   *
-   * @async
-   * @param   state       The state by which to retrieve the correlations.
-   * @returns             The retrieved correlations.
-   */
-  getCorrelationsByState(state: CorrelationState): Promise<Array<CorrelationFromRepository>>;
-
-  /**
    * Removes all correlations with a specific ProcessModelId.
    *
    * @async
    * @param   processModelId The ID of the processModel, by which correlations should be removed.
    */
   deleteCorrelationByProcessModelId(correlationId: string): Promise<void>;
-
-  /**
-   * Finishes the given correlation.
-   *
-   * @async
-   * @param   correlationId   The ID of the Correlation to finish.
-   * @throws  NotFoundError  When no matching correlation was found.
-   */
-  finishCorrelation(correlationId: string): Promise<void>;
-
-  /**
-   * Finishes the given correlation with an error.
-   *
-   * @async
-   * @param   correlationId   The ID of the Correlation to finish erroneously.
-   * @param   error           The error that occurred.
-   * @throws  NotFoundError  When no matching correlation was found.
-   */
-  finishWithError(correlationId: string, error: Error): Promise<void>;
 }
