@@ -76,10 +76,19 @@ export interface IProcessModelFacade {
    * This should only return multiple results, when dealing with a Gateway.
    * Otherwise, the model is invalid.
    *
-   * @param flowNodeId The FlowNode for which to get the succeeding FlowNode.
+   * @param flowNodeId The FlowNode for which to get the succeeding FlowNodes.
    * @returns          The upcoming FlowNodes.
    */
   getNextFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
+
+  /**
+   * Gets the FlowNodes that preceeded the given FlowNode.
+   * Can contain multiple results for all FlowNode types.
+   *
+   * @param flowNodeId The FlowNode for which to get the preceeding FlowNodes.
+   * @returns          The preceeding FlowNodes.
+   */
+  getPreviousFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
 
   /**
    * Gets all BoundaryEvents for the given FlowNode.
