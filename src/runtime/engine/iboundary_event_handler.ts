@@ -33,7 +33,7 @@ export interface IBoundaryEventHandler<TBoundaryEvent extends BoundaryEvent> {
    *
    * @param callback The callback to call when the BoundaryEvent is triggered.
    */
-  onBoundaryEventTriggered(callback: Function): void;
+  onTriggered(callback: Function): void;
 
   /**
    * Initializes the BoundaryEvent and waits until its triggering event occurs.
