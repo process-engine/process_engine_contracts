@@ -1,4 +1,5 @@
 export * from './iboundary_event_handler';
+export * from './iboundary_event_handler_factory';
 export * from './iinterruptible';
 export * from './iexecute_process_service';
 export * from './iflow_node_handler_dedicated_factory';
