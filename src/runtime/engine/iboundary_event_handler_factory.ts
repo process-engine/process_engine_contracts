@@ -1,5 +1,5 @@
 import {Model} from './../../model';
-import {IFlowNodeHandler} from './iflow_node_handler';
+import {IBoundaryEventHandler} from './iboundary_event_handler';
 import {IProcessModelFacade} from './iprocess_model_facade';
 
 /**
@@ -14,5 +14,5 @@ export interface IBoundaryEventHandlerFactory {
    * @param   processModelFacade The ProcessModelFacade to use.
    * @returns                    The created BoundaryEventHandler.
    */
-  create(flowNode: Model.Events.BoundaryEvent, processModelFacade: IProcessModelFacade): Promise<IFlowNodeHandler<Model.Events.BoundaryEvent>>;
+  create(flowNode: Model.Events.BoundaryEvent, processModelFacade: IProcessModelFacade): Promise<IBoundaryEventHandler>;
 }
