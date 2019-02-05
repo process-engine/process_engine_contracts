@@ -7,7 +7,14 @@ import {
   IProcessTokenFacade,
 } from './index';
 
-export type OnTriggeredCallback = (data: any) => void;
+/**
+ * Defines the signature a callback for a triggered BoundaryEvent should have.
+ *
+ * @param nextFlowNode The FlowNode to run after this BoundaryEvent.
+ * @param eventData    Optional: The payload that was sent with the triggering
+ *                     event.
+ */
+export type OnTriggeredCallback = (nextFlowNode: FlowNode, eventData?: any) => void;
 
 /**
  * Handles the execution of a BoundaryEvent.
@@ -40,7 +47,7 @@ export interface IBoundaryEventHandler {
     processModelFacade: IProcessModelFacade,
     identity: IIdentity,
     onTriggeredCallback: OnTriggeredCallback,
-  ): Promise<FlowNode>;
+  ): Promise<void>;
 
   /**
    * Cancels the Execution of this BoundaryEvent.
