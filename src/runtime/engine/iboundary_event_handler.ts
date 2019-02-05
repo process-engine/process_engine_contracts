@@ -8,7 +8,7 @@ import {
   IProcessTokenFacade,
 } from './index';
 
-export type onTriggeredCallback = (data: any) => void;
+export type OnTriggeredCallback = (data: any) => void;
 
 /**
  * Handles the execution of a BoundaryEvent.
@@ -28,7 +28,7 @@ export interface IBoundaryEventHandler<TBoundaryEvent extends BoundaryEvent> {
    *
    * @param callback The callback to call when the BoundaryEvent is triggered.
    */
-  onTriggered(callback: onTriggeredCallback): void;
+  onTriggered(callback: OnTriggeredCallback): void;
 
   /**
    * Initializes the BoundaryEvent and waits until its triggering event occurs.
