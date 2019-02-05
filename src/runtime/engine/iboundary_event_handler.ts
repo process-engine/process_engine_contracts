@@ -1,7 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 import {FlowNode} from '../../model/base';
-import {BoundaryEvent} from '../../model/events';
 import {ProcessToken} from '../types';
 import {
   IProcessModelFacade,
@@ -13,7 +12,7 @@ export type OnTriggeredCallback = (data: any) => void;
 /**
  * Handles the execution of a BoundaryEvent.
  */
-export interface IBoundaryEventHandler<TBoundaryEvent extends BoundaryEvent> {
+export interface IBoundaryEventHandler {
 
   /**
    * Gets the instance ID of the BoundaryEvent that this handler is responsible for.
@@ -23,31 +22,24 @@ export interface IBoundaryEventHandler<TBoundaryEvent extends BoundaryEvent> {
   getInstanceId(): string;
 
   /**
-   * Allows a decorated handler to pass a callback to the BoundaryEvent.
-   * The callback will get called, after the BoundaryEvent was triggered.
-   *
-   * @param callback The callback to call when the BoundaryEvent is triggered.
-   */
-  onTriggered(callback: OnTriggeredCallback): void;
-
-  /**
    * Initializes the BoundaryEvent and waits until its triggering event occurs.
    * For SignalEvents, this will be an incoming signal, for MessageEvents an
    * incoming message, asf.
    *
    * @async
-   * @param token                      The current ProcessToken.
-   * @param processTokenFacade         The Facade for the current ProcessToken.
-   * @param processModelFacade         The Facade for the ProcessModel.
-   * @param identity                   Contains the users identity.
-   * @param previousFlowNodeInstanceId The ID of the previously run FNI.
+   * @param token               The current ProcessToken.
+   * @param processTokenFacade  The Facade for the current ProcessToken.
+   * @param processModelFacade  The Facade for the ProcessModel.
+   * @param identity            Contains the users identity.
+   * @param onTriggeredCallback The callback to run after the BoundaryEvent was
+   *                            triggered.
    */
   waitForTriggeringEvent(
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
     processModelFacade: IProcessModelFacade,
     identity: IIdentity,
-    previousFlowNodeInstanceId?: string,
+    onTriggeredCallback: OnTriggeredCallback,
   ): Promise<FlowNode>;
 
   /**
