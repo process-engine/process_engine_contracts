@@ -8,13 +8,27 @@ import {
 } from './index';
 
 /**
+ * Encapsulates the data sent with a OnTriggeredCallback.
+ *
+ * @param nextFlowNode     The FlowNode that follows the triggered BoundaryEvent.
+ * @param interruptHandler If true, the BoundaryEvent is interrupting and the
+ *                         FlowNodeHandler must stop working.
+ * @param eventPayload     Optional: Any payload that was sent with the
+ *                         triggering event.
+ */
+export type OnBoundaryEventTriggeredData = {
+  nextFlowNode: FlowNode,
+  interruptHandler: boolean,
+  eventPayload?: any,
+};
+
+/**
  * Defines the signature a callback for a triggered BoundaryEvent should have.
  *
- * @param nextFlowNode The FlowNode to run after this BoundaryEvent.
- * @param eventData    Optional: The payload that was sent with the triggering
- *                     event.
+ * @param data Contains information that the decorated handler will need for
+ *             processing the triggered BoundaryEvent.
  */
-export type OnTriggeredCallback = (nextFlowNode: FlowNode, eventData?: any) => void;
+export type OnBoundaryEventTriggeredCallback = (data: OnBoundaryEventTriggeredData) => void;
 
 /**
  * Handles the execution of a BoundaryEvent.
@@ -46,7 +60,7 @@ export interface IBoundaryEventHandler {
     processTokenFacade: IProcessTokenFacade,
     processModelFacade: IProcessModelFacade,
     identity: IIdentity,
-    onTriggeredCallback: OnTriggeredCallback,
+    onTriggeredCallback: OnBoundaryEventTriggeredCallback,
   ): Promise<void>;
 
   /**
