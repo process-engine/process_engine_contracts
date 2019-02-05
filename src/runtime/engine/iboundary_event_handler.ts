@@ -8,7 +8,7 @@ import {
 } from './index';
 
 /**
- * Encapsulates the data sent with a OnTriggeredCallback.
+ * Encapsulates the data sent with an OnTriggeredCallback.
  *
  * @param nextFlowNode     The FlowNode that follows the triggered BoundaryEvent.
  * @param interruptHandler If true, the BoundaryEvent is interrupting and the
