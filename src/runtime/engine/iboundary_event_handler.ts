@@ -44,8 +44,8 @@ export interface IBoundaryEventHandler {
 
   /**
    * Cancels the Execution of this BoundaryEvent.
-   * This can be used by the decorated handlers to cleanup their BoundaryEvents
-   * after it has finished successfully.
+   * This can be used by a decorated handler to cleanup its BoundaryEvents
+   * after it has finished execution.
    */
   cancel(): Promise<void>;
 
