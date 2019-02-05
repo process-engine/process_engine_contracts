@@ -50,7 +50,6 @@ export interface IBoundaryEventHandler {
    * @async
    * @param token               The current ProcessToken.
    * @param processTokenFacade  The Facade for the current ProcessToken.
-   * @param processModelFacade  The Facade for the ProcessModel.
    * @param identity            Contains the users identity.
    * @param onTriggeredCallback The callback to run after the BoundaryEvent was
    *                            triggered.
@@ -58,7 +57,6 @@ export interface IBoundaryEventHandler {
   waitForTriggeringEvent(
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
-    processModelFacade: IProcessModelFacade,
     identity: IIdentity,
     onTriggeredCallback: OnBoundaryEventTriggeredCallback,
   ): Promise<void>;
