@@ -14,8 +14,5 @@ export interface IFlowNodeHandlerFactory {
    * @param   processToken Optional: The current ProcessToken.
    * @returns              The created FlowNodeHandler.
    */
-  create<TFlowNode extends Model.Base.FlowNode>(
-    flowNode: TFlowNode,
-    processToken?: ProcessToken,
-  ): Promise<IFlowNodeHandler<TFlowNode>>;
+  create<TFlowNode extends Model.Base.FlowNode>(flowNode: TFlowNode, processToken?: ProcessToken): Promise<IFlowNodeHandler<TFlowNode>>;
 }
