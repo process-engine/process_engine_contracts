@@ -21,13 +21,6 @@ export interface IBoundaryEventHandler<TBoundaryEvent extends BoundaryEvent> {
   getInstanceId(): string;
 
   /**
-   * Gets the BoundaryEvent model this handler is supposed to execute.
-   *
-   * @returns The BoundaryEvent model for this handler.
-   */
-  getBoundaryEvent(): TBoundaryEvent;
-
-  /**
    * Allows a decorated handler to pass a callback to the BoundaryEvent.
    * The callback will get called, after the BoundaryEvent was triggered.
    *
