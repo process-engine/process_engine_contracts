@@ -1,11 +1,6 @@
-import {IIdentity} from '@essential-projects/iam_contracts';
-
 import {FlowNode} from '../../model/base';
 import {ProcessToken} from '../types';
-import {
-  IProcessModelFacade,
-  IProcessTokenFacade,
-} from './index';
+import {IProcessTokenFacade} from './index';
 
 /**
  * Encapsulates the data sent with an OnTriggeredCallback.
@@ -28,7 +23,7 @@ export type OnBoundaryEventTriggeredData = {
  * @param data Contains information that the decorated handler will need for
  *             processing the triggered BoundaryEvent.
  */
-export type OnBoundaryEventTriggeredCallback = (data: OnBoundaryEventTriggeredData) => void;
+export type OnBoundaryEventTriggeredCallback = (data: OnBoundaryEventTriggeredData) => void | Promise<void>;
 
 /**
  * Handles the execution of a BoundaryEvent.
@@ -48,17 +43,15 @@ export interface IBoundaryEventHandler {
    * incoming message, asf.
    *
    * @async
-   * @param token               The current ProcessToken.
-   * @param processTokenFacade  The Facade for the current ProcessToken.
-   * @param identity            Contains the users identity.
    * @param onTriggeredCallback The callback to run after the BoundaryEvent was
    *                            triggered.
+   * @param token               The current ProcessToken.
+   * @param processTokenFacade  The Facade for the current ProcessToken.
    */
   waitForTriggeringEvent(
+    onTriggeredCallback: OnBoundaryEventTriggeredCallback,
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
-    identity: IIdentity,
-    onTriggeredCallback: OnBoundaryEventTriggeredCallback,
   ): Promise<void>;
 
   /**
