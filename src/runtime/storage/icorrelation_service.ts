@@ -42,38 +42,42 @@ export interface ICorrelationService {
    * Returns a list of all Correlations.
    *
    * @async
-   * @returns A list of Correlations.
+   * @param identity The executing users identity.
+   * @returns        A list of Correlations.
    */
-  getAll(): Promise<Array<Correlation>>;
+  getAll(identity: IIdentity): Promise<Array<Correlation>>;
 
   /**
    * Returns a list of all Correlations that contain at least one active
    * ProcessInstance.
    *
    * @async
-   * @returns A list of Correlations.
+   * @param identity The executing users identity.
+   * @returns        A list of Correlations.
    */
-  getActive(): Promise<Array<Correlation>>;
+  getActive(identity: IIdentity): Promise<Array<Correlation>>;
 
   /**
    * Gets a specific Correlation by its ID.
    *
    * @async
-   * @param   correlationId The ID of the Correlation to retrieve.
+   * @param identity        The executing users identity.
+   * @param correlationId   The ID of the Correlation to retrieve.
    * @returns               The retrieved Correlation.
    * @throws                404, If the Correlation was not found.
    */
-  getByCorrelationId(correlationId: string): Promise<Correlation>;
+  getByCorrelationId(identity: IIdentity, correlationId: string): Promise<Correlation>;
 
   /**
    * Gets all entries with a specific ProcessModelId.
    *
    * @async
-   * @param   processModelId The ID of the ProcessModel for which to retrieve
-   *                         the Correlations.
-   * @returns                The retrieved Correlations.
+   * @param identity        The executing users identity.
+   * @param processModelId  The ID of the ProcessModel for which to retrieve
+   *                        the Correlations.
+   * @returns               The retrieved Correlations.
    */
-  getByProcessModelId(processModelId: string): Promise<Array<Correlation>>;
+  getByProcessModelId(identity: IIdentity, processModelId: string): Promise<Array<Correlation>>;
 
   /**
    * Gets the entry that belongs to the given ProcessInstanceId.
@@ -81,30 +85,33 @@ export interface ICorrelationService {
    * return only one entry.
    *
    * @async
-   * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
-   *                            the Correlations.
-   * @returns                   The retrieved Correlation.
-   * @throws                    404, If the Correlation was not found.
+   * @param identity          The executing users identity.
+   * @param processInstanceId The ID of the ProcessInstance for which to retrieve
+   *                          the Correlations.
+   * @returns                 The retrieved Correlation.
+   * @throws                  404, If the Correlation was not found.
    */
-  getByProcessInstanceId(processInstanceId: string): Promise<Correlation>;
+  getByProcessInstanceId(identity: IIdentity, processInstanceId: string): Promise<Correlation>;
 
   /**
    * Gets a Correlation-Object that contains all Subprocesses for the given
    * ProcessInstanceId.
    *
    * @async
-   * @param   processInstanceId The ID of the ProcessInstance for which to retrieve
-   *                            the SubProcess-Correlations.
-   * @returns                   The retrieved Correlations.
-   *                            If none are found, an empty Array is returned.
+   * @param identity          The executing users identity.
+   * @param processInstanceId The ID of the ProcessInstance for which to retrieve
+   *                          the SubProcess-Correlations.
+   * @returns                 The retrieved Correlations.
+   *                          If none are found, an empty Array is returned.
    */
-  getSubprocessesForProcessInstance(processInstanceId: string): Promise<Correlation>;
+  getSubprocessesForProcessInstance(identity: IIdentity, processInstanceId: string): Promise<Correlation>;
 
   /**
    * Removes all correlations with a specific ProcessModelId.
    *
    * @async
-   * @param    processModelId The ID of the processModel, by which correlations should be removed.
+   * @param identity        The executing users identity.
+   * @param processModelId  The ID of the processModel, by which correlations should be removed.
    */
-  deleteCorrelationByProcessModelId(processModelId: string): Promise<void>;
+  deleteCorrelationByProcessModelId(identity: IIdentity, processModelId: string): Promise<void>;
 }
