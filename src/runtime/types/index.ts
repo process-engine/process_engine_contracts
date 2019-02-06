@@ -1,3 +1,4 @@
+export * from './bpmn_error';
 export * from './correlation_from_repository';
 export * from './correlation_process_model';
 export * from './correlation';
