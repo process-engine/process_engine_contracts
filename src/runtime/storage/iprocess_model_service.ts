@@ -77,7 +77,7 @@ export interface IProcessModelService {
    * @returns         The retrieved ProcessModel.
    * @throws          404, if the ProcessModel was not found.
    */
-  getByHash(identity: IIdentity, hash: string): Promise<ProcessDefinitionFromRepository>;
+  getByHash(identity: IIdentity, hash: string): Promise<Model.Types.Process>;
 
   /**
    * Gets a list of all stored ProcessModels.
