@@ -69,6 +69,17 @@ export interface IProcessModelService {
   getProcessDefinitionAsXmlByName(identity: IIdentity, name: string): Promise<ProcessDefinitionFromRepository>;
 
   /**
+   * Retrieves a ProcessModel by its hash.
+   *
+   * @async
+   * @param  identity Contains the requesting users identity.
+   * @param  hash     The hash of the ProcessModel to get.
+   * @returns         The retrieved ProcessModel.
+   * @throws          404, if the ProcessModel was not found.
+   */
+  getByHash(identity: IIdentity, hash: string): Promise<ProcessDefinitionFromRepository>;
+
+  /**
    * Gets a list of all stored ProcessModels.
    *
    * @async
