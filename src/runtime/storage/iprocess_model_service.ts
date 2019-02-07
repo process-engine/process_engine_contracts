@@ -72,12 +72,14 @@ export interface IProcessModelService {
    * Retrieves a ProcessModel by its hash.
    *
    * @async
-   * @param  identity Contains the requesting users identity.
-   * @param  hash     The hash of the ProcessModel to get.
-   * @returns         The retrieved ProcessModel.
-   * @throws          404, if the ProcessModel was not found.
+   * @param  identity        Contains the requesting users identity.
+   * @param  processModelId: The ID of the ProcessModel to get.
+   * @param  hash            The hash of the ProcessModel to get.
+   *                         Used for getting specific versions of the ProcessModel.
+   * @returns                The retrieved ProcessModel.
+   * @throws                 404, if the ProcessModel was not found.
    */
-  getByHash(identity: IIdentity, hash: string): Promise<Model.Types.Process>;
+  getByHash(identity: IIdentity, processModelId: string, hash: string): Promise<Model.Types.Process>;
 
   /**
    * Gets a list of all stored ProcessModels.
