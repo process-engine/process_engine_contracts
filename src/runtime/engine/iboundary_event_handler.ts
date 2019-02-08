@@ -61,8 +61,11 @@ export interface IBoundaryEventHandler {
    * Cancels the Execution of this BoundaryEvent.
    * This can be used by a decorated handler to cleanup its BoundaryEvents
    * after it has finished execution.
+   *
+   * @async
+   * @param token The current ProcessToken.
    */
-  cancel(): Promise<void>;
+  cancel(processToken: ProcessToken): Promise<void>;
 
   /**
    * Gets the FlowNode that follows after this BoundaryEvent.
