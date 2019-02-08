@@ -47,7 +47,7 @@ export interface IBoundaryEventHandler {
    *                                   BoundaryEvent was triggered.
    * @param token                      The current ProcessToken.
    * @param processTokenFacade         The Facade for the current ProcessToken.
-   * @param attachedFlowNodeInstanceId The InstnanceId of the FlowNode this
+   * @param attachedFlowNodeInstanceId The InstanceId of the FlowNode this
    *                                   BoundaryEvent is attached to.
    */
   waitForTriggeringEvent(
