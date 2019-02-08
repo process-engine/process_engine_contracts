@@ -43,15 +43,18 @@ export interface IBoundaryEventHandler {
    * incoming message, asf.
    *
    * @async
-   * @param onTriggeredCallback The callback to run after the BoundaryEvent was
-   *                            triggered.
-   * @param token               The current ProcessToken.
-   * @param processTokenFacade  The Facade for the current ProcessToken.
+   * @param onTriggeredCallback        The callback to run after the
+   *                                   BoundaryEvent was triggered.
+   * @param token                      The current ProcessToken.
+   * @param processTokenFacade         The Facade for the current ProcessToken.
+   * @param attachedFlowNodeInstanceId The InstnanceId of the FlowNode this
+   *                                   BoundaryEvent is attached to.
    */
   waitForTriggeringEvent(
     onTriggeredCallback: OnBoundaryEventTriggeredCallback,
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
+    attachedFlowNodeInstanceId: string,
   ): Promise<void>;
 
   /**
