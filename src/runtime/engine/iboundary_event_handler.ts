@@ -1,6 +1,7 @@
 import {FlowNode} from '../../model/base';
 import {ProcessToken} from '../types';
-import {IProcessTokenFacade} from './index';
+import {IProcessModelFacade} from './iprocess_model_facade';
+import {IProcessTokenFacade} from './iprocess_token_facade';
 
 /**
  * Encapsulates the data sent with an OnTriggeredCallback.
@@ -47,6 +48,7 @@ export interface IBoundaryEventHandler {
    *                                   BoundaryEvent was triggered.
    * @param token                      The current ProcessToken.
    * @param processTokenFacade         The Facade for the current ProcessToken.
+   * @param processModelFacade         The Facade for the current ProcessModel.
    * @param attachedFlowNodeInstanceId The InstanceId of the FlowNode this
    *                                   BoundaryEvent is attached to.
    */
@@ -54,6 +56,7 @@ export interface IBoundaryEventHandler {
     onTriggeredCallback: OnBoundaryEventTriggeredCallback,
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
+    processModelFacade: IProcessModelFacade,
     attachedFlowNodeInstanceId: string,
   ): Promise<void>;
 
@@ -63,14 +66,16 @@ export interface IBoundaryEventHandler {
    * after it has finished execution.
    *
    * @async
-   * @param token The current ProcessToken.
+   * @param token              The current ProcessToken.
+   * @param processModelFacade The Facade for the current ProcessModel.
    */
-  cancel(processToken: ProcessToken): Promise<void>;
+  cancel(processToken: ProcessToken, processModelFacade: IProcessModelFacade): Promise<void>;
 
   /**
    * Gets the FlowNode that follows after this BoundaryEvent.
    *
-   * @returns The FlowNode that follows this BoundaryEvent
+   * @param   processModelFacade The Facade for the current ProcessModel.
+   * @returns                    The FlowNode that follows this BoundaryEvent
    */
-  getNextFlowNode(): FlowNode;
+  getNextFlowNode(processModelFacade: IProcessModelFacade): FlowNode;
 }
