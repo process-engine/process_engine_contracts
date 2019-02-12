@@ -1,7 +1,7 @@
 /**
  * Contains information about a FlowNodeInstances result.
  */
-export interface IProcessTokenResult {
+export interface IFlowNodeInstanceResult {
   flowNodeInstanceId: string;
   flowNodeId: string;
   result: any;
