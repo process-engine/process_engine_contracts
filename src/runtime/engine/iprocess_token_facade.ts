@@ -31,6 +31,17 @@ export interface IProcessTokenFacade {
   addResultForFlowNode(flowNodeId: string, flowNodeInstanceId: string, result: any): void;
 
   /**
+   * Checks if a result set for the given FlowNodeInstance has already been
+   * stored in this facade.
+   *
+   * @param   flowNodeInstnaceId The ID of the FlowNodeInstance to check.
+   * @returns                    True, if a result for the given FlowNodeInstance
+   *                             has already been added to this facade;
+   *                             false otherwise.
+   */
+  containsResultForFlowNodeInstance(flowNodeInstnaceId: string): boolean;
+
+  /**
    * Creates a copy of this ProcessTokenFacade, including all currently
    * stored values.
    *
