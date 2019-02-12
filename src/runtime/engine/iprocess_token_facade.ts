@@ -2,7 +2,7 @@ import {Model} from './../../model';
 
 import {ProcessToken} from './../types';
 
-import {IProcessTokenResult} from './iprocess_token_result';
+import {IFlowNodeInstanceResult} from './iflow_node_instance_result';
 
 /**
  * This Facade encapsulates a ProcessToken and allows other components to run
@@ -53,7 +53,7 @@ export interface IProcessTokenFacade {
    *
    * @returns A list of all results.
    */
-  getAllResults(): Array<IProcessTokenResult>;
+  getAllResults(): Array<IFlowNodeInstanceResult>;
 
   /**
    * Returns the currently stored ProcessTokens into the old format.
@@ -63,28 +63,10 @@ export interface IProcessTokenFacade {
   getOldTokenFormat(): any;
 
   /**
-   * Takes a SequenceFlow and checks if it contains a mapper.
-   * If it does, the most recent ProcessToken is passed through that mapper
-   * and stored in the resulting format.
+   * Imports the given IFlowNodeInstanceResult set into the one used by this
+   * facade.
    *
-   * @param sequenceFlow The SequenceFlow for which to evaluate the mapper.
+   * @param results The results to import.
    */
-  evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): void;
-
-  /**
-   * Takes a FlowNode and checks if it contains a mapper.
-   * If it does, the most recent ProcessToken is passed through that mapper
-   * and stored in the resulting format.
-   *
-   * @param flowNode The FlowNode for which to evaluate the mapper.
-   */
-  evaluateMapperForFlowNode(flowNode: Model.Base.FlowNode): void;
-
-  /**
-   * Takes a list of ProcessTokenResults and places them into the list of
-   * results associated with this Facade.
-   *
-   * @param processTokenResults The results to import.
-   */
-  importResults(processTokenResults: Array<IProcessTokenResult>): void;
+  importResults(results: Array<IFlowNodeInstanceResult>): void;
 }
