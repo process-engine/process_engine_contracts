@@ -24,10 +24,11 @@ export interface IProcessTokenFacade {
   /**
    * Adds the results of a given FlowNode to the ProcessToken.
    *
-   * @param flowNodeId The ID of the FlowNode for which to add a result.
-   * @param result     The payload to add to the ProcessToken.
+   * @param flowNodeId         The ID of the FlowNode for which to add a result.
+   * @param flowNodeInstanceId The ID of the Instance that executed the FlowNode.
+   * @param result             The payload containing the result.
    */
-  addResultForFlowNode(flowNodeId: string, result: any): void;
+  addResultForFlowNode(flowNodeId: string, flowNodeInstanceId: string, result: any): void;
 
   /**
    * Creates a copy of this ProcessTokenFacade, including all currently
