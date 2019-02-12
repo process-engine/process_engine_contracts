@@ -72,12 +72,23 @@ export interface IProcessModelFacade {
   getOutgoingSequenceFlowsFor(flowNodeId: string): Array<Model.Types.SequenceFlow>;
 
   /**
-   * Gets the FlowNode to run after the given FlowNode has finished execution.
+   * Gets the FlowNodes to run after the given FlowNode has finished execution.
+   * This should only return multiple results, when dealing with a Gateway.
+   * Otherwise, the model is invalid.
    *
-   * @param flowNodeId The FlowNode for which to get the succeeding FlowNode.
-   * @returns          The upcoming FlowNode.
+   * @param flowNodeId The FlowNode for which to get the succeeding FlowNodes.
+   * @returns          The upcoming FlowNodes.
    */
-  getNextFlowNodeFor(flowNode: Model.Base.FlowNode): Model.Base.FlowNode;
+  getNextFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
+
+  /**
+   * Gets the FlowNodes that preceeded the given FlowNode.
+   * Can contain multiple results for all FlowNode types.
+   *
+   * @param flowNodeId The FlowNode for which to get the preceeding FlowNodes.
+   * @returns          The preceeding FlowNodes.
+   */
+  getPreviousFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
 
   /**
    * Gets all BoundaryEvents for the given FlowNode.
@@ -86,14 +97,6 @@ export interface IProcessModelFacade {
    * @returns          The retrieved BoundaryEvents.
    */
   getBoundaryEventsFor(flowNode: Model.Base.FlowNode): Array<Model.Events.BoundaryEvent>;
-
-  /**
-   * Gets the corresponding Join-Gateway for the given ParallelSplitGateway.
-   *
-   * @param parallelSplitGateway The gateway for which to get the JoinGateway.
-   * @returns                    The retrieved ParallelJoinGateway.
-   */
-  getJoinGatewayFor(parallelSplitGateway: Model.Gateways.ParallelGateway): Model.Gateways.ParallelGateway;
 
   /**
    * Returns the IntermediateLinkCatchEvents with the given link name.

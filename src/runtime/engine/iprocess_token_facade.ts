@@ -2,7 +2,7 @@ import {Model} from './../../model';
 
 import {ProcessToken} from './../types';
 
-import {IProcessTokenResult} from './iprocess_token_result';
+import {IFlowNodeInstanceResult} from './iflow_node_instance_result';
 
 /**
  * This Facade encapsulates a ProcessToken and allows other components to run
@@ -24,10 +24,22 @@ export interface IProcessTokenFacade {
   /**
    * Adds the results of a given FlowNode to the ProcessToken.
    *
-   * @param flowNodeId The ID of the FlowNode for which to add a result.
-   * @param result     The payload to add to the ProcessToken.
+   * @param flowNodeId         The ID of the FlowNode for which to add a result.
+   * @param flowNodeInstanceId The ID of the Instance that executed the FlowNode.
+   * @param result             The payload containing the result.
    */
-  addResultForFlowNode(flowNodeId: string, result: any): void;
+  addResultForFlowNode(flowNodeId: string, flowNodeInstanceId: string, result: any): void;
+
+  /**
+   * Checks if a result set for the given FlowNodeInstance has already been
+   * stored in this facade.
+   *
+   * @param   flowNodeInstanceId The ID of the FlowNodeInstance to check.
+   * @returns                    True, if a result for the given FlowNodeInstance
+   *                             has already been added to this facade;
+   *                             false otherwise.
+   */
+  containsResultForFlowNodeInstance(flowNodeInstanceId: string): boolean;
 
   /**
    * Creates a copy of this ProcessTokenFacade, including all currently
@@ -52,7 +64,7 @@ export interface IProcessTokenFacade {
    *
    * @returns A list of all results.
    */
-  getAllResults(): Array<IProcessTokenResult>;
+  getAllResults(): Array<IFlowNodeInstanceResult>;
 
   /**
    * Returns the currently stored ProcessTokens into the old format.
@@ -62,28 +74,10 @@ export interface IProcessTokenFacade {
   getOldTokenFormat(): any;
 
   /**
-   * Takes a SequenceFlow and checks if it contains a mapper.
-   * If it does, the most recent ProcessToken is passed through that mapper
-   * and stored in the resulting format.
+   * Imports the given IFlowNodeInstanceResult set into the one used by this
+   * facade.
    *
-   * @param sequenceFlow The SequenceFlow for which to evaluate the mapper.
+   * @param results The results to import.
    */
-  evaluateMapperForSequenceFlow(sequenceFlow: Model.Types.SequenceFlow): void;
-
-  /**
-   * Takes a FlowNode and checks if it contains a mapper.
-   * If it does, the most recent ProcessToken is passed through that mapper
-   * and stored in the resulting format.
-   *
-   * @param flowNode The FlowNode for which to evaluate the mapper.
-   */
-  evaluateMapperForFlowNode(flowNode: Model.Base.FlowNode): void;
-
-  /**
-   * Takes a list of ProcessTokenResults and places them into the list of
-   * results associated with this Facade.
-   *
-   * @param processTokenResults The results to import.
-   */
-  importResults(processTokenResults: Array<IProcessTokenResult>): void;
+  importResults(results: Array<IFlowNodeInstanceResult>): void;
 }

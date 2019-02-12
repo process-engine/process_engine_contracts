@@ -6,6 +6,6 @@ import {EventDefinition} from './event_definition';
  */
 export class ErrorEventDefinition extends EventDefinition {
   public name: string;
-  public errorCode: string;
+  public code: string;
   public structureRef: StructureReference;
 }
