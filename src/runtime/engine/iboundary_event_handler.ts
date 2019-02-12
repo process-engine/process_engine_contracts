@@ -6,13 +6,15 @@ import {IProcessTokenFacade} from './iprocess_token_facade';
 /**
  * Encapsulates the data sent with an OnTriggeredCallback.
  *
- * @param nextFlowNode     The FlowNode that follows the triggered BoundaryEvent.
- * @param interruptHandler If true, the BoundaryEvent is interrupting and the
- *                         FlowNodeHandler must stop working.
- * @param eventPayload     Optional: Any payload that was sent with the
- *                         triggering event.
+ * @param boundaryInstanceId The Instance ID of the triggered BoundaryEvent.
+ * @param nextFlowNode       The FlowNode that follows the triggered BoundaryEvent.
+ * @param interruptHandler   If true, the BoundaryEvent is interrupting and the
+ *                           FlowNodeHandler must stop working.
+ * @param eventPayload       Optional: Any payload that was sent with the
+ *                           triggering event.
  */
 export type OnBoundaryEventTriggeredData = {
+  boundaryInstanceId: string;
   nextFlowNode: FlowNode,
   interruptHandler: boolean,
   eventPayload?: any,
