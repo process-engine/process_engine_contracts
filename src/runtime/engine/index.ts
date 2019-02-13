@@ -1,3 +1,4 @@
+export * from './iauto_start_service';
 export * from './iboundary_event_handler';
 export * from './iboundary_event_handler_factory';
 export * from './iinterruptible';
