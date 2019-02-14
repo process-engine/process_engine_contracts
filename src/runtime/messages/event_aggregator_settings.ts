@@ -13,13 +13,15 @@ const messageParams = {
 
 const messagePaths = {
   // Generic messages
-  userTaskReached: 'user_task_reached',
-  userTaskFinished: 'user_task_finished',
   manualTaskReached: 'manual_task_reached',
   manualTaskFinished: 'manual_task_finished',
-  processTerminated: 'process_terminated',
-  processStarted: 'process_started',
+  messageTriggered: 'message_triggered',
   processEnded: 'process_ended',
+  processStarted: 'process_started',
+  processTerminated: 'process_terminated',
+  signalTriggered: 'signal_triggered',
+  userTaskReached: 'user_task_reached',
+  userTaskFinished: 'user_task_finished',
   // Instance specific messages
   finishUserTask:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
