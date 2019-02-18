@@ -1,8 +1,10 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
-import {Model, TimerDefinitionType} from '@process-engine/process_engine_contracts';
 
 import {TimerEventDefinition} from '../../model/event_definitions/timer_event_definition';
 import {IProcessTokenFacade} from './iprocess_token_facade';
+
+import {TimerDefinitionType} from '../../constants';
+import {Model} from '../../model/index';
 
 /**
  * Handles the creation and resolution of timers.
