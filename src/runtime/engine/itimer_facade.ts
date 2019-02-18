@@ -1,22 +1,50 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 import {Model, TimerDefinitionType} from '@process-engine/process_engine_contracts';
 
+import {TimerEventDefinition} from '../../model/event_definitions/timer_event_definition';
+import {IProcessTokenFacade} from './iprocess_token_facade';
+
 /**
  * Handles the creation and resolution of timers.
  */
 export interface ITimerFacade {
 
   /**
-   * Initializes a new timer that will be attached to the given flowNode.
+   * Initializes a new timer for the given FlowNode, using the given type and
+   * value as a baseline.
    *
-   * @param   flowNode   The FlowNode to which to attach the timer.
-   * @param   timerType  The type of the timer (cycle, duration, etc).
-   * @param   timerValue The value of the timer (interval, duration, etc).
-   * @param   callback   The function to call, after the timer has elapsed.
-   * @returns            A Subscription on the event aggreator, which can be used
-   *                     to wait for the timer to elapse.
+   * @param   flowNode           The FlowNode to which to attach the timer.
+   * @param   timerType          The type of the timer (cycle, duration, etc).
+   * @param   timerValue         The value of the timer.
+   * @param   callback           The function to call, after the timer has elapsed.
+   * @returns                    A Subscription on the event aggreator,
+   *                             which can be used to wait for the timer to elapse.
    */
-  initializeTimer(flowNode: Model.Base.FlowNode, timerType: TimerDefinitionType, timerValue: string, callback: Function): Subscription;
+  initializeTimer(
+    flowNode: Model.Base.FlowNode,
+    timerType: TimerDefinitionType,
+    timerValue: string,
+    callback: Function,
+  ): Subscription;
+
+  /**
+   * Initializes a new timer for the given FlowNode from the given
+   * timerDefinition.
+   *
+   * @param   flowNode           The FlowNode to which to attach the timer.
+   * @param   timerDefinition    The timer definition from which to build the timer.
+   * @param   processTokenFacade The ProcessTokenFacade to use to retrieve
+   *                             token values for timer expressions.
+   * @param   callback           The function to call, after the timer has elapsed.
+   * @returns                    A Subscription on the event aggreator,
+   *                             which can be used to wait for the timer to elapse.
+   */
+  initializeTimerFromDefinition(
+    flowNode: Model.Base.FlowNode,
+    timerDefinition: TimerEventDefinition,
+    processTokenFacade: IProcessTokenFacade,
+    callback: Function,
+  ): Subscription;
 
   /**
    * Takes an event definition and parsed it into a comprehensive
