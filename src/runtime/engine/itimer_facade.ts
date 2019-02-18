@@ -16,8 +16,6 @@ export interface ITimerFacade {
    * @param   flowNode           The FlowNode to which to attach the timer.
    * @param   timerType          The type of the timer (cycle, duration, etc).
    * @param   timerValue         The value of the timer.
-   * @param   processTokenFacade The ProcessTokenFacade to use to retrieve
-   *                             token values for timer expressions.
    * @param   callback           The function to call, after the timer has elapsed.
    * @returns                    A Subscription on the event aggreator,
    *                             which can be used to wait for the timer to elapse.
@@ -26,7 +24,6 @@ export interface ITimerFacade {
     flowNode: Model.Base.FlowNode,
     timerType: TimerDefinitionType,
     timerValue: string,
-    processTokenFacade: IProcessTokenFacade,
     callback: Function,
   ): Subscription;
 
