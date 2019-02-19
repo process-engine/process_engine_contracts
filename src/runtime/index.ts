@@ -1,9 +1,3 @@
-import * as types from './types/index';
-
-// tslint:disable-next-line:no-namespace
-export namespace Runtime {
-  export import Types = types;
-}
-
-export * from './engine';
-export * from './messages';
+export * from './types/index';
+export * from './engine/index';
+export * from './messages/index';
