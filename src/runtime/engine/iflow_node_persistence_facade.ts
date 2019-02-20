@@ -1,4 +1,5 @@
-import {Model, Runtime} from '@process-engine/process_engine_contracts';
+import {Model} from '../../model/index';
+import {ProcessToken} from '../types/index';
 
 export interface IFlowNodePersistenceFacade {
   /**
@@ -17,7 +18,7 @@ export interface IFlowNodePersistenceFacade {
   persistOnEnter(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
     previousFlowNodeInstanceId?: string,
   ): Promise<void>;
 
@@ -33,7 +34,7 @@ export interface IFlowNodePersistenceFacade {
   persistOnExit(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
   ): Promise<void>;
 
   /**
@@ -48,7 +49,7 @@ export interface IFlowNodePersistenceFacade {
   persistOnTerminate(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
   ): Promise<void>;
 
   /**
@@ -64,7 +65,7 @@ export interface IFlowNodePersistenceFacade {
   persistOnError(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
     error: Error,
   ): Promise<void>;
 
@@ -79,7 +80,7 @@ export interface IFlowNodePersistenceFacade {
   persistOnSuspend(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
   ): Promise<void>;
 
   /**
@@ -93,6 +94,6 @@ export interface IFlowNodePersistenceFacade {
   persistOnResume(
     flowNode: Model.Base.FlowNode,
     flowNodeInstanceId: string,
-    processToken: Runtime.Types.ProcessToken,
+    processToken: ProcessToken,
   ): Promise<void>;
 }
