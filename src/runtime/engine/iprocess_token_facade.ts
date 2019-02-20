@@ -1,5 +1,3 @@
-import {Model} from './../../model';
-
 import {ProcessToken} from './../types';
 
 import {IFlowNodeInstanceResult} from './iflow_node_instance_result';
