@@ -22,6 +22,15 @@ export interface IProcessModelFacade {
   getStartEvents(): Array<StartEvent>;
 
   /**
+   * Gets a single StartEvent, if the process does not contain more
+   * then one start events.
+   *
+   * @returns The only StartEvent of the Process
+   * @throws BadRequestError If the Process contains more then one StartEvents.
+   */
+  getSingleStartEvent(): Model.Events.StartEvent;
+
+  /**
    * Gets a StartEvent by its ID.
    *
    * @param startEventId The ID of the StartEvent to get.
