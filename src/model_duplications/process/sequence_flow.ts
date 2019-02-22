@@ -2,7 +2,7 @@ import {BaseElement} from '../flow_nodes/index';
 
 /**
  * Describes a BPMN SequenceFlow element, which is used to connect
- * two FlowNodes together.
+ * two FlowNodes.
  */
 export class SequenceFlow extends BaseElement {
   public name: string;

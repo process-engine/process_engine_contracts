@@ -6,7 +6,7 @@
  * signals.
  * Whenever a signal or message is received, the service will lookup all
  * ProcessModels that use matching StartEvents and create new instances
- * for them.
+ * of them.
  */
 export interface IAutoStartService {
 
