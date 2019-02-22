@@ -1,5 +1,5 @@
 /**
- * Describes a BPMN message, which can be sent/received by MessageEvents.
+ * Describes a BPMN Message, which can be sent/received by MessageEvents.
  */
 export class Message {
   public id: string;

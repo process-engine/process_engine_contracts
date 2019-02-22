@@ -5,7 +5,7 @@ import {
   MessageEventDefinition,
   SignalEventDefinition,
   TimerEventDefinition,
-} from '../event_definitions/index';
+} from './definitions/index';
 
 /**
  * Describes a BPMN StartEvent.

@@ -1,5 +1,4 @@
 import {BaseElement} from '../base/index';
-import {ConditionExpression} from './condition_expression';
 
 /**
  * Describes a BPMN SequenceFlow element, which is used to connect
@@ -9,5 +8,14 @@ export class SequenceFlow extends BaseElement {
   public name: string;
   public sourceRef: string;
   public targetRef: string;
-  public conditionExpression?: ConditionExpression;
+  public conditionExpression?: IConditionExpression;
+}
+
+/**
+ * Describes a conditional expression that can be placed on
+ * a SequenceFlow.
+ */
+export interface IConditionExpression {
+  type: string;
+  expression: string;
 }

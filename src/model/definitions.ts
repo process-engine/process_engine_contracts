@@ -1,4 +1,5 @@
-import {Collaboration, Process} from './types/index';
+import {Collaboration} from './collaboration';
+import {Process} from './process';
 import {Xmlns} from './xmlns';
 
 /**

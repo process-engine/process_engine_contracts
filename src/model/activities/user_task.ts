@@ -1,14 +1,14 @@
-import {BpmnType} from '../../../constants';
-import {FormField} from '../../types';
-import {Task} from './task';
+import {BpmnType} from '../../constants';
+import {Activity} from './activity';
+import {UserTaskFormField} from './types/user_task_form_field';
 
 /**
  * Describes a BPMN UserTask.
  *
- * A user task will hold the current ProcessExecution and wait for user input
+ * A user task will hold the current execution of the process and wait for user input
  * before continuing.
  */
-export class UserTask extends Task {
+export class UserTask extends Activity {
   public get bpmnType(): BpmnType {
     return BpmnType.userTask;
   }
@@ -18,7 +18,7 @@ export class UserTask extends Task {
   public candidateGroups: string;
   public dueDate?: Date;
   public followUpDate?: Date;
-  public formFields: Array<FormField>;
+  public formFields: Array<UserTaskFormField>;
   public description: string;
   public finishedMessage: string;
 }

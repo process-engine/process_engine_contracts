@@ -1,6 +1,6 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {TimerEventDefinition} from '../../model/event_definitions/timer_event_definition';
+import {TimerEventDefinition} from '../../model/events/definitions/timer_event_definition';
 import {IProcessTokenFacade} from './iprocess_token_facade';
 
 import {TimerDefinitionType} from '../../constants';

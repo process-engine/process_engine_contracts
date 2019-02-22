@@ -6,7 +6,7 @@ import {
   MessageEventDefinition,
   SignalEventDefinition,
   TerminateEventDefinition,
-} from '../event_definitions/index';
+} from './definitions/index';
 
 /**
  * Describes a BPMN EndEvent.

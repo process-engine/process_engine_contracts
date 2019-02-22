@@ -1,6 +1,6 @@
-import {BpmnType} from '../../../constants';
-import {MessageEventDefinition} from '../../event_definitions';
-import {Task} from './task';
+import {BpmnType} from '../../constants';
+import {MessageEventDefinition} from '../events/definitions';
+import {Activity} from './activity';
 
 /**
  * Describes a BPMN ReceiveTask.
@@ -15,7 +15,7 @@ import {Task} from './task';
  * Therefore, a ReceiveTask will only accept messages, that where send by
  * a SendTask.
  */
-export class ReceiveTask extends Task {
+export class ReceiveTask extends Activity {
   public get bpmnType(): BpmnType {
     return BpmnType.receiveTask;
   }

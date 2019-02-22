@@ -1,8 +1,12 @@
+import * as types from './types/index';
+
 export * from './base_element';
-export * from './camunda_execution_listener';
-export * from './camunda_extension_property';
-export * from './extension_elements';
 export * from './flow_node';
 export * from './iconstructor';
-export * from './root_element';
-export * from './structure';
+
+// tslint:disable-next-line:no-namespace
+export namespace Types {
+  export import CamundaExecutionListener = types.CamundaExecutionListener;
+  export import CamundaExtensionProperty = types.CamundaExtensionProperty;
+  export import ExtensionElements = types.ExtensionElements;
+}

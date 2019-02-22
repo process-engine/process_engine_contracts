@@ -1,6 +1,5 @@
-import {FlowNode, RootElement} from '../base/index';
-import {LaneSet} from './index';
-import {SequenceFlow} from './sequence_flow';
+import {BaseElement, FlowNode} from './base/index';
+import {LaneSet, SequenceFlow} from './process/index';
 
 /**
  * Describes a BPMN Process.
@@ -8,7 +7,7 @@ import {SequenceFlow} from './sequence_flow';
  * stored here.
  * This is the root element for working with ProcessModels.
  */
-export class Process extends RootElement {
+export class Process extends BaseElement {
   public name: string;
   public isExecutable: boolean;
   public laneSet?: LaneSet;

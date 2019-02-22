@@ -1,4 +1,3 @@
-import {StructureReference} from '../type_references/index';
 import {EventDefinition} from './event_definition';
 
 /**
@@ -7,5 +6,4 @@ import {EventDefinition} from './event_definition';
 export class ErrorEventDefinition extends EventDefinition {
   public name: string;
   public code: string;
-  public structureRef: StructureReference;
 }

@@ -15,5 +15,5 @@ export interface IProcessModelFacadeFactory {
    * @param   processModel The ProcessModel for which to create a Facade.
    * @returns              The created ProcessModelFacade.
    */
-  create(processModel: Model.Types.Process): IProcessModelFacade;
+  create(processModel: Model.Process): IProcessModelFacade;
 }

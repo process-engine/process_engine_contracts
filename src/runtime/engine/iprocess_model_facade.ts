@@ -59,7 +59,7 @@ export interface IProcessModelFacade {
    *                   SequenceFlows.
    * @returns          The retrieved SequenceFlows.
    */
-  getIncomingSequenceFlowsFor(flowNodeId: string): Array<Model.Types.SequenceFlow>;
+  getIncomingSequenceFlowsFor(flowNodeId: string): Array<Model.ProcessElements.SequenceFlow>;
 
   /**
    * Returns a list of all outgoing SequenceFlows connected to the FlowNode
@@ -69,7 +69,7 @@ export interface IProcessModelFacade {
    *                   SequenceFlows.
    * @returns          The retrieved SequenceFlows.
    */
-  getOutgoingSequenceFlowsFor(flowNodeId: string): Array<Model.Types.SequenceFlow>;
+  getOutgoingSequenceFlowsFor(flowNodeId: string): Array<Model.ProcessElements.SequenceFlow>;
 
   /**
    * Gets the FlowNodes to run after the given FlowNode has finished execution.
@@ -115,7 +115,7 @@ export interface IProcessModelFacade {
    * @param nextFlowNode The second FlowNode.
    * @returns            The retrieved SequenceFlow.
    */
-  getSequenceFlowBetween(flowNode: Model.Base.FlowNode, nextFlowNode: Model.Base.FlowNode): Model.Types.SequenceFlow;
+  getSequenceFlowBetween(flowNode: Model.Base.FlowNode, nextFlowNode: Model.Base.FlowNode): Model.ProcessElements.SequenceFlow;
 
   /**
    * Creates a ProcessModelFacade for the given SubProcess.

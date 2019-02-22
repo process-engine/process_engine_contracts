@@ -1,6 +1,6 @@
 import {BpmnType} from '../../constants';
 import {FlowNode} from '../base/index';
-import {LaneSet, SequenceFlow} from '../types/index';
+import {LaneSet, SequenceFlow} from '../process/index';
 import {Activity} from './activity';
 
 /**

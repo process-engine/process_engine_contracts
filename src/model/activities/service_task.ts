@@ -1,13 +1,13 @@
-import {BpmnType} from '../../../constants';
+import {BpmnType} from '../../constants';
+import {Activity} from './activity';
 import {Invocation} from './invocations/index';
-import {Task} from './task';
 
 /**
  * Describes a BPMN ServiceTask.
- * A service task is used to call either a function from a specific class,
+ * A ServiceTask is used to call either a function from a specific class,
  * or for performing web requests.
  */
-export class ServiceTask extends Task {
+export class ServiceTask extends Activity {
   public get bpmnType(): BpmnType {
     return BpmnType.serviceTask;
   }

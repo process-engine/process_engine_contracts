@@ -3,7 +3,7 @@ import {
   MessageEventDefinition,
   SignalEventDefinition,
   TimerEventDefinition,
-} from '../event_definitions/index';
+} from './definitions/index';
 
 import {BpmnType, EventType} from '../../constants';
 import {Event} from './event';

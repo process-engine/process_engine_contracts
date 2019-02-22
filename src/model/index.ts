@@ -2,20 +2,29 @@
 import * as activities from './activities/index';
 import * as base from './base/index';
 import * as bpmnTags from './bpmn_component_tags';
-import * as eventDefinitions from './event_definitions/index';
 import * as events from './events/index';
 import * as gateways from './gateways/index';
-import * as typeReferences from './type_references/index';
-import * as types from './types/index';
+import * as globalElements from './global_elements';
+import * as processElements from './process/index';
+
+import * as collaboration from './collaboration';
+import * as definition from './definitions';
+import * as participant from './participant';
+import * as process from './process';
+import * as xmlns from './xmlns';
 
 export namespace Model {
   export import Activities = activities;
   export import Base = base;
-  export import EventDefinitions = eventDefinitions;
+  export import Collaboration = collaboration.Collaboration;
+  export import Definitions = definition.Definitions;
   export import Events = events;
   export import Gateways = gateways;
-  export import TypeReferences = typeReferences;
-  export import Types = types;
+  export import GlobalElements = globalElements;
+  export import Participant = participant.Participant;
+  export import Process = process.Process;
+  export import ProcessElements = processElements;
+  export import Xmlns = xmlns.Xmlns;
 }
 
 export namespace BpmnTags {
@@ -31,7 +40,5 @@ export namespace BpmnTags {
   export import XmlnsProperty = bpmnTags.XmlnsProperty;
 }
 
-export * from './definitions';
-export * from './xmlns';
 export * from './imodel_parser';
 export * from './iparsed_object_model';

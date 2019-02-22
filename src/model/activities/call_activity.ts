@@ -2,9 +2,9 @@ import {BpmnType} from '../../constants';
 import {Activity} from './activity';
 
 /**
- * Describes a BPMN call activity.
+ * Describes a BPMN CallActivity.
  *
- * Call activities also describe a type of subprocess, except that the process
+ * CallActivities also describe a type of subprocess, except that the process
  * is not contained within the parent process, but is located somewhere else.
  *
  * This means that the process called by the CallActivity can also run by itself,
