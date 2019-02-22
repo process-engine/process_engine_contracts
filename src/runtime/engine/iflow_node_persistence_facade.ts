@@ -1,4 +1,4 @@
-import {Model} from '../../model/index';
+import {FlowNode} from '../../model_duplications/index';
 import {ProcessToken} from '../types/index';
 
 export interface IFlowNodePersistenceFacade {
@@ -16,7 +16,7 @@ export interface IFlowNodePersistenceFacade {
    *                                   have one.
    */
   persistOnEnter(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
     previousFlowNodeInstanceId?: string,
@@ -32,7 +32,7 @@ export interface IFlowNodePersistenceFacade {
    * @param processToken       The current ProcessToken.
    */
   persistOnExit(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
   ): Promise<void>;
@@ -47,7 +47,7 @@ export interface IFlowNodePersistenceFacade {
    * @param processToken       The current ProcessToken.
    */
   persistOnTerminate(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
   ): Promise<void>;
@@ -63,7 +63,7 @@ export interface IFlowNodePersistenceFacade {
    * @param error              The error that occured.
    */
   persistOnError(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
     error: Error,
@@ -78,7 +78,7 @@ export interface IFlowNodePersistenceFacade {
    * @param processToken       The current ProcessToken.
    */
   persistOnSuspend(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
   ): Promise<void>;
@@ -92,7 +92,7 @@ export interface IFlowNodePersistenceFacade {
    * @param processToken       The current ProcessToken.
    */
   persistOnResume(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     flowNodeInstanceId: string,
     processToken: ProcessToken,
   ): Promise<void>;

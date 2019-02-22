@@ -1,4 +1,4 @@
-import {Model} from './../../index';
+import {Process} from './../../model_duplications/index';
 
 import {IProcessModelFacade} from './iprocess_model_facade';
 
@@ -15,5 +15,5 @@ export interface IProcessModelFacadeFactory {
    * @param   processModel The ProcessModel for which to create a Facade.
    * @returns              The created ProcessModelFacade.
    */
-  create(processModel: Model.Process): IProcessModelFacade;
+  create(processModel: Process): IProcessModelFacade;
 }

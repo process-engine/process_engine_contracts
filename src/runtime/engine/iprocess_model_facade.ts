@@ -1,4 +1,4 @@
-import {Model} from './../../model';
+import {BoundaryEvent, EndEvent, FlowNode, IntermediateCatchEvent, SequenceFlow, StartEvent, SubProcess} from './../../model_duplications/index';
 
 /**
  * The ProcessModelFacade allows to run queries for a certain ProcessModel,
@@ -19,7 +19,7 @@ export interface IProcessModelFacade {
    *
    * @returns A list of StartEvents.
    */
-  getStartEvents(): Array<Model.Events.StartEvent>;
+  getStartEvents(): Array<StartEvent>;
 
   /**
    * Gets a StartEvent by its ID.
@@ -27,21 +27,14 @@ export interface IProcessModelFacade {
    * @param startEventId The ID of the StartEvent to get.
    * @returns            The retrieved StartEvent.
    */
-  getStartEventById(startEventId: string): Model.Events.StartEvent;
+  getStartEventById(startEventId: string): StartEvent;
 
   /**
    * Gets all the ProcessModels EndEvents.
    *
    * @returns A list of EndEvents.
    */
-  getEndEvents(): Array<Model.Events.EndEvent>;
-
-  /**
-   * Gets all the ProcessModels UserTask.
-   *
-   * @returns A list of UserTask.
-   */
-  getUserTasks(): Array<Model.Activities.UserTask>;
+  getEndEvents(): Array<EndEvent>;
 
   /**
    * Gets a FlowNode by its ID.
@@ -49,7 +42,7 @@ export interface IProcessModelFacade {
    * @param flowNodeId The ID of the FlowNode to get.
    * @returns          The retrieved FlowNode.
    */
-  getFlowNodeById(flowNodeId: string): Model.Base.FlowNode;
+  getFlowNodeById(flowNodeId: string): FlowNode;
 
   /**
    * Returns a list of all incoming SequenceFlows connected to the FlowNode
@@ -59,7 +52,7 @@ export interface IProcessModelFacade {
    *                   SequenceFlows.
    * @returns          The retrieved SequenceFlows.
    */
-  getIncomingSequenceFlowsFor(flowNodeId: string): Array<Model.ProcessElements.SequenceFlow>;
+  getIncomingSequenceFlowsFor(flowNodeId: string): Array<SequenceFlow>;
 
   /**
    * Returns a list of all outgoing SequenceFlows connected to the FlowNode
@@ -69,7 +62,7 @@ export interface IProcessModelFacade {
    *                   SequenceFlows.
    * @returns          The retrieved SequenceFlows.
    */
-  getOutgoingSequenceFlowsFor(flowNodeId: string): Array<Model.ProcessElements.SequenceFlow>;
+  getOutgoingSequenceFlowsFor(flowNodeId: string): Array<SequenceFlow>;
 
   /**
    * Gets the FlowNodes to run after the given FlowNode has finished execution.
@@ -79,7 +72,7 @@ export interface IProcessModelFacade {
    * @param flowNodeId The FlowNode for which to get the succeeding FlowNodes.
    * @returns          The upcoming FlowNodes.
    */
-  getNextFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
+  getNextFlowNodesFor(flowNode: FlowNode): Array<FlowNode>;
 
   /**
    * Gets the FlowNodes that preceeded the given FlowNode.
@@ -88,7 +81,7 @@ export interface IProcessModelFacade {
    * @param flowNodeId The FlowNode for which to get the preceeding FlowNodes.
    * @returns          The preceeding FlowNodes.
    */
-  getPreviousFlowNodesFor(flowNode: Model.Base.FlowNode): Array<Model.Base.FlowNode>;
+  getPreviousFlowNodesFor(flowNode: FlowNode): Array<FlowNode>;
 
   /**
    * Gets all BoundaryEvents for the given FlowNode.
@@ -96,7 +89,7 @@ export interface IProcessModelFacade {
    * @param flowNodeId The FlowNode for which to get the BoundaryEvents.
    * @returns          The retrieved BoundaryEvents.
    */
-  getBoundaryEventsFor(flowNode: Model.Base.FlowNode): Array<Model.Events.BoundaryEvent>;
+  getBoundaryEventsFor(flowNode: FlowNode): Array<BoundaryEvent>;
 
   /**
    * Returns the IntermediateLinkCatchEvents with the given link name.
@@ -106,7 +99,7 @@ export interface IProcessModelFacade {
    * @returns          The IntermediateLinkCatchEvents that handle the given
    *                   link.
    */
-  getLinkCatchEventsByLinkName(linkName: string): Array<Model.Events.IntermediateCatchEvent>;
+  getLinkCatchEventsByLinkName(linkName: string): Array<IntermediateCatchEvent>;
 
   /**
    * Gets the SequenceFlow that links two FlowNodes together.
@@ -115,7 +108,7 @@ export interface IProcessModelFacade {
    * @param nextFlowNode The second FlowNode.
    * @returns            The retrieved SequenceFlow.
    */
-  getSequenceFlowBetween(flowNode: Model.Base.FlowNode, nextFlowNode: Model.Base.FlowNode): Model.ProcessElements.SequenceFlow;
+  getSequenceFlowBetween(flowNode: FlowNode, nextFlowNode: FlowNode): SequenceFlow;
 
   /**
    * Creates a ProcessModelFacade for the given SubProcess.
@@ -123,5 +116,5 @@ export interface IProcessModelFacade {
    * @param subProcess The SubProcess for which to create a Facade.
    * @returns          The created ProcessModelFacade.
    */
-  getSubProcessModelFacade(subProcess: Model.Activities.SubProcess): IProcessModelFacade;
+  getSubProcessModelFacade(subProcess: SubProcess): IProcessModelFacade;
 }
