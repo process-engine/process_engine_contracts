@@ -79,8 +79,8 @@ export interface IExecuteProcessService {
     processModelId: string,
     correlationId: string,
     endEventId: string,
-    initialPayload?: any,
     startEventId?: string,
+    initialPayload?: any,
     caller?: string,
   ): Promise<EndEventReachedMessage>;
 }
