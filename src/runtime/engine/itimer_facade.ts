@@ -1,10 +1,9 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {TimerEventDefinition} from '../../model/event_definitions/timer_event_definition';
+import {FlowNode, TimerEventDefinition} from '../../model_duplications/index';
 import {IProcessTokenFacade} from './iprocess_token_facade';
 
 import {TimerDefinitionType} from '../../constants';
-import {Model} from '../../model/index';
 
 /**
  * Handles the creation and resolution of timers.
@@ -23,7 +22,7 @@ export interface ITimerFacade {
    *                             which can be used to wait for the timer to elapse.
    */
   initializeTimer(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     timerType: TimerDefinitionType,
     timerValue: string,
     callback: Function,
@@ -42,7 +41,7 @@ export interface ITimerFacade {
    *                             which can be used to wait for the timer to elapse.
    */
   initializeTimerFromDefinition(
-    flowNode: Model.Base.FlowNode,
+    flowNode: FlowNode,
     timerDefinition: TimerEventDefinition,
     processTokenFacade: IProcessTokenFacade,
     callback: Function,

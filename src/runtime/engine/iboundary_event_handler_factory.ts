@@ -1,4 +1,4 @@
-import {Model} from './../../model';
+import {BoundaryEvent} from './../../model_duplications/index';
 import {IBoundaryEventHandler} from './iboundary_event_handler';
 
 /**
@@ -12,5 +12,5 @@ export interface IBoundaryEventHandlerFactory {
    * @param   flowNode The BoundaryEvent for which to create a handler.
    * @returns          The created BoundaryEventHandler.
    */
-  create(flowNode: Model.Events.BoundaryEvent): Promise<IBoundaryEventHandler>;
+  create(flowNode: BoundaryEvent): Promise<IBoundaryEventHandler>;
 }

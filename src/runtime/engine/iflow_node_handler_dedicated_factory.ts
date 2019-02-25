@@ -1,4 +1,4 @@
-import {Model} from './../../model';
+import {FlowNode} from './../../model_duplications/index';
 import {ProcessToken} from './../../runtime/types';
 import {IFlowNodeHandler} from './iflow_node_handler';
 
@@ -8,7 +8,7 @@ import {IFlowNodeHandler} from './iflow_node_handler';
  * This is currently used for ServiceTasks, ParallelGateways and IntermediateEvents,
  * which use multiple handlers.
  */
-export interface IFlowNodeHandlerDedicatedFactory<TFlowNode extends Model.Base.FlowNode> {
+export interface IFlowNodeHandlerDedicatedFactory<TFlowNode extends FlowNode> {
 
   /**
    * Returns a new Instance of the FlowNodeHandler for the given FlowNode.

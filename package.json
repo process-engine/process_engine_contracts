@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://www.npmjs.com"
   },
-  "version": "40.1.0",
+  "version": "40.2.0",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
@@ -21,7 +21,7 @@
     "@types/node": "^10.12.2",
     "gulp": "^4.0.0",
     "gulptraum": "^3.0.0",
-    "gulptraum-typescript": "^2.0.0",
+    "gulptraum-typescript": "^3.0.0",
     "moment": "^2.24.0",
     "tsconfig": "^7.0.0",
     "tslint": "^5.12.0",
