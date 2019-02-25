@@ -5,8 +5,8 @@
  * It does this, by subscribing to a global notification for messages and
  * signals.
  * Whenever a signal or message is received, the service will lookup all
- * ProcessModels that use matching StartEvents and create new instances 
- * for them.
+ * ProcessModels that use matching StartEvents and create new instances
+ * of them.
  */
 export interface IAutoStartService {
 
