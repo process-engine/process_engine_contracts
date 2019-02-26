@@ -28,7 +28,7 @@ export interface IProcessModelFacade {
    * @returns The only StartEvent of the Process
    * @throws {BadRequestError} If the Process contains more than one StartEvent.
    */
-  getSingleStartEvent(): Model.Events.StartEvent;
+  getSingleStartEvent(): StartEvent;
 
   /**
    * Gets a StartEvent by its ID.
