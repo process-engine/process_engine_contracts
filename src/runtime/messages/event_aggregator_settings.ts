@@ -8,11 +8,14 @@ const messageParams = {
   processModelId: ':process_model_id',
   userTaskId: ':user_task_id',
   manualTaskId: ':manual_task_id',
+  emptyActivityId: ':empty_activity_id',
   signalReference: ':signal_ref',
 };
 
 const messagePaths = {
   // Generic messages
+  emptyActivityReached: 'manual_task_reached',
+  emptyActivityFinished: 'manual_task_finished',
   manualTaskReached: 'manual_task_reached',
   manualTaskFinished: 'manual_task_finished',
   messageTriggered: 'message_triggered',
@@ -23,6 +26,12 @@ const messagePaths = {
   userTaskReached: 'user_task_reached',
   userTaskFinished: 'user_task_finished',
   // Instance specific messages
+  finishEmptyActivity:
+  `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
+  `${messageParams.processInstanceId}/emptyactivity/${messageParams.flowNodeInstanceId}/finish`,
+  emptyActivityWithInstanceIdFinished:
+    `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
+    `${messageParams.processInstanceId}/manualtask/${messageParams.flowNodeInstanceId}/finished`,
   finishUserTask:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
     `${messageParams.processInstanceId}/usertask/${messageParams.flowNodeInstanceId}/finish`,
