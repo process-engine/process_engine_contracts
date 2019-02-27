@@ -27,11 +27,11 @@ const messagePaths = {
   userTaskFinished: 'user_task_finished',
   // Instance specific messages
   finishEmptyActivity:
-  `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
-  `${messageParams.processInstanceId}/emptyactivity/${messageParams.flowNodeInstanceId}/finish`,
+    `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
+    `${messageParams.processInstanceId}/emptyactivity/${messageParams.flowNodeInstanceId}/finish`,
   emptyActivityWithInstanceIdFinished:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
-    `${messageParams.processInstanceId}/manualtask/${messageParams.flowNodeInstanceId}/finished`,
+    `${messageParams.processInstanceId}/emptyactivity/${messageParams.flowNodeInstanceId}/finished`,
   finishUserTask:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
     `${messageParams.processInstanceId}/usertask/${messageParams.flowNodeInstanceId}/finish`,
