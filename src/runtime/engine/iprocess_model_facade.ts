@@ -22,11 +22,11 @@ export interface IProcessModelFacade {
   getStartEvents(): Array<StartEvent>;
 
   /**
-   * Gets a single StartEvent, if the process does not contain more
-   * than one StartEvent.
+   * Gets the first StartEvent of the ProcessModel.
+   * Should only be used for ProcessModels that only
+   * have one StartEvent.
    *
-   * @returns The only StartEvent of the Process
-   * @throws {BadRequestError} If the Process contains more than one StartEvent.
+   * @returns The first StartEvent of the ProcessModel.
    */
   getSingleStartEvent(): StartEvent;
 
