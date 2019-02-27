@@ -17,10 +17,10 @@ export interface IExecuteProcessService {
    * @async
    * @param identity       The requesting users identity.
    * @param processModelId The ID of the ProcessModel to execute.
-   * @param startEventId   The ID of the StartEvent by which to start the
-   *                       ProcessModel.
    * @param correlationId  The CorrelationId to use.
    *                       If not provided, it will be generated.
+   * @param startEventId   The ID of the StartEvent by which to start the
+   *                       ProcessModel.
    * @param initialPayload The payload to pass to the StartEvent.
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
@@ -28,8 +28,8 @@ export interface IExecuteProcessService {
   start(
     identity: IIdentity,
     processModelId: string,
-    startEventId: string,
     correlationId: string,
+    startEventId?: string,
     initialPayload?: any,
     caller?: string,
   ): Promise<ProcessStartedMessage>;
@@ -41,10 +41,10 @@ export interface IExecuteProcessService {
    * @async
    * @param identity       The requesting users identity.
    * @param processModelId The ID of the ProcessModel to execute.
-   * @param startEventId   The ID of the StartEvent by which to start the
-   *                       ProcessModel.
    * @param correlationId  The CorrelationId to use.
    *                       If not provided, it will be generated.
+   * @param startEventId   The ID of the StartEvent by which to start the
+   *                       ProcessModel.
    * @param initialPayload The payload to pass to the StartEvent.
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
@@ -52,8 +52,8 @@ export interface IExecuteProcessService {
   startAndAwaitEndEvent(
     identity: IIdentity,
     processModelId: string,
-    startEventId: string,
     correlationId: string,
+    startEventId?: string,
     initialPayload?: any,
     caller?: string,
   ): Promise<EndEventReachedMessage>;
@@ -65,11 +65,11 @@ export interface IExecuteProcessService {
    * @async
    * @param identity       The requesting users identity.
    * @param processModelId The ID of the ProcessModel to execute.
-   * @param startEventId   The ID of the StartEvent by which to start the
-   *                       ProcessModel.
    * @param correlationId  The CorrelationId to use.
    *                       If not provided, it will be generated.
    * @param endEventId     The ID of the EndEvent to wait for.
+   * @param startEventId   The ID of the StartEvent by which to start the
+   *                       ProcessModel.
    * @param initialPayload The payload to pass to the StartEvent.
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
@@ -77,9 +77,9 @@ export interface IExecuteProcessService {
   startAndAwaitSpecificEndEvent(
     identity: IIdentity,
     processModelId: string,
-    startEventId: string,
     correlationId: string,
     endEventId: string,
+    startEventId?: string,
     initialPayload?: any,
     caller?: string,
   ): Promise<EndEventReachedMessage>;
