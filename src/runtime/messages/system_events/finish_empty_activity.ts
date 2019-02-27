@@ -3,12 +3,12 @@ import {IIdentity} from '@essential-projects/iam_contracts';
 import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
- * The message used to finish a waiting ManualTask.
+ * The message used to finish a waiting EmptyActivity.
  */
-export class FinishManualTaskMessage extends BaseSystemEventMessage {
+export class FinishEmptyActivityMessage extends BaseSystemEventMessage {
 
   /**
-   * The flow node id of the ManualTask being finished.
+   * The flow node id of the EmptyActivity being finished.
    */
   public manualTaskId: string;
 
