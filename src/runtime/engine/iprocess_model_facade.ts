@@ -22,6 +22,15 @@ export interface IProcessModelFacade {
   getStartEvents(): Array<StartEvent>;
 
   /**
+   * Gets the first StartEvent of the ProcessModel.
+   * Should only be used for ProcessModels that only
+   * have one StartEvent.
+   *
+   * @returns The first StartEvent of the ProcessModel.
+   */
+  getSingleStartEvent(): StartEvent;
+
+  /**
    * Gets a StartEvent by its ID.
    *
    * @param startEventId The ID of the StartEvent to get.
