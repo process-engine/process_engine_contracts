@@ -14,8 +14,8 @@ const messageParams = {
 
 const messagePaths = {
   // Generic messages
-  emptyActivityReached: 'manual_task_reached',
-  emptyActivityFinished: 'manual_task_finished',
+  emptyActivityReached: 'empty_activity_reached',
+  emptyActivityFinished: 'empty_activity_finished',
   manualTaskReached: 'manual_task_reached',
   manualTaskFinished: 'manual_task_finished',
   messageTriggered: 'message_triggered',
