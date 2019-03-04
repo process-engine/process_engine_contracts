@@ -17,8 +17,9 @@ export class MessageEventReachedMessage extends BaseBpmnEventMessage {
               flowNodeId: string,
               flowNodeInstanceId: string,
               processInstanceOwner: IIdentity,
-              currentToken: any) {
-    super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
+              currentToken: any,
+              messageEventName?: string) {
+    super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken, messageEventName);
 
     this.messageReference = messageReference;
   }
