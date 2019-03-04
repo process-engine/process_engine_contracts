@@ -8,13 +8,20 @@ import {BaseBpmnEventMessage} from './base_bpmn_event_message';
  */
 export class EndEventReachedMessage extends BaseBpmnEventMessage {
 
+  /**
+   * The name of the EndEvent that was reached.
+   */
+  public endEventName: string;
+
   constructor(correlationId: string,
               processModelId: string,
               processInstanceId: string,
               flowNodeId: string,
               flowNodeInstanceId: string,
               processInstanceOwner: IIdentity,
-              currentToken: any) {
+              currentToken: any,
+              endEventName?: string) {
     super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
+    this.endEventName = endEventName;
   }
 }
