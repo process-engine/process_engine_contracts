@@ -65,7 +65,7 @@ export interface IProcessModelFacade {
   /**
    * Checks if the ProcessModel has at least one lane.
    *
-   * @returns True, of the ProcessModel has at least one lane, otherwise false.
+   * @returns True, if the ProcessModel has at least one lane, otherwise false.
    */
   getProcessModelHasLanes(): boolean;
 
