@@ -68,7 +68,7 @@ export interface IProcessModelFacade {
    * @param flowNodeId The ID of the FlowNode for which to get the lane.
    * @returns          The retrieved lane name.
    */
-  getLaneNameForFlowNode(flowNodeId: string): Lane;
+  getLaneForFlowNode(flowNodeId: string): Lane;
 
   /**
    * Returns a list of all incoming SequenceFlows connected to the FlowNode
