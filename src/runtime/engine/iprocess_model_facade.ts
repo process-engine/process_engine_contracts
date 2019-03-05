@@ -63,6 +63,13 @@ export interface IProcessModelFacade {
   getFlowNodeById(flowNodeId: string): FlowNode;
 
   /**
+   * Checks if the ProcessModel has at least one lane.
+   *
+   * @returns True, of the ProcessModel has at least one lane, otherwise false.
+   */
+  getProcessModelHasLanes(): boolean;
+
+  /**
    * Gets the lane that the given FlowNode belongs to.
    *
    * @param flowNodeId The ID of the FlowNode for which to get the lane.
