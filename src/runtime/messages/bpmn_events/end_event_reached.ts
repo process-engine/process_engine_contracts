@@ -14,7 +14,8 @@ export class EndEventReachedMessage extends BaseBpmnEventMessage {
               flowNodeId: string,
               flowNodeInstanceId: string,
               processInstanceOwner: IIdentity,
-              currentToken: any) {
-    super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
+              currentToken: any,
+              endEventName?: string) {
+    super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken, endEventName);
   }
 }
