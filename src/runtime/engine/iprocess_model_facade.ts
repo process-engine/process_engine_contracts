@@ -1,4 +1,13 @@
-import {BoundaryEvent, EndEvent, FlowNode, IntermediateCatchEvent, SequenceFlow, StartEvent, SubProcess} from './../../model_duplications/index';
+import {
+  BoundaryEvent,
+  EndEvent,
+  FlowNode,
+  IntermediateCatchEvent,
+  Lane,
+  SequenceFlow,
+  StartEvent,
+  SubProcess,
+} from './../../model_duplications/index';
 
 /**
  * The ProcessModelFacade allows to run queries for a certain ProcessModel,
@@ -52,6 +61,21 @@ export interface IProcessModelFacade {
    * @returns          The retrieved FlowNode.
    */
   getFlowNodeById(flowNodeId: string): FlowNode;
+
+  /**
+   * Checks if the ProcessModel has at least one lane.
+   *
+   * @returns True, if the ProcessModel has at least one lane, otherwise false.
+   */
+  getProcessModelHasLanes(): boolean;
+
+  /**
+   * Gets the lane that the given FlowNode belongs to.
+   *
+   * @param flowNodeId The ID of the FlowNode for which to get the lane.
+   * @returns          The retrieved lane name.
+   */
+  getLaneForFlowNode(flowNodeId: string): Lane;
 
   /**
    * Returns a list of all incoming SequenceFlows connected to the FlowNode
