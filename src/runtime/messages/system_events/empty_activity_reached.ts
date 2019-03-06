@@ -3,14 +3,9 @@ import {IIdentity} from '@essential-projects/iam_contracts';
 import {BaseSystemEventMessage} from './base_system_event_message';
 
 /**
- * The message used to finish a waiting ManualTask.
+ * Represents the message which is send, when a EmptyActivity has been finished.
  */
-export class FinishManualTaskMessage extends BaseSystemEventMessage {
-
-  /**
-   * The flow node id of the ManualTask being finished.
-   */
-  public manualTaskId: string;
+export class EmptyActivityReachedMessage extends BaseSystemEventMessage {
 
   constructor(correlationId: string,
               processModelId: string,
