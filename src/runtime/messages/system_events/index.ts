@@ -10,3 +10,4 @@ export * from './manual_task_finished';
 export * from './manual_task_reached';
 export * from './process_ended';
 export * from './process_started';
+export * from './process_terminated';
