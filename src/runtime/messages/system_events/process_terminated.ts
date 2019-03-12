@@ -10,10 +10,10 @@ export class ProcessTerminatedMessage extends BaseSystemEventMessage {
   constructor(correlationId: string,
               processModelId: string,
               processInstanceId: string,
-              startEventId: string,
-              startEventInstanceId: string,
+              flowNodeId: string,
+              flowNodeInstanceId: string,
               processInstanceOwner: IIdentity,
               currentToken: any) {
-    super(correlationId, processModelId, processInstanceId, startEventId, startEventInstanceId, processInstanceOwner, currentToken);
+    super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
   }
 }
