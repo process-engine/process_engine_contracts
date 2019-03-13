@@ -21,6 +21,7 @@ const messagePaths = {
   messageTriggered: 'message_triggered',
   processEnded: 'process_ended',
   processStarted: 'process_started',
+  processError: 'process_error',
   processTerminated: 'process_terminated',
   signalTriggered: 'signal_triggered',
   userTaskReached: 'user_task_reached',
@@ -49,9 +50,10 @@ const messagePaths = {
   sendTaskReached: `/processengine/process/sendtask/${messageParams.messageReference}`,
   receiveTaskReached: `/processengine/process/receivetask/${messageParams.messageReference}`,
   signalEventReached: `/processengine/process/signal/${messageParams.signalReference}`,
-  terminateEndEventReached: `/processengine/process/${messageParams.processInstanceId}/terminated`,
-  processInstanceStarted: `/processengine/process_started/${messageParams.processModelId}`,
-  processInstanceEnded: `/processengine/process/${messageParams.processInstanceId}/ended`,
+  processInstanceWithIdStarted: `/processengine/process_started/${messageParams.processModelId}`,
+  processInstanceWithIdEnded: `/processengine/process/${messageParams.processInstanceId}/ended`,
+  processInstanceWithIdErrored: `/processengine/process/${messageParams.processInstanceId}/error`,
+  processInstanceWithIdTerminated: `/processengine/process/${messageParams.processInstanceId}/terminated`,
 };
 
 export const eventAggregatorSettings = {
