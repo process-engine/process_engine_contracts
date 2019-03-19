@@ -56,5 +56,12 @@ export class EndEvent extends FlowNode {
   public messageEventDefinition?: MessageEventDefinition;
   public signalEventDefinition?: SignalEventDefinition;
   public terminateEventDefinition?: TerminateEventDefinition;
-
+  /**
+   * When using a SignalEndEvent or MessageEndEvent, this property can hold a
+   * definition for a payload to send with the event.
+   *
+   * Use this, if you do not want to use the current ProcessToken as event
+   * payload.
+   */
+  public inputValues?: any;
 }
