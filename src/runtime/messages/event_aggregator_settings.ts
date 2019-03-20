@@ -14,6 +14,8 @@ const messageParams = {
 
 const messagePaths = {
   // Generic messages
+  callActivityReached: 'call_activity_reached',
+  callActivityFinished: 'call_activity_finished',
   emptyActivityReached: 'empty_activity_reached',
   emptyActivityFinished: 'empty_activity_finished',
   manualTaskReached: 'manual_task_reached',
