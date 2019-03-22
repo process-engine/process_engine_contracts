@@ -38,6 +38,24 @@ export interface IFlowNodePersistenceFacade {
   ): Promise<void>;
 
   /**
+   * Persists the current state of the FlowNodeInstance, after it was
+   * interrupted by a BoundaryEvent.
+   *
+   * @async
+   * @param flowNode              The FlowNodeInstance's Model.
+   * @param flowNodeInstanceId    The FlowNodeInstance's ID.
+   * @param processToken          The current ProcessToken.
+   * @param interruptorInstanceId The ID of the BoundaryEvent that interrupted
+   *                              the FlowNodeInstance.
+   */
+  persistOnInterrupt(
+    flowNode: FlowNode,
+    flowNodeInstanceId: string,
+    processToken: ProcessToken,
+    interruptorInstanceId: string,
+  ): Promise<void>;
+
+  /**
    * Persists the current state of the FlowNodeInstance, after it was aborted,
    * due to process termination.
    *
