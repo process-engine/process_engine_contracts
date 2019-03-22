@@ -10,4 +10,5 @@ export abstract class FlowNode extends BaseElement {
   public name: string;
   public incoming: Array<string> = [];
   public outgoing: Array<string> = [];
+  public defaultOutgoingSequenceFlowId?: string;
 }
