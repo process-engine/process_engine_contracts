@@ -67,7 +67,7 @@ export interface IProcessTokenFacade {
    *
    * @returns A list of all results.
    */
-  getLatestResults(): IFlowNodeInstanceResult;
+  getLatestResult(): IFlowNodeInstanceResult;
 
   /**
    * Returns the currently stored ProcessTokens into the old format.
