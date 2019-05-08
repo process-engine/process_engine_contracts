@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {FlowNode} from '../../model_duplications/index';
 import {ProcessToken} from '../types';
 import {IProcessModelFacade} from './iprocess_model_facade';
@@ -15,9 +16,9 @@ import {IProcessTokenFacade} from './iprocess_token_facade';
  */
 export type OnBoundaryEventTriggeredData = {
   boundaryInstanceId: string;
-  nextFlowNode: FlowNode,
-  interruptHandler: boolean,
-  eventPayload?: any,
+  nextFlowNode: FlowNode;
+  interruptHandler: boolean;
+  eventPayload?: any;
 };
 
 /**

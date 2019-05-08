@@ -9,10 +9,13 @@ import {FlowNode} from './flow_node';
  * within another process and are treated like an activity for that process.
  */
 export class SubProcess extends FlowNode {
+
   public get bpmnType(): BpmnType {
     return BpmnType.subProcess;
   }
+
   public laneSet?: LaneSet;
   public flowNodes: Array<FlowNode> = [];
   public sequenceFlows: Array<SequenceFlow> = [];
+
 }

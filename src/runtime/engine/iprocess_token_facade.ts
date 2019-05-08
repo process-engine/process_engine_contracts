@@ -1,4 +1,4 @@
-import {ProcessToken} from './../types';
+import {ProcessToken} from '../types';
 
 import {IFlowNodeInstanceResult} from './iflow_node_instance_result';
 
@@ -17,7 +17,7 @@ export interface IProcessTokenFacade {
    * @param   payload The payload to use with the ProcessToken.
    * @returns         The created ProcessToken.
    */
-  createProcessToken(payload?: any): ProcessToken;
+  createProcessToken<TPayload>(payload?: TPayload): ProcessToken;
 
   /**
    * Adds the results of a given FlowNode to the ProcessToken.
@@ -26,7 +26,7 @@ export interface IProcessTokenFacade {
    * @param flowNodeInstanceId The ID of the Instance that executed the FlowNode.
    * @param result             The payload containing the result.
    */
-  addResultForFlowNode(flowNodeId: string, flowNodeInstanceId: string, result: any): void;
+  addResultForFlowNode<TResult>(flowNodeId: string, flowNodeInstanceId: string, result: TResult): void;
 
   /**
    * Checks if a result set for the given FlowNodeInstance has already been
@@ -69,6 +69,7 @@ export interface IProcessTokenFacade {
    *
    * @returns The converted ProcessTokens.
    */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   getOldTokenFormat(): any;
 
   /**

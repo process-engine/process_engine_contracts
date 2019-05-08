@@ -1,4 +1,4 @@
-import {BoundaryEvent} from './../../model_duplications/index';
+import {BoundaryEvent} from '../../model_duplications/index';
 import {IBoundaryEventHandler} from './iboundary_event_handler';
 
 /**

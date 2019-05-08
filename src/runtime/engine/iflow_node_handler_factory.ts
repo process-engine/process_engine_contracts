@@ -1,6 +1,6 @@
-import {BoundaryEvent, FlowNode} from './../../model_duplications/index';
+import {BoundaryEvent, FlowNode} from '../../model_duplications/index';
 
-import {ProcessToken} from './../../runtime/types';
+import {ProcessToken} from '../types';
 
 import {IBoundaryEventHandler} from './iboundary_event_handler';
 import {IFlowNodeHandler} from './iflow_node_handler';

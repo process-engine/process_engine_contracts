@@ -25,12 +25,12 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  start(
+  start<TPayload>(
     identity: IIdentity,
     processModelId: string,
     correlationId: string,
     startEventId?: string,
-    initialPayload?: any,
+    initialPayload?: TPayload,
     caller?: string,
   ): Promise<ProcessStartedMessage>;
 
@@ -49,12 +49,12 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  startAndAwaitEndEvent(
+  startAndAwaitEndEvent<TPayload>(
     identity: IIdentity,
     processModelId: string,
     correlationId: string,
     startEventId?: string,
-    initialPayload?: any,
+    initialPayload?: TPayload,
     caller?: string,
   ): Promise<EndEventReachedMessage>;
 
@@ -74,13 +74,13 @@ export interface IExecuteProcessService {
    * @param caller         Optional: If a Subprocess is started, this will
    *                       contain the ID of the parent Process.
    */
-  startAndAwaitSpecificEndEvent(
+  startAndAwaitSpecificEndEvent<TPayload>(
     identity: IIdentity,
     processModelId: string,
     correlationId: string,
     endEventId: string,
     startEventId?: string,
-    initialPayload?: any,
+    initialPayload?: TPayload,
     caller?: string,
   ): Promise<EndEventReachedMessage>;
 }
