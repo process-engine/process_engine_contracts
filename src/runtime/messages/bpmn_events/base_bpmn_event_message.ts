@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 /**
@@ -6,6 +7,7 @@ import {IIdentity} from '@essential-projects/iam_contracts';
  * EndEvents, etc.
  */
 export class BaseBpmnEventMessage {
+
   public readonly correlationId: string;
   public readonly processModelId: string;
   public readonly processInstanceId: string;
@@ -15,14 +17,16 @@ export class BaseBpmnEventMessage {
   public readonly processInstanceOwner: IIdentity;
   public readonly currentToken: any;
 
-  constructor(correlationId: string,
-              processModelId: string,
-              processInstanceId: string,
-              flowNodeId: string,
-              flowNodeInstanceId: string,
-              processInstanceOwner: IIdentity,
-              currentToken: any,
-              flowNodeName?: string) {
+  constructor(
+    correlationId: string,
+    processModelId: string,
+    processInstanceId: string,
+    flowNodeId: string,
+    flowNodeInstanceId: string,
+    processInstanceOwner: IIdentity,
+    currentToken: any,
+    flowNodeName?: string,
+  ) {
     this.correlationId = correlationId;
     this.processModelId = processModelId;
     this.processInstanceId = processInstanceId;
@@ -32,4 +36,5 @@ export class BaseBpmnEventMessage {
     this.currentToken = currentToken;
     this.flowNodeName = flowNodeName;
   }
+
 }

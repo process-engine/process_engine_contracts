@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 import {UserTaskResult} from '../../types/user_task_result';
@@ -13,16 +14,19 @@ export class UserTaskFinishedMessage extends BaseSystemEventMessage {
    */
   public userTaskResult: UserTaskResult;
 
-  constructor(userTaskResult: UserTaskResult,
-              correlationId: string,
-              processModelId: string,
-              processInstanceId: string,
-              flowNodeId: string,
-              flowNodeInstanceId: string,
-              processInstanceOwner: IIdentity,
-              currentToken: any) {
+  constructor(
+    userTaskResult: UserTaskResult,
+    correlationId: string,
+    processModelId: string,
+    processInstanceId: string,
+    flowNodeId: string,
+    flowNodeInstanceId: string,
+    processInstanceOwner: IIdentity,
+    currentToken: any,
+  ) {
     super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
 
     this.userTaskResult = userTaskResult;
   }
+
 }

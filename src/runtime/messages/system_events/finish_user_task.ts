@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 import {BaseSystemEventMessage} from './base_system_event_message';
@@ -16,16 +17,19 @@ export class FinishUserTaskMessage extends BaseSystemEventMessage {
    */
   public result: any;
 
-  constructor(result: any,
-              correlationId: string,
-              processModelId: string,
-              processInstanceId: string,
-              flowNodeId: string,
-              flowNodeInstanceId: string,
-              processInstanceOwner: IIdentity,
-              currentToken: any) {
+  constructor(
+    result: any,
+    correlationId: string,
+    processModelId: string,
+    processInstanceId: string,
+    flowNodeId: string,
+    flowNodeInstanceId: string,
+    processInstanceOwner: IIdentity,
+    currentToken: any,
+  ) {
     super(correlationId, processModelId, processInstanceId, flowNodeId, flowNodeInstanceId, processInstanceOwner, currentToken);
 
     this.result = result;
   }
+
 }
