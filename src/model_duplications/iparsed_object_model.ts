@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /**
  * This contains the raw BPMN process, as it was parsed by
  * xml2json.

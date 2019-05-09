@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {FlowNode} from '../../model_duplications/index';
 import {ProcessToken} from '../types';
 import {IProcessModelFacade} from './iprocess_model_facade';

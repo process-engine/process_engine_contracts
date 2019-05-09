@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {BpmnType, EventType} from '../../constants';
 import {FlowNode} from './flow_node';
 

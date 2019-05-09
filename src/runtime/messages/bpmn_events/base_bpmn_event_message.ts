@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {IIdentity} from '@essential-projects/iam_contracts';
 
 /**
