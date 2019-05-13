@@ -11,4 +11,5 @@ export class BpmnError extends Error {
     this.code = code || '';
     this.message = message || '';
   }
+
 }

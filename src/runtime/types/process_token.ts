@@ -7,6 +7,7 @@ import {ProcessTokenType} from './process_token_type';
  * Each FlowNodeInstance will produce its own tokens.
  */
 export class ProcessToken {
+
   public processInstanceId: string;
   public processModelId: string;
   public correlationId: string;
@@ -29,4 +30,5 @@ export class ProcessToken {
    * Contains the ProcessToken's values.
    */
   public payload: any;
+
 }

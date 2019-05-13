@@ -1,5 +1,5 @@
-import {FlowNode} from './../../model_duplications/index';
-import {ProcessToken} from './../../runtime/types';
+import {FlowNode} from '../../model_duplications/index';
+import {ProcessToken} from '../types';
 import {IFlowNodeHandler} from './iflow_node_handler';
 
 /**

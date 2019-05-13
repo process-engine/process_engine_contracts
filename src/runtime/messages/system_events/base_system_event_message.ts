@@ -8,6 +8,7 @@ import {IIdentity} from '@essential-projects/iam_contracts';
  * For example: A UserTask was reached or finished.
  */
 export class BaseSystemEventMessage {
+
   public readonly correlationId: string;
   public readonly processModelId: string;
   public readonly processInstanceId: string;
@@ -16,13 +17,15 @@ export class BaseSystemEventMessage {
   public readonly processInstanceOwner: IIdentity;
   public readonly currentToken: any;
 
-  constructor(correlationId: string,
-              processModelId: string,
-              processInstanceId: string,
-              flowNodeId: string,
-              flowNodeInstanceId: string,
-              processInstanceOwner: IIdentity,
-              currentToken: any) {
+  constructor(
+    correlationId: string,
+    processModelId: string,
+    processInstanceId: string,
+    flowNodeId: string,
+    flowNodeInstanceId: string,
+    processInstanceOwner: IIdentity,
+    currentToken: any,
+  ) {
     this.correlationId = correlationId;
     this.processModelId = processModelId;
     this.processInstanceId = processInstanceId;
@@ -31,4 +34,5 @@ export class BaseSystemEventMessage {
     this.processInstanceOwner = processInstanceOwner;
     this.currentToken = currentToken;
   }
+
 }

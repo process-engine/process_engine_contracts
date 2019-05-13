@@ -1,3 +1,5 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {IProcessTokenFacade} from './iprocess_token_facade';
 
 /**
@@ -16,5 +18,5 @@ export interface IProcessTokenFacadeFactory {
    * @param   identity          The identity of the requesting User
    * @returns                   The created ProcessTokenFacade.
    */
-  create(processInstanceId: string, processModelId: string, correlationId: string, identity: any): IProcessTokenFacade; // TODO: Use IIdentity
+  create(processInstanceId: string, processModelId: string, correlationId: string, identity: IIdentity): IProcessTokenFacade;
 }

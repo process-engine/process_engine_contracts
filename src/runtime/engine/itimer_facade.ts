@@ -54,7 +54,7 @@ export interface ITimerFacade {
    * @param   eventDefinition The event definition to parse.
    * @returns                 The parsed TimerDefinitionType.
    */
-  parseTimerDefinitionType(eventDefinition: any): TimerDefinitionType;
+  parseTimerDefinitionType(eventDefinition: TimerEventDefinition): TimerDefinitionType;
 
   /**
    * Takes the given event definition and parses the attached value into
@@ -63,7 +63,7 @@ export interface ITimerFacade {
    * @param   eventDefinition The event definition to parse.
    * @returns                 The parsed timer value.
    */
-  parseTimerDefinitionValue(eventDefinition: any): string;
+  parseTimerDefinitionValue(eventDefinition: TimerEventDefinition): string;
 
   /**
    * Cancels the given timer subscription.
