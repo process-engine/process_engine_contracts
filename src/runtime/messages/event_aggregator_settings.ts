@@ -16,6 +16,10 @@ const messagePaths = {
   // Generic messages
   callActivityReached: 'call_activity_reached',
   callActivityFinished: 'call_activity_finished',
+  intermediateEventReached: 'intermediate_event_reached',
+  intermediateEventFinished: 'intermediate_event_finished',
+  boundaryEventReached: 'boundary_event_reached',
+  boundaryEventFinished: 'boundary_event_finished',
   emptyActivityReached: 'empty_activity_reached',
   emptyActivityFinished: 'empty_activity_finished',
   manualTaskReached: 'manual_task_reached',
