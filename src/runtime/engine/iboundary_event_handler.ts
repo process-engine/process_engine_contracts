@@ -15,9 +15,9 @@ import {IProcessTokenFacade} from './iprocess_token_facade';
  */
 export type OnBoundaryEventTriggeredData = {
   boundaryInstanceId: string;
-  nextFlowNode: FlowNode,
-  interruptHandler: boolean,
-  eventPayload?: any,
+  nextFlowNode: FlowNode;
+  interruptHandler: boolean;
+  eventPayload?: any;
 };
 
 /**
