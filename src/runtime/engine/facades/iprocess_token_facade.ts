@@ -1,6 +1,4 @@
-import {ProcessToken} from '../types';
-
-import {IFlowNodeInstanceResult} from './iflow_node_instance_result';
+import {IFlowNodeInstanceResult, ProcessToken} from '../../types/index';
 
 /**
  * This Facade encapsulates a ProcessToken and allows other components to run

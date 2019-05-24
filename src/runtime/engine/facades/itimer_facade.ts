@@ -1,9 +1,9 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {FlowNode, TimerEventDefinition} from '../../model_duplications/index';
-import {IProcessTokenFacade} from './iprocess_token_facade';
+import {FlowNode, TimerEventDefinition} from '../../../model_duplications/index';
+import {TimerDefinitionType} from '../../../constants';
 
-import {TimerDefinitionType} from '../../constants';
+import {IProcessTokenFacade} from './iprocess_token_facade';
 
 /**
  * Handles the creation and resolution of timers.

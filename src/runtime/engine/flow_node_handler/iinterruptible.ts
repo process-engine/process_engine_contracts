@@ -1,4 +1,4 @@
-import {ProcessToken} from '../types/process_token';
+import {ProcessToken} from '../../types/process_token';
 
 /**
  * The signature for the interruption callback function.

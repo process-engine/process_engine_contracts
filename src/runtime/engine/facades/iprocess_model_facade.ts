@@ -7,7 +7,7 @@ import {
   SequenceFlow,
   StartEvent,
   SubProcess,
-} from '../../model_duplications/index';
+} from '../../../model_duplications/index';
 
 /**
  * The ProcessModelFacade allows to run queries for a certain ProcessModel,

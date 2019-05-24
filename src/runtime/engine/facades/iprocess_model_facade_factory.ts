@@ -1,4 +1,4 @@
-import {Process} from '../../model_duplications/index';
+import {Process} from '../../../model_duplications/index';
 
 import {IProcessModelFacade} from './iprocess_model_facade';
 

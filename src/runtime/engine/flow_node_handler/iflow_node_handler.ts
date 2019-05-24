@@ -1,11 +1,11 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {FlowNode} from '../../model_duplications/index';
-import {FlowNodeInstance, ProcessToken} from '../types';
+import {FlowNode} from '../../../model_duplications/index';
+import {FlowNodeInstance, ProcessToken} from '../../types';
 import {
   IProcessModelFacade,
   IProcessTokenFacade,
-} from './index';
+} from '../facades';
 
 /**
  * Handles the execution of a single FlowNodeInstance.
