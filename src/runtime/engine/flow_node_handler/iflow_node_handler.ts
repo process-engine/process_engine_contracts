@@ -1,11 +1,11 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {FlowNode} from '../../model_duplications/index';
-import {FlowNodeInstance, ProcessToken} from '../types';
+import {FlowNode} from '../../../model_duplications/index';
+import {FlowNodeInstance, ProcessToken} from '../../types';
 import {
   IProcessModelFacade,
   IProcessTokenFacade,
-} from './index';
+} from '../facades';
 
 /**
  * Handles the execution of a single FlowNodeInstance.
@@ -49,14 +49,17 @@ export interface IFlowNodeHandler<TFlowNode extends FlowNode> {
    * interrupted.
    *
    * @async
-   * @param flowNodeInstances  The FlowNodeInstances for the ProcessInstance
-   *                           in which the FlowNodeInstance runs.
-   * @param processTokenFacade The Facade for the current ProcessToken.
-   * @param processModelFacade The Facade for the ProcessModel.
-   * @param identity           The Identity that started the FlowNodeInstance.
+   * @param flowNodeInstanceForHandler The FlowNodeInstance to resume.
+   * @param allFlowNodeInstances       All FlowNodeInstances for the
+   *                                   ProcessInstance.
+   * @param processTokenFacade         The Facade for the current ProcessToken.
+   * @param processModelFacade         The Facade for the ProcessModel.
+   * @param identity                   The Identity that started the
+   *                                   FlowNodeInstance.
    */
   resume(
-    flowNodeInstances: Array<FlowNodeInstance>,
+    flowNodeInstanceForHandler: FlowNodeInstance,
+    allFlowNodeInstances: Array<FlowNodeInstance>,
     processTokenFacade: IProcessTokenFacade,
     processModelFacade: IProcessModelFacade,
     identity: IIdentity,

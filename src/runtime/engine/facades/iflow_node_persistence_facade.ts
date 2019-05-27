@@ -1,5 +1,5 @@
-import {FlowNode} from '../../model_duplications/index';
-import {ProcessToken} from '../types/index';
+import {FlowNode} from '../../../model_duplications/index';
+import {ProcessToken} from '../../types/index';
 
 export interface IFlowNodePersistenceFacade {
   /**

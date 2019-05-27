@@ -1,7 +1,7 @@
-import {FlowNode} from '../../model_duplications/index';
-import {ProcessToken} from '../types';
-import {IProcessModelFacade} from './iprocess_model_facade';
-import {IProcessTokenFacade} from './iprocess_token_facade';
+import {FlowNode} from '../../../model_duplications/index';
+import {ProcessToken} from '../../types';
+import {IProcessModelFacade} from '../facades/iprocess_model_facade';
+import {IProcessTokenFacade} from '../facades/iprocess_token_facade';
 
 /**
  * Encapsulates the data sent with an OnTriggeredCallback.

@@ -1,6 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {EndEventReachedMessage} from '../messages/bpmn_events/end_event_reached';
+import {EndEventReachedMessage} from '../../messages/bpmn_events/end_event_reached';
 
 export interface IResumeProcessService {
 
