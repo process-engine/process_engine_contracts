@@ -17,7 +17,7 @@ const messagePaths = {
   boundaryEventTriggered: 'boundary_event_triggered',
   callActivityReached: 'call_activity_reached',
   callActivityFinished: 'call_activity_finished',
-  intermediateEventReached: 'intermediate_event_reached',
+  intermediateEventTriggered: 'intermediate_event_triggered',
   intermediateEventFinished: 'intermediate_event_finished',
   emptyActivityReached: 'empty_activity_reached',
   emptyActivityFinished: 'empty_activity_finished',

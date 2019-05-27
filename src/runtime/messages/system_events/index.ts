@@ -8,7 +8,7 @@ export * from './finish_empty_activity';
 export * from './finish_user_task';
 export * from './finish_manual_task';
 export * from './intermediate_event_finished';
-export * from './intermediate_event_reached';
+export * from './intermediate_event_triggered';
 export * from './user_task_finished';
 export * from './user_task_reached';
 export * from './manual_task_finished';
