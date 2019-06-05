@@ -14,6 +14,12 @@ const messageParams = {
 
 const messagePaths = {
   // Generic messages
+  boundaryEventTriggered: 'boundary_event_triggered',
+  callActivityReached: 'call_activity_reached',
+  callActivityFinished: 'call_activity_finished',
+  intermediateThrowEventTriggered: 'intermediate_throw_event_triggered',
+  intermediateCatchEventReached: 'intermediate_catch_event_reached',
+  intermediateCatchEventFinished: 'intermediate_catch_event_finished',
   emptyActivityReached: 'empty_activity_reached',
   emptyActivityFinished: 'empty_activity_finished',
   manualTaskReached: 'manual_task_reached',

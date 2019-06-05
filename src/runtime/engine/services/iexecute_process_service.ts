@@ -1,6 +1,6 @@
 import {IIdentity} from '@essential-projects/iam_contracts';
 
-import {EndEventReachedMessage, ProcessStartedMessage} from '../messages';
+import {EndEventReachedMessage, ProcessStartedMessage} from '../../messages';
 
 /**
  * This service handles the execution of ProcessModels.
