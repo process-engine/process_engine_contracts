@@ -30,8 +30,19 @@ const messagePaths = {
   processError: 'process_error',
   processTerminated: 'process_terminated',
   signalTriggered: 'signal_triggered',
+  receiveTaskReached: 'receive_task_reached',
+  receiveTaskFinished: 'receive_task_finished',
+  scriptTaskReached: 'script_task_reached',
+  scriptTaskFinished: 'script_task_finished',
+  sendTaskReached: 'send_task_reached',
+  sendTaskFinished: 'send_task_finished',
+  serviceTaskReached: 'service_task_reached',
+  serviceTaskFinished: 'service_task_finished',
+  subprocessReached: 'subprocess_reached',
+  subprocessFinished: 'subprocess_finished',
   userTaskReached: 'user_task_reached',
   userTaskFinished: 'user_task_finished',
+
   // Instance specific messages
   finishEmptyActivity:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
@@ -53,8 +64,8 @@ const messagePaths = {
     `${messageParams.processInstanceId}/manualtask/${messageParams.flowNodeInstanceId}/finished`,
   endEventReached: `/processengine/correlation/${messageParams.correlationId}/processmodel/${messageParams.processModelId}/ended`,
   messageEventReached: `/processengine/process/message/${messageParams.messageReference}`,
-  sendTaskReached: `/processengine/process/sendtask/${messageParams.messageReference}`,
-  receiveTaskReached: `/processengine/process/receivetask/${messageParams.messageReference}`,
+  sendTaskSendingMessage: `/processengine/process/sendtask/${messageParams.messageReference}`,
+  receiveTaskWaitingForMessage: `/processengine/process/receivetask/${messageParams.messageReference}`,
   signalEventReached: `/processengine/process/signal/${messageParams.signalReference}`,
   processInstanceWithIdStarted: `/processengine/process_started/${messageParams.processModelId}`,
   processInstanceWithIdEnded: `/processengine/process/${messageParams.processInstanceId}/ended`,
