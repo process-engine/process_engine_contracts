@@ -15,8 +15,8 @@ const messageParams = {
 const messagePaths = {
   // Generic messages
   boundaryEventTriggered: 'boundary_event_triggered',
-  callActivityReached: 'call_activity_reached',
-  callActivityFinished: 'call_activity_finished',
+  activityReached: 'activity_reached',
+  activityFinished: 'activity_finished',
   intermediateThrowEventTriggered: 'intermediate_throw_event_triggered',
   intermediateCatchEventReached: 'intermediate_catch_event_reached',
   intermediateCatchEventFinished: 'intermediate_catch_event_finished',
@@ -32,6 +32,7 @@ const messagePaths = {
   signalTriggered: 'signal_triggered',
   userTaskReached: 'user_task_reached',
   userTaskFinished: 'user_task_finished',
+
   // Instance specific messages
   finishEmptyActivity:
     `/processengine/correlation/${messageParams.correlationId}/processinstance/` +
