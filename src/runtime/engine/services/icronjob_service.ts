@@ -13,6 +13,14 @@ import {IAutoStartService} from './iauto_start_service';
 export interface ICronjobService extends IAutoStartService {
 
   /**
+   * Gets a list of all cronjobs that are currently active.
+   * The cronjobs are grouped by the ProcessModel to which they belong.
+   *
+   * @returns A list of active Cronjobs.
+   */
+  getActive(): Array<CronjobConfiguration>;
+
+  /**
    * Adds the cyclic TimerStartEvents of the given ProcessModel to the internal
    * cronjob storage, or updates it, if the ProcessModel has already been added
    * to the list.
@@ -29,4 +37,13 @@ export interface ICronjobService extends IAutoStartService {
    * @param processModelId
    */
   remove(processModelId: string): void;
+}
+
+/**
+ * Describes a cronjob employed by the CronjobService.
+ */
+export type CronjobConfiguration = {
+  processModelId: string;
+  startEventId: string;
+  cronjob: string;
 }
