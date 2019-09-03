@@ -1,7 +1,6 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {FlowNode, TimerEventDefinition} from '../../../model_duplications/index';
-import {TimerDefinitionType} from '../../../constants';
+import {FlowNode, TimerEventDefinition, TimerType} from '../../../model_duplications/index';
 
 import {IProcessTokenFacade} from './iprocess_token_facade';
 
@@ -15,32 +14,13 @@ export interface ITimerFacade {
    * value as a baseline.
    *
    * @param   flowNode           The FlowNode to which to attach the timer.
-   * @param   timerType          The type of the timer (cycle, duration, etc).
-   * @param   timerValue         The value of the timer.
+   * @param   timerDefinition    The definition containing the timer.
+   * @param   processTokenFacade The facade containing the current ProcessToken.
    * @param   callback           The function to call, after the timer has elapsed.
    * @returns                    A Subscription on the event aggreator,
    *                             which can be used to wait for the timer to elapse.
    */
   initializeTimer(
-    flowNode: FlowNode,
-    timerType: TimerDefinitionType,
-    timerValue: string,
-    callback: Function,
-  ): Subscription;
-
-  /**
-   * Initializes a new timer for the given FlowNode from the given
-   * timerDefinition.
-   *
-   * @param   flowNode           The FlowNode to which to attach the timer.
-   * @param   timerDefinition    The timer definition from which to build the timer.
-   * @param   processTokenFacade The ProcessTokenFacade to use to retrieve
-   *                             token values for timer expressions.
-   * @param   callback           The function to call, after the timer has elapsed.
-   * @returns                    A Subscription on the event aggreator,
-   *                             which can be used to wait for the timer to elapse.
-   */
-  initializeTimerFromDefinition(
     flowNode: FlowNode,
     timerDefinition: TimerEventDefinition,
     processTokenFacade: IProcessTokenFacade,
@@ -48,22 +28,58 @@ export interface ITimerFacade {
   ): Subscription;
 
   /**
-   * Takes an event definition and parsed it into a comprehensive
-   * TimerDefinitionType.
+   * Initializes a new cyclic timer, using the given value and FlowNode.
+   * When the timer expires, the given callback will be called.
    *
-   * @param   eventDefinition The event definition to parse.
-   * @returns                 The parsed TimerDefinitionType.
+   * @param   crontab               The crontab to use.
+   * @param   flowNode              The FlowNode that contains the timer.
+   * @param   callback              The callback to call, when the timer expires.
+   * @param   timerExpiredEventName Optional: A name for the event to raise, when the timer expires.
+   * @returns                       The Subscription that was created on the EventAggregator.
    */
-  parseTimerDefinitionType(eventDefinition: TimerEventDefinition): TimerDefinitionType;
+  startCycleTimer(crontab: string, flowNode: FlowNode, callback: Function, timerExpiredEventName?: string): Subscription;
 
   /**
-   * Takes the given event definition and parses the attached value into
-   * a format that can be understood be the timer-scheduling library.
+   * Initializes a new date timer, using the given value.
+   * When the timer expires, the given callback will be called.
    *
-   * @param   eventDefinition The event definition to parse.
-   * @returns                 The parsed timer value.
+   * @param   date                  The date at which the timer will be triggered.
+   * @param   callback              The callback to call, when the timer expires.
+   * @param   timerExpiredEventName Optional: A name for the event to raise, when the timer expires.
+   * @returns                       The Subscription that was created on the EventAggregator.
    */
-  parseTimerDefinitionValue(eventDefinition: TimerEventDefinition): string;
+  startDateTimer(date: string, callback: Function, timerExpiredEventName?: string): Subscription;
+
+  /**
+   * Initializes a new duration timer, using the given value.
+   * When the timer expires, the given callback will be called.
+   *
+   * @param   duration              The duration to use.
+   * @param   callback              The callback to call, when the timer expires.
+   * @param   timerExpiredEventName Optional: A name for the event to raise, when the timer expires.
+   * @returns                       The Subscription that was created on the EventAggregator.
+   */
+  startDurationTimer(duration: string, callback: Function, timerExpiredEventName?: string): Subscription;
+
+  /**
+   * Validates the given TimerType and TimerValue, using the given FlowNode as a baseline.
+   *
+   * @param timerDefinition The definition of the timer to validate.
+   * @param flowNode        The FlowNode to use as a baseline.
+   */
+  validateTimer(timerDefinition: TimerEventDefinition, flowNode: FlowNode): void;
+
+  /**
+   * Takes a timer expression and a ProcessTokenFacade and checks if the timerExpression contains
+   * references to the ProcessToken (i.e. token.history.FlowNode1.abc and the like).
+   * If so, these references will be resolved with values from the current ProcessToken,
+   * contained within the facade.
+   *
+   * @param   timerExpression    The timer expression to parse.
+   * @param   processTokenFacade The facade containing the current ProcessToken.
+   * @returns                    The parsed timer expression.
+   */
+  executeTimerExpressionIfNeeded(timerExpression: string, processTokenFacade: IProcessTokenFacade): string;
 
   /**
    * Cancels the given timer subscription.

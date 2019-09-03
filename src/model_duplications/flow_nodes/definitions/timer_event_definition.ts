@@ -4,6 +4,7 @@ export class TimerEventDefinition extends EventDefinition {
 
   public enabled?: boolean = true;
   public timerType: TimerType;
+  public value: string;
 
 }
 

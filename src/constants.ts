@@ -34,21 +34,3 @@ export enum EventType {
   timerEvent = 'timerEvent',
   errorEvent = 'errorEvent',
 }
-
-/**
- * Contains a list of possible timer definition types.
- */
-export enum TimerDefinitionType {
-  /**
-   * The timer will run once and expire at the given date and time.
-   */
-  date = 0,
-  /**
-   * The timer will run once and expire after a given amount of time.
-   */
-  duration = 1,
-  /**
-   * The timer will run repeatedly in the given interval.
-   */
-  cycle = 2,
-}
