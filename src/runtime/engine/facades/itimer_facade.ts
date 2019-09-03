@@ -1,6 +1,6 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {FlowNode, TimerEventDefinition} from '../../../model_duplications/index';
+import {FlowNode, TimerEventDefinition, TimerType} from '../../../model_duplications/index';
 
 import {IProcessTokenFacade} from './iprocess_token_facade';
 
@@ -58,6 +58,14 @@ export interface ITimerFacade {
    * @returns                       The Subscription that was created on the EventAggregator.
    */
   startDurationTimer(duration: string, callback: Function, timerExpiredEventName?: string): Subscription;
+
+  /**
+   * Validates the given TimerType and TimerValue, using the given FlowNode as a baseline.
+   *
+   * @param timerDefinition The definition of the timer to validate.
+   * @param flowNode        The FlowNode to use as a baseline.
+   */
+  validateTimer(timerDefinition: TimerEventDefinition, flowNode: FlowNode): void;
 
   /**
    * Takes a timer expression and a ProcessTokenFacade and checks if the timerExpression contains
