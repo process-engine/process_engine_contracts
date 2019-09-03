@@ -13,15 +13,17 @@ export interface ITimerFacade {
    * Initializes a new timer for the given FlowNode, using the given type and
    * value as a baseline.
    *
-   * @param   flowNode        The FlowNode to which to attach the timer.
-   * @param   timerDefinition The definition containing the timer.
-   * @param   callback        The function to call, after the timer has elapsed.
-   * @returns                 A Subscription on the event aggreator,
-   *                          which can be used to wait for the timer to elapse.
+   * @param   flowNode           The FlowNode to which to attach the timer.
+   * @param   timerDefinition    The definition containing the timer.
+   * @param   processTokenFacade The facade containing the current ProcessToken.
+   * @param   callback           The function to call, after the timer has elapsed.
+   * @returns                    A Subscription on the event aggreator,
+   *                             which can be used to wait for the timer to elapse.
    */
   initializeTimer(
     flowNode: FlowNode,
     timerDefinition: TimerEventDefinition,
+    processTokenFacade: IProcessTokenFacade,
     callback: Function,
   ): Subscription;
 
