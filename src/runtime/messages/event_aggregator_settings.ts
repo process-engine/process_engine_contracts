@@ -36,6 +36,7 @@ const messagePaths = {
   cronjobExecuted: 'cronjob_executed',
   cronjobStopped: 'cronjob_stopped',
   cronjobUpdated: 'cronjob_updated',
+  cronjobRemoved: 'cronjob_removed',
 
   // Instance specific messages
   finishEmptyActivity:
