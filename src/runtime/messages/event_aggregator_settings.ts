@@ -32,6 +32,11 @@ const messagePaths = {
   signalTriggered: 'signal_triggered',
   userTaskReached: 'user_task_reached',
   userTaskFinished: 'user_task_finished',
+  cronjobCreated: 'cronjob_created',
+  cronjobExecuted: 'cronjob_executed',
+  cronjobStopped: 'cronjob_stopped',
+  cronjobUpdated: 'cronjob_updated',
+  cronjobRemoved: 'cronjob_removed',
 
   // Instance specific messages
   finishEmptyActivity:
