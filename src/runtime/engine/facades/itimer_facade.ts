@@ -1,6 +1,6 @@
 import {Subscription} from '@essential-projects/event_aggregator_contracts';
 
-import {FlowNode, TimerEventDefinition, TimerType} from '../../../model_duplications/index';
+import {FlowNode, TimerEventDefinition} from '../../../model_duplications/index';
 
 import {IProcessTokenFacade} from './iprocess_token_facade';
 

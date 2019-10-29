@@ -31,11 +31,10 @@
   "devDependencies": {
     "@essential-projects/eslint-config": "^1.0.0",
     "@process-engine/ci_tools": "^2.0.0",
-    "@types/node": "^10.12.2",
-    "eslint": "^5.16.0",
+    "@types/node": "^12.11.7",
+    "eslint": "^6.6.0",
     "moment": "^2.24.0",
-    "tsconfig": "^7.0.0",
-    "typescript": "^3.3.3"
+    "typescript": "^3.6.4"
   },
   "scripts": {
     "clean": "rm -rf dist",
