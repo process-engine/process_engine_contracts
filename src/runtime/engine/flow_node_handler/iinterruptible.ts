@@ -1,3 +1,5 @@
+import {IIdentity} from '@essential-projects/iam_contracts';
+
 import {ProcessToken} from '../../types/process_token';
 
 /**
@@ -20,5 +22,5 @@ export interface IInterruptible {
    * @param terminate Optional: If set to true, the activity will terminate,
    *                  rather than finish regularily.
    */
-  interrupt(token: ProcessToken, terminate?: boolean): void | Promise<void>;
+  interrupt(token: ProcessToken, terminate?: boolean, terminatedBy?: IIdentity): void | Promise<void>;
 }
