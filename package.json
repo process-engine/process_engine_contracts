@@ -1,8 +1,5 @@
 {
   "name": "@process-engine/process_engine_contracts",
-  "publishConfig": {
-    "registry": "https://www.npmjs.com"
-  },
   "version": "46.1.0",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
