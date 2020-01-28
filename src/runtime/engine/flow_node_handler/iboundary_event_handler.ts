@@ -1,5 +1,5 @@
 import {FlowNode} from '../../../model_duplications/index';
-import {ProcessToken} from '../../types';
+import {FlowNodeInstance, ProcessToken} from '../../types';
 import {IProcessModelFacade} from '../facades/iprocess_model_facade';
 import {IProcessTokenFacade} from '../facades/iprocess_token_facade';
 
@@ -46,15 +46,35 @@ export interface IBoundaryEventHandler {
    * incoming message, asf.
    *
    * @async
-   * @param onTriggeredCallback        The callback to run after the
-   *                                   BoundaryEvent was triggered.
+   * @param onTriggeredCallback        The callback to run after the BoundaryEvent was triggered.
    * @param token                      The current ProcessToken.
    * @param processTokenFacade         The Facade for the current ProcessToken.
    * @param processModelFacade         The Facade for the current ProcessModel.
-   * @param attachedFlowNodeInstanceId The InstanceId of the FlowNode this
-   *                                   BoundaryEvent is attached to.
+   * @param attachedFlowNodeInstanceId The InstanceId of the FlowNode this BoundaryEvent is attached to.
    */
   waitForTriggeringEvent(
+    onTriggeredCallback: OnBoundaryEventTriggeredCallback,
+    token: ProcessToken,
+    processTokenFacade: IProcessTokenFacade,
+    processModelFacade: IProcessModelFacade,
+    attachedFlowNodeInstanceId: string,
+  ): Promise<void>;
+
+  /**
+   * Resumes the BoundaryEvent and continues to wait for the triggering event to occur.
+   * Basically, this UseCase works the same as waitForTriggeringEvent, except that no
+   * initial state transition is performed and a FlowNodeInstance is required.
+   *
+   * @async
+   * @param boundaryEventInstanceId    The instance of the BoundaryEvent to resume.
+   * @param onTriggeredCallback        The callback to run after the BoundaryEvent was triggered.
+   * @param token                      The current ProcessToken.
+   * @param processTokenFacade         The Facade for the current ProcessToken.
+   * @param processModelFacade         The Facade for the current ProcessModel.
+   * @param attachedFlowNodeInstanceId The InstanceId of the FlowNode this BoundaryEvent is attached to.
+   */
+  resumeWait(
+    boundaryEventInstance: FlowNodeInstance,
     onTriggeredCallback: OnBoundaryEventTriggeredCallback,
     token: ProcessToken,
     processTokenFacade: IProcessTokenFacade,
