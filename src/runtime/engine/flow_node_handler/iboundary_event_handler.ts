@@ -66,7 +66,7 @@ export interface IBoundaryEventHandler {
    * initial state transition is performed and a FlowNodeInstance is required.
    *
    * @async
-   * @param boundaryEventInstanceId    The instance of the BoundaryEvent to resume.
+   * @param boundaryEventInstance      The instance of the BoundaryEvent to resume.
    * @param onTriggeredCallback        The callback to run after the BoundaryEvent was triggered.
    * @param token                      The current ProcessToken.
    * @param processTokenFacade         The Facade for the current ProcessToken.
