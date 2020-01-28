@@ -1,6 +1,6 @@
 {
   "name": "@process-engine/process_engine_contracts",
-  "version": "47.0.0-alpha.1",
+  "version": "47.0.0-alpha.2",
   "description": "The referencable contracts for the whole ProcessEngine.",
   "license": "MIT",
   "main": "dist/commonjs/index.js",
