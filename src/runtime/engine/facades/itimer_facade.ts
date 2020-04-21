@@ -17,6 +17,7 @@ export interface ITimerFacade {
    * @param   timerDefinition    The definition containing the timer.
    * @param   processTokenFacade The facade containing the current ProcessToken.
    * @param   callback           The function to call, after the timer has elapsed.
+   * @param   timerStartedDate   Optional: The date where the timer originally started.
    * @returns                    A Subscription on the event aggreator,
    *                             which can be used to wait for the timer to elapse.
    */
@@ -25,6 +26,7 @@ export interface ITimerFacade {
     timerDefinition: TimerEventDefinition,
     processTokenFacade: IProcessTokenFacade,
     callback: Function,
+    timerStartedDate?: Date
   ): Subscription;
 
   /**
@@ -57,9 +59,10 @@ export interface ITimerFacade {
    * @param   duration              The duration to use.
    * @param   callback              The callback to call, when the timer expires.
    * @param   timerExpiredEventName Optional: A name for the event to raise, when the timer expires.
+   * @param   timerStartedDate      Optional: The date where the timer originally started.
    * @returns                       The Subscription that was created on the EventAggregator.
    */
-  startDurationTimer(duration: string, callback: Function, timerExpiredEventName?: string): Subscription;
+  startDurationTimer(duration: string, callback: Function, timerExpiredEventName?: string, timerStartedDate?: Date): Subscription;
 
   /**
    * Validates the given TimerType and TimerValue, using the given FlowNode as a baseline.
