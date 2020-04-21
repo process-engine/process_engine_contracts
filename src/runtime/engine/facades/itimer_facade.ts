@@ -17,7 +17,7 @@ export interface ITimerFacade {
    * @param   timerDefinition    The definition containing the timer.
    * @param   processTokenFacade The facade containing the current ProcessToken.
    * @param   callback           The function to call, after the timer has elapsed.
-   * @param   timerStartedDate      Optional: The date where the timer originally started.
+   * @param   timerStartedDate   Optional: The date where the timer originally started.
    * @returns                    A Subscription on the event aggreator,
    *                             which can be used to wait for the timer to elapse.
    */
